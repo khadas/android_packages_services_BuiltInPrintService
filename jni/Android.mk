@@ -58,7 +58,7 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_SHARED_LIBRARIES := libcups libjpeg
 
-LOCAL_LDLIBS += -llog -lz -Wl,--no-warn-shared-textrel
+LOCAL_LDLIBS += -llog -lz
 LOCAL_MODULE := libwfds
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
