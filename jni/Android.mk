@@ -14,11 +14,7 @@
 # limitations under the License.
 
 LOCAL_PATH:= $(call my-dir)
-JNI_LOCAL_PATH := $(LOCAL_PATH)
-include $(call all-subdir-makefiles)
 include $(CLEAR_VARS)
-
-LOCAL_PATH:= $(JNI_LOCAL_PATH)
 
 INCLUDE_DIR    := include
 LIB_DIR        := lib
@@ -54,11 +50,9 @@ LOCAL_SRC_FILES:= \
 
 LOCAL_C_INCLUDES += \
       $(LOCAL_PATH)/$(INCLUDE_DIR) $(LOCAL_PATH)/$(PLUGINS_DIR)/genPCLm/inc \
-      $(LOCAL_PATH)/$(IPP_HELPER_DIR) external/zlib
+      $(LOCAL_PATH)/$(IPP_HELPER_DIR)
 
-LOCAL_SHARED_LIBRARIES := libcups libjpeg
-
-LOCAL_LDLIBS += -llog -lz
+LOCAL_SHARED_LIBRARIES := libcups libjpeg liblog libz
 LOCAL_MODULE := libwfds
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
