@@ -247,7 +247,7 @@ static void _stream_dbg_start_job(wJob_t job_handle, const char *ext) {
         char filename[MAX_PATHNAME_LENGTH + 1];
         snprintf(filename, MAX_PATHNAME_LENGTH, "%s/jobstream.%s", jq->debug_path, ext);
         filename[MAX_PATHNAME_LENGTH] = 0;
-        jq->job_debug_fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY);
+        jq->job_debug_fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
     }
 }
 
@@ -305,7 +305,7 @@ static void _stream_dbg_start_page(wJob_t job_handle, int page_number, int width
         snprintf(buff.filename, MAX_PATHNAME_LENGTH, "%s/page%4.4d.ppm", jq->debug_path,
                 page_number);
         buff.filename[MAX_PATHNAME_LENGTH] = 0;
-        jq->page_debug_fd = open(buff.filename, O_CREAT | O_TRUNC | O_WRONLY);
+        jq->page_debug_fd = open(buff.filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
         int length = snprintf(buff.ppm_header, sizeof(buff.ppm_header), "%s\n#%*c\n%d %d\n%d\n",
                 PPM_IDENTIFIER, 0, ' ', width, height, 255);
         int padding = sizeof(buff.ppm_header) - length;
