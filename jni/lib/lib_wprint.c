@@ -50,6 +50,9 @@
 
 #define TAG "lib_wprint"
 
+/* As expected by target devices */
+#define USERAGENT_PREFIX "wPrintAndroid"
+
 #define USE_PWG_OVER_PCLM 0
 
 #if (USE_PWG_OVER_PCLM != 0)
@@ -1806,15 +1809,11 @@ wJob_t wprintStartJob(const char *printer_addr, port_t port_num,
 
         memcpy((char *) &(jq->job_params), job_params, sizeof(wprint_job_params_t));
 
-        {
-            int useragent_len = strlen(g_osName) + strlen(jq->job_params.docCategory) + 1;
-            char *useragent = (char *) malloc(useragent_len + 1);
-            if (useragent != NULL) {
-                memset(useragent, 0, useragent_len + 1);
-                snprintf(useragent, useragent_len + 1, "%s%s", g_osName,
-                        jq->job_params.docCategory);
-                jq->job_params.useragent = useragent;
-            }
+        size_t useragent_len = strlen(USERAGENT_PREFIX) + strlen(jq->job_params.docCategory) + 1;
+        char *useragent = (char *) malloc(useragent_len);
+        if (useragent != NULL) {
+            snprintf(useragent, useragent_len, USERAGENT_PREFIX "%s", jq->job_params.docCategory);
+            jq->job_params.useragent = useragent;
         }
 
         jq->job_params.page_num = 0;
