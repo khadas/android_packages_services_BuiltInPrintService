@@ -27,7 +27,7 @@ LOCAL_SDK_VERSION := current
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
-LOCAL_JNI_SHARED_LIBRARIES := libwfds
+LOCAL_JNI_SHARED_LIBRARIES := libwfds libcups
 
 include $(BUILD_PACKAGE)
 
