@@ -21,6 +21,8 @@ LIB_DIR        := lib
 PLUGINS_DIR    := plugins
 IPP_HELPER_DIR := ipphelper
 
+LOCAL_SDK_VERSION := current
+
 LOCAL_CFLAGS += \
       -DINCLUDE_PDF=1 -Werror -Wextra -Wno-unused-parameter \
       -Wno-sign-compare -Wno-missing-field-initializers \
@@ -51,8 +53,8 @@ LOCAL_SRC_FILES:= \
 LOCAL_C_INCLUDES += \
       $(LOCAL_PATH)/$(INCLUDE_DIR) $(LOCAL_PATH)/$(PLUGINS_DIR)/genPCLm/inc \
       $(LOCAL_PATH)/$(IPP_HELPER_DIR)
-
-LOCAL_SHARED_LIBRARIES := libcups libjpeg liblog libz
+LOCAL_STATIC_LIBRARIES := libjpeg_static_ndk
+LOCAL_SHARED_LIBRARIES := libcups liblog libz
 LOCAL_MODULE := libwfds
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
