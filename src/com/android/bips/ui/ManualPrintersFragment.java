@@ -169,7 +169,7 @@ public class ManualPrintersFragment extends PreferenceFragment implements Servic
             setLayoutResource(R.layout.printer_item);
             setTitle(printer.name);
             setSummary(printer.path.getHost());
-            setIcon(android.R.mipmap.sym_def_app_icon);
+            setIcon(R.drawable.ic_printer);
         }
     }
 
