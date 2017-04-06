@@ -21,6 +21,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.ParcelFileDescriptor;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentInfo;
 import android.print.PrintJobInfo;
@@ -34,11 +35,8 @@ import com.android.bips.jni.LocalPrinterCapabilities;
 import com.android.bips.jni.MediaSizes;
 import com.android.bips.util.FileUtils;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -74,7 +72,7 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
     private final Uri mDestination;
     private final LocalPrinterCapabilities mCapabilities;
     private final LocalJobParams mJobParams;
-    private final FileDescriptor mSourceFileDescriptor;
+    private final ParcelFileDescriptor mSourceFileDescriptor;
     private final String mJobId;
     private final PrintJobInfo mJobInfo;
     private final PrintDocumentInfo mDocInfo;
@@ -90,7 +88,7 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
         mJobId = printJob.getId().toString();
         mJobInfo = printJob.getInfo();
         mDocInfo = printJob.getDocument().getInfo();
-        mSourceFileDescriptor = printJob.getDocument().getData().getFileDescriptor();
+        mSourceFileDescriptor = printJob.getDocument().getData();
         mMediaSizes = MediaSizes.getInstance(mContext);
     }
 
@@ -133,7 +131,7 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
         File pdfFile = new File(tempFolder, mJobId + ".pdf");
         try {
             try {
-                FileUtils.copy(new BufferedInputStream(new FileInputStream(mSourceFileDescriptor)),
+                FileUtils.copy(new ParcelFileDescriptor.AutoCloseInputStream(mSourceFileDescriptor),
                         new BufferedOutputStream(new FileOutputStream(pdfFile)));
             } catch (IOException e) {
                 Log.w(TAG, "Error while copying to " + pdfFile, e);
