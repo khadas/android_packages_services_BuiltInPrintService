@@ -76,6 +76,7 @@ class LocalPrinter implements CapabilitiesCache.OnLocalPrinterCapabilities {
         PrinterInfo.Builder builder = new PrinterInfo.Builder(
                 mPrinterId, mDiscoveredPrinter.name,
                 idle ? PrinterInfo.STATUS_IDLE : PrinterInfo.STATUS_UNAVAILABLE)
+                .setIconResourceId(R.drawable.ic_printer)
                 .setDescription(description);
 
         if (mCapabilities != null) {
