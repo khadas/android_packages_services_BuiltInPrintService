@@ -27,6 +27,8 @@ import com.android.bips.discovery.DiscoveredPrinter;
 import com.android.bips.ipp.CapabilitiesCache;
 import com.android.bips.jni.LocalPrinterCapabilities;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Collections;
 
 /**
@@ -51,6 +53,15 @@ class LocalPrinter implements CapabilitiesCache.OnLocalPrinterCapabilities {
         mSession = session;
         mDiscoveredPrinter = discoveredPrinter;
         mPrinterId = discoveredPrinter.getId(printService);
+    }
+
+    /**
+     * @return The address of the printer or {@code null} if the printer is not reachable
+     *
+     * @throws UnknownHostException if the address could not be resolved
+     */
+    public InetAddress getAddress() throws UnknownHostException {
+        return InetAddress.getByName(mDiscoveredPrinter.path.getHost());
     }
 
     /** Return true if this printer should be aged out */
