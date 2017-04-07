@@ -17,9 +17,14 @@
 
 package com.android.bips;
 
+import android.print.PrintManager;
 import android.print.PrinterId;
 import android.print.PrinterInfo;
+import android.printservice.PrintServiceInfo;
 import android.printservice.PrinterDiscoverySession;
+import android.printservice.recommendation.RecommendationInfo;
+import android.util.ArrayMap;
+import android.util.ArraySet;
 import android.util.JsonReader;
 import android.util.JsonWriter;
 import android.util.Log;
@@ -32,6 +37,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,7 +47,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery.Listener {
+class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery.Listener,
+        PrintManager.PrintServiceRecommendationsChangeListener,
+        PrintManager.PrintServicesChangeListener {
     private static final String TAG = LocalDiscoverySession.class.getSimpleName();
     private static final boolean DEBUG = false;
 
@@ -58,9 +67,25 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
     private final List<PrinterId> mKnownGood = new ArrayList<>();
     private Runnable mExpirePrinters;
 
+    PrintManager mPrintManager;
+
+    /** Package names of all currently enabled print services beside this one */
+    private ArraySet<String> mEnabledServices = new ArraySet<>();
+
+    /**
+     * Address of printers that can be handled by print services, ordered by package name of the
+     * print service. The print service might not be enabled. For that, look at
+     * {@link #mEnabledServices}.
+     *
+     * <p>This print service only shows a printer if another print service does not show it.
+     */
+    private final ArrayMap<InetAddress, ArrayList<String>> mPrintersOfOtherService =
+            new ArrayMap<>();
+
     LocalDiscoverySession(BuiltInPrintService service) {
         mPrintService = service;
         mCapabilitiesCache = service.getCapabilitiesCache();
+        mPrintManager = mPrintService.getSystemService(PrintManager.class);
         loadKnownGood();
     }
 
@@ -77,12 +102,22 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
         monitorExpiredPrinters();
 
         mPrintService.getDiscovery().start(this);
+
+        mPrintManager.addPrintServicesChangeListener(this, null);
+        onPrintServicesChanged();
+
+        mPrintManager.addPrintServiceRecommendationsChangeListener(this, null);
+        onPrintServiceRecommendationsChanged();
     }
 
     @Override
     public void onStopPrinterDiscovery() {
         if (DEBUG) Log.d(TAG, "onStopPrinterDiscovery()");
         mPrintService.getDiscovery().stop(this);
+
+        PrintManager printManager = mPrintService.getSystemService(PrintManager.class);
+        printManager.removePrintServicesChangeListener(this);
+        printManager.removePrintServiceRecommendationsChangeListener(this);
 
         if (mExpirePrinters != null) {
             mPrintService.getMainHandler().removeCallbacks(mExpirePrinters);
@@ -193,7 +228,9 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
                     " caps=" + (info.getCapabilities() != null) + " status=" + info.getStatus());
         }
 
-        addPrinters(Collections.singletonList(info));
+        if (!isHandledByOtherService(localPrinter)) {
+            addPrinters(Collections.singletonList(info));
+        }
     }
 
     /**
@@ -242,6 +279,104 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
         } catch (IOException e) {
             Log.w(TAG, "Failed to write known good list", e);
         }
+    }
+
+    /**
+     * Is this printer handled by another print service and should be suppressed?
+     *
+     * @param printer The printer that might need to be suppressed
+     *
+     * @return {@code true} iff the printer should be suppressed
+     */
+    private boolean isHandledByOtherService(LocalPrinter printer) {
+        ArrayList<String> printerServices;
+        try {
+            printerServices = mPrintersOfOtherService.get(printer.getAddress());
+        } catch (UnknownHostException e) {
+            Log.e(TAG, "Cannot resolve address for " + printer, e);
+            return false;
+        }
+
+        if (printerServices != null) {
+            int numServices = printerServices.size();
+            for (int i = 0; i < numServices; i++) {
+                if (mEnabledServices.contains(printerServices.get(i))) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * If the system's print service state changed some printer might be newly suppressed or not
+     * suppressed anymore.
+     */
+    private void onPrintServicesStateUpdated() {
+        ArrayList<PrinterInfo> printersToAdd = new ArrayList<>();
+        ArrayList<PrinterId> printersToRemove = new ArrayList<>();
+        for (LocalPrinter printer : mPrinters.values()) {
+            PrinterInfo info = printer.createPrinterInfo();
+
+            if (printer.getCapabilities() != null && printer.isFound()
+                    && !isHandledByOtherService(printer) && info != null) {
+                printersToAdd.add(info);
+            } else {
+                printersToRemove.add(printer.getPrinterId());
+            }
+        }
+
+        removePrinters(printersToRemove);
+        addPrinters(printersToAdd);
+    }
+
+    @Override
+    public void onPrintServiceRecommendationsChanged() {
+        mPrintersOfOtherService.clear();
+
+        List<RecommendationInfo> infos = mPrintManager.getPrintServiceRecommendations();
+
+        int numInfos = infos.size();
+        for (int i = 0; i < numInfos; i++) {
+            RecommendationInfo info = infos.get(i);
+            String packageName = info.getPackageName().toString();
+
+            if (!packageName.equals(mPrintService.getPackageName())) {
+                for (InetAddress address : info.getDiscoveredPrinters()) {
+                    ArrayList<String> services = mPrintersOfOtherService.get(address);
+
+                    if (services == null) {
+                        services = new ArrayList<>(1);
+                        mPrintersOfOtherService.put(address, services);
+                    }
+
+                    services.add(packageName);
+                }
+            }
+        }
+
+        onPrintServicesStateUpdated();
+    }
+
+    @Override
+    public void onPrintServicesChanged() {
+        mEnabledServices.clear();
+
+        List<PrintServiceInfo> infos = mPrintManager.getPrintServices(
+                PrintManager.ENABLED_SERVICES);
+
+        int numInfos = infos.size();
+        for (int i = 0; i < numInfos; i++) {
+            PrintServiceInfo info = infos.get(i);
+            String packageName = info.getComponentName().getPackageName();
+
+            if (!packageName.equals(mPrintService.getPackageName())) {
+                mEnabledServices.add(packageName);
+            }
+        }
+
+        onPrintServicesStateUpdated();
     }
 
     /** A runnable that periodically removes expired printers, when any exist */
