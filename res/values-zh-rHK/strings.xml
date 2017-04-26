@@ -19,12 +19,12 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name" msgid="3551052199033657984">"預設列印服務"</string>
     <string name="printer_busy" msgid="8604311528104955859">"忙碌"</string>
-    <string name="printer_out_of_paper" msgid="4882186432807703877">"紙張已用完"</string>
-    <string name="printer_out_of_ink" msgid="7361897651097675464">"墨水已用完"</string>
-    <string name="printer_out_of_toner" msgid="2077516357225364154">"碳粉已用完"</string>
+    <string name="printer_out_of_paper" msgid="4882186432807703877">"紙張用完"</string>
+    <string name="printer_out_of_ink" msgid="7361897651097675464">"墨水用完"</string>
+    <string name="printer_out_of_toner" msgid="2077516357225364154">"碳粉用完"</string>
     <string name="printer_low_on_ink" msgid="3515015872393897705">"墨水不足"</string>
     <string name="printer_low_on_toner" msgid="8807858294038587130">"碳粉不足"</string>
-    <string name="printer_door_open" msgid="2446302931916940874">"打印機門已開啟"</string>
+    <string name="printer_door_open" msgid="2446302931916940874">"機門未關"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"卡紙"</string>
     <string name="printer_offline" msgid="9196864753298645066">"離線"</string>
     <string name="printer_check" msgid="6428369671197132828">"檢查打印機"</string>
@@ -38,12 +38,12 @@
     <string name="media_size_8x10in" msgid="1872576638522812402">"8x10 吋"</string>
     <string name="media_size_4x6in" msgid="3093276425529958253">"4x6 吋"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
-    <string name="title_activity_add_printer" msgid="3971541707589830268">"已手動新增打印機"</string>
+    <string name="title_activity_add_printer" msgid="3971541707589830268">"手動新增的打印機"</string>
     <string name="add_manual_printer" msgid="3990455596246121671">"手動新增打印機"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"主機名稱或 IP 位址"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"新增"</string>
     <string name="no_printer_found" msgid="4777867380924351173">"在這個位址找不到打印機"</string>
-    <string name="printer_not_supported" msgid="281955849350938408">"系統不支援打印機"</string>
+    <string name="printer_not_supported" msgid="281955849350938408">"不支援的打印機"</string>
     <string name="forget_printer" msgid="7287993564179837445">"移除打印機"</string>
 </resources>

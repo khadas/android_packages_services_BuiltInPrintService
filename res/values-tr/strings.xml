@@ -37,7 +37,7 @@
     <string name="media_size_54x86mm" msgid="1301991206183343895">"54x86 mm"</string>
     <string name="media_size_8x10in" msgid="1872576638522812402">"8x10 inç"</string>
     <string name="media_size_4x6in" msgid="3093276425529958253">"4x6 inç"</string>
-    <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
+    <string name="printer_description" msgid="8580767673213837142">"%1$s - %2$s"</string>
     <string name="title_activity_add_printer" msgid="3971541707589830268">"Manuel Olarak Eklenmiş Yazıcılar"</string>
     <string name="add_manual_printer" msgid="3990455596246121671">"Manuel yazıcı ekle"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"Ana makine adı veya IP adresi"</string>

@@ -39,7 +39,7 @@
     <string name="media_size_4x6in" msgid="3093276425529958253">"4 x 6 tommer"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
     <string name="title_activity_add_printer" msgid="3971541707589830268">"Skrivere som er lagt til manuelt"</string>
-    <string name="add_manual_printer" msgid="3990455596246121671">"Legg til manuell skriver"</string>
+    <string name="add_manual_printer" msgid="3990455596246121671">"Legg til skriver manuelt"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"Vertsnavn eller IP-adresse"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"Legg til"</string>

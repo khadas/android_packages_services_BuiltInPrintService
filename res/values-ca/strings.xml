@@ -25,13 +25,13 @@
     <string name="printer_low_on_ink" msgid="3515015872393897705">"Poca tinta"</string>
     <string name="printer_low_on_toner" msgid="8807858294038587130">"Poc tòner"</string>
     <string name="printer_door_open" msgid="2446302931916940874">"Porta oberta"</string>
-    <string name="printer_jammed" msgid="5104099859384749499">"Encallada"</string>
+    <string name="printer_jammed" msgid="5104099859384749499">"Paper encallat"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Sense connexió"</string>
     <string name="printer_check" msgid="6428369671197132828">"Comprova la impressora"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"S\'està esperant que s\'enviï"</string>
     <string name="wifi_not_connected" msgid="8644760246612043851">"La Wi-Fi no està connectada"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"No s\'ha pogut llegir el document"</string>
-    <string name="media_size_l" msgid="164416542021598181">"L"</string>
+    <string name="media_size_l" msgid="164416542021598181">"9 x 13 cm"</string>
     <string name="media_size_5x7in" msgid="1275128379533195285">"5 x 7 polzades"</string>
     <string name="media_size_89x119mm" msgid="6828167243395807385">"89 x 119 mm"</string>
     <string name="media_size_54x86mm" msgid="1301991206183343895">"54 x 86 mm"</string>
@@ -39,7 +39,7 @@
     <string name="media_size_4x6in" msgid="3093276425529958253">"4 x 6 polzades"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s: %2$s"</string>
     <string name="title_activity_add_printer" msgid="3971541707589830268">"Impressores afegides manualment"</string>
-    <string name="add_manual_printer" msgid="3990455596246121671">"Afegeix una impressora de forma manual"</string>
+    <string name="add_manual_printer" msgid="3990455596246121671">"Afegeix una impressora manualment"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"Nom d\'amfitrió o adreça IP"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"Afegeix"</string>

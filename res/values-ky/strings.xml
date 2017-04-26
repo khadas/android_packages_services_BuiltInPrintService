@@ -22,8 +22,8 @@
     <string name="printer_out_of_paper" msgid="4882186432807703877">"Барак түгөндү"</string>
     <string name="printer_out_of_ink" msgid="7361897651097675464">"Сыя түгөндү"</string>
     <string name="printer_out_of_toner" msgid="2077516357225364154">"Тонер түгөндү"</string>
-    <string name="printer_low_on_ink" msgid="3515015872393897705">"Сыя бүткөнү калды"</string>
-    <string name="printer_low_on_toner" msgid="8807858294038587130">"Тонер бүткөнү калды"</string>
+    <string name="printer_low_on_ink" msgid="3515015872393897705">"Сыя аз калды"</string>
+    <string name="printer_low_on_toner" msgid="8807858294038587130">"Тонер аз калды"</string>
     <string name="printer_door_open" msgid="2446302931916940874">"Капкагы ачык"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Кагаз чайналды"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Оффлайн"</string>

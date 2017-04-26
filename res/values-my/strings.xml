@@ -20,9 +20,9 @@
     <string name="app_name" msgid="3551052199033657984">"မူရင်းပုံနှိပ်ဝန်ဆောင်မှု"</string>
     <string name="printer_busy" msgid="8604311528104955859">"အလုပ်များနေသည်"</string>
     <string name="printer_out_of_paper" msgid="4882186432807703877">"စာရွက်ကုန်နေသည်"</string>
-    <string name="printer_out_of_ink" msgid="7361897651097675464">"မှင်ကုန်နေသည်"</string>
+    <string name="printer_out_of_ink" msgid="7361897651097675464">"မင်ကုန်နေသည်"</string>
     <string name="printer_out_of_toner" msgid="2077516357225364154">"ဆိုးဆေးကုန်နေသည်"</string>
-    <string name="printer_low_on_ink" msgid="3515015872393897705">"မှင်နည်းနေသည်"</string>
+    <string name="printer_low_on_ink" msgid="3515015872393897705">"မင်နည်းနေသည်"</string>
     <string name="printer_low_on_toner" msgid="8807858294038587130">"ဆိုးဆေးနည်းနေသည်"</string>
     <string name="printer_door_open" msgid="2446302931916940874">"တံခါးပွင့်နေသည်"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"စာရွက်ညှပ်နေသည်"</string>
@@ -30,7 +30,7 @@
     <string name="printer_check" msgid="6428369671197132828">"ပုံနှိပ်စက်ကို စစ်ဆေးရန်"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"ပို့ရန် စောင့်နေသည်"</string>
     <string name="wifi_not_connected" msgid="8644760246612043851">"Wi-Fi ချိတ်ဆက်ထားခြင်းမရှိပါ"</string>
-    <string name="unreadable_input" msgid="2199948329556527912">"ဖိုင်ကို ဖတ်၍မရပါ"</string>
+    <string name="unreadable_input" msgid="2199948329556527912">"စာရွက်စာတမ်းကို ဖတ်၍မရပါ"</string>
     <string name="media_size_l" msgid="164416542021598181">"ကြီး"</string>
     <string name="media_size_5x7in" msgid="1275128379533195285">"၅x၇ လက်မ"</string>
     <string name="media_size_89x119mm" msgid="6828167243395807385">"၈၉x၁၁၉ မီလီမီတာ"</string>
