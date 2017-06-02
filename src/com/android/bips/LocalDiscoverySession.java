@@ -188,6 +188,13 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
             mKnownGood.add(0, localPrinter.getPrinterId());
         }
 
+        for (PrinterInfo knownInfo : getPrinters()) {
+            if (knownInfo.getId().equals(info.getId()) && (info.getCapabilities() == null)) {
+                if (DEBUG) Log.d(TAG, "Ignore update with no caps " + localPrinter);
+                return;
+            }
+        }
+
         if (DEBUG) {
             Log.d(TAG, "handlePrinter: reporting " + localPrinter +
                     " caps=" + (info.getCapabilities() != null) + " status=" + info.getStatus());
@@ -200,7 +207,7 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
      * Return true if the {@link PrinterId} corresponds to a high-priority printer
      */
     boolean isPriority(PrinterId printerId) {
-        return mPriorityIds.contains(printerId) || mTrackingIds.contains(printerId);
+        return mTrackingIds.contains(printerId);
     }
 
     /**
