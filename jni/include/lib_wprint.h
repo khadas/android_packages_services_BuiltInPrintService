@@ -206,6 +206,8 @@ typedef struct {
     const char *uri_path;
     const char *uri_scheme;
     int port_num;
+    /* Timeout per retry in milliseconds */
+    long timeout;
 } wprint_connect_info_t;
 
 /*

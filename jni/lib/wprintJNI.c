@@ -1150,7 +1150,7 @@ static char *copyToNewString(JNIEnv *env, jstring source) {
  */
 JNIEXPORT jint JNICALL Java_com_android_bips_ipp_Backend_nativeGetCapabilities(
         JNIEnv *env, jobject obj, jstring address, jint port, jstring httpResource,
-        jstring uriScheme, jobject printerCaps) {
+        jstring uriScheme, jlong timeout, jobject printerCaps) {
     jint result;
     printer_capabilities_t caps;
     wprint_connect_info_t connect_info;
@@ -1159,6 +1159,7 @@ JNIEXPORT jint JNICALL Java_com_android_bips_ipp_Backend_nativeGetCapabilities(
     connect_info.uri_path = copyToNewString(env, httpResource);
     connect_info.uri_scheme = copyToNewString(env, uriScheme);
     connect_info.port_num = port;
+    connect_info.timeout = timeout;
 
     LOGI("nativeGetCapabilities for %s JNIenv is %p", connect_info.printer_addr, env);
 

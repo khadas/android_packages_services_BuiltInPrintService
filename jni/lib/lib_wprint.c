@@ -741,6 +741,7 @@ static void *_job_thread(void *param) {
                 connect_info.uri_path = jq->printer_uri;
                 connect_info.port_num = jq->port_num;
                 connect_info.uri_scheme = IPP_PREFIX;
+                connect_info.timeout = DEFAULT_IPP_TIMEOUT;
                 jq->status_ifc->init(jq->status_ifc, &connect_info);
             }
             // wait for the printer to be idle

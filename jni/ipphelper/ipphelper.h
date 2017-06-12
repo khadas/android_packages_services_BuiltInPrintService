@@ -28,7 +28,8 @@
 #include "ipp.h"
 #include "ifc_wprint.h"
 
-#define DEFAULT_IPP_TIMEOUT 15.0
+/* Default timeout for most operations */
+#define DEFAULT_IPP_TIMEOUT (15 * 1000)
 
 #ifdef __cplusplus
 extern "C" {
