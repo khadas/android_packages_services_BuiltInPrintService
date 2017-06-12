@@ -158,6 +158,13 @@ public abstract class Discovery {
         return mPrinters.values();
     }
 
+    /**
+     * Return printer matching the uri, or null if none
+     */
+    public DiscoveredPrinter getPrinter(Uri uri) {
+        return mPrinters.get(uri);
+    }
+
     public interface Listener {
         void onPrinterFound(DiscoveredPrinter printer);
 
