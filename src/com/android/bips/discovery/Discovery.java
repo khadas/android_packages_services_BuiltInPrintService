@@ -154,7 +154,7 @@ public abstract class Discovery {
     /**
      * Return the working collection of currently-found printers
      */
-    Collection<DiscoveredPrinter> getPrinters() {
+    public Collection<DiscoveredPrinter> getPrinters() {
         return mPrinters.values();
     }
 
