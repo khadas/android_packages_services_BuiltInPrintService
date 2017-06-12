@@ -38,21 +38,20 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
     /** Lock to ensure we don't issue multiple simultaneous capability requests */
     private static final Lock sJniLock = new ReentrantLock();
 
-    /** Amount of time before giving up on the "online" check for printer */
-    private static final int ONLINE_TIMEOUT_MILLIS = 6000;
-
     private final Backend mBackend;
     private final Uri mUri;
+    private final long mTimeout;
 
-    GetCapabilitiesTask(Backend backend, Uri uri) {
+    GetCapabilitiesTask(Backend backend, Uri uri, long timeout) {
         mUri = uri;
         mBackend = backend;
+        mTimeout = timeout;
     }
 
-    private static boolean isDeviceOnline(Uri uri) {
+    private boolean isDeviceOnline(Uri uri) {
         try (Socket socket = new Socket()) {
             InetSocketAddress a = new InetSocketAddress(uri.getHost(), uri.getPort());
-            socket.connect(a, ONLINE_TIMEOUT_MILLIS);
+            socket.connect(a, (int) mTimeout);
             return true;
         } catch (IOException e) {
             return false;
@@ -70,15 +69,16 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
                     " (" + (System.currentTimeMillis() - start) + "ms)");
         }
 
-        if (!online) return null;
+        if (!online || isCancelled()) return null;
 
         // Do not permit more than a single call to this API or crashes may result
         sJniLock.lock();
         int status = -1;
         start = System.currentTimeMillis();
         try {
+            if (isCancelled()) return null;
             status = mBackend.nativeGetCapabilities(Backend.getIp(mUri.getHost()),
-                    mUri.getPort(), mUri.getPath(), mUri.getScheme(), printerCaps);
+                    mUri.getPort(), mUri.getPath(), mUri.getScheme(), mTimeout, printerCaps);
         } finally {
             sJniLock.unlock();
         }
