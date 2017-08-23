@@ -55,13 +55,12 @@ class LocalPrinter implements CapabilitiesCache.OnLocalPrinterCapabilities {
         mPrinterId = discoveredPrinter.getId(printService);
     }
 
-    /**
-     * @return The address of the printer or {@code null} if the printer is not reachable
-     *
-     * @throws UnknownHostException if the address could not be resolved
-     */
-    public InetAddress getAddress() throws UnknownHostException {
-        return InetAddress.getByName(mDiscoveredPrinter.path.getHost());
+    /** Return the address of the printer or {@code null} if not known */
+    public InetAddress getAddress() {
+        if (mCapabilities != null) {
+            return mCapabilities.inetAddress;
+        }
+        return null;
     }
 
     /** Return true if this printer should be aged out */
