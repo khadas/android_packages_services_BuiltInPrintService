@@ -25,8 +25,10 @@ import com.android.bips.jni.BackendConstants;
 import com.android.bips.jni.LocalPrinterCapabilities;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -63,6 +65,12 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
         long start = System.currentTimeMillis();
 
         LocalPrinterCapabilities printerCaps = new LocalPrinterCapabilities();
+        try {
+            printerCaps.inetAddress = InetAddress.getByName(mUri.getHost());
+        } catch (UnknownHostException e) {
+            return null;
+        }
+
         boolean online = isDeviceOnline(mUri);
         if (DEBUG) {
             Log.d(TAG, "isDeviceOnline uri=" + mUri + " online=" + online +

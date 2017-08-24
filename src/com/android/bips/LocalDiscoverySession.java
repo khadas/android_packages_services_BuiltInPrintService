@@ -296,13 +296,10 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
      * @return {@code true} iff the printer should be suppressed
      */
     private boolean isHandledByOtherService(LocalPrinter printer) {
-        ArrayList<String> printerServices;
-        try {
-            printerServices = mPrintersOfOtherService.get(printer.getAddress());
-        } catch (UnknownHostException e) {
-            Log.e(TAG, "Cannot resolve address for " + printer, e);
-            return false;
-        }
+        InetAddress address = printer.getAddress();
+        if (address == null) return false;
+
+        ArrayList<String> printerServices = mPrintersOfOtherService.get(printer.getAddress());
 
         if (printerServices != null) {
             int numServices = printerServices.size();
