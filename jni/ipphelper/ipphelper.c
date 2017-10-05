@@ -1425,7 +1425,16 @@ http_t *ipp_cups_connect(const wprint_connect_info_t *connect_info, char *printe
 
     int ippPortNumber = ((connect_info->port_num == IPP_PORT) ? ippPort() : connect_info->port_num);
 
-    curl_http = httpConnect(connect_info->printer_addr, ippPortNumber);
+    if (strstr(connect_info->uri_scheme,IPPS_PREFIX) != NULL) {
+        curl_http = httpConnectEncrypt(connect_info->printer_addr, ippPortNumber, HTTP_ENCRYPTION_ALWAYS);
+
+        // If ALWAYS doesn't work, fall back to REQUIRED
+        if (curl_http == NULL) {
+            curl_http = httpConnectEncrypt(connect_info->printer_addr, ippPortNumber, HTTP_ENCRYPT_REQUIRED);
+        }
+    } else {
+        curl_http = httpConnectEncrypt(connect_info->printer_addr, ippPortNumber, HTTP_ENCRYPTION_IF_REQUESTED);
+    }
 
     httpSetTimeout(curl_http, (double)connect_info->timeout / 1000, NULL, 0);
     httpAssembleURIf(HTTP_URI_CODING_ALL, printer_uri, uriLength, connect_info->uri_scheme, NULL,
