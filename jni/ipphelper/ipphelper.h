@@ -145,6 +145,7 @@ http_t *ipp_cups_connect(const wprint_connect_info_t *info, char *printer_uri,
 ipp_t *ipp_doCupsRequest(http_t *http, ipp_t *request, char *http_resource, char *printer_uri);
 
 #define IPP_PREFIX "ipp"
+#define IPPS_PREFIX "ipps"
 #define DEFAULT_IPP_URI_RESOURCE "/ipp/print"
 
 #ifdef __cplusplus
