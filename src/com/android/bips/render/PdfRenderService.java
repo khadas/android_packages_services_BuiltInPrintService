@@ -80,7 +80,7 @@ public class PdfRenderService extends Service {
             if (!openPage(page)) return null;
 
             // Create a pipe with input and output sides
-            ParcelFileDescriptor pipes[];
+            ParcelFileDescriptor[] pipes;
             try {
                 pipes = ParcelFileDescriptor.createPipe();
             } catch (IOException e) {
@@ -190,7 +190,7 @@ public class PdfRenderService extends Service {
             Bitmap bitmap = null;
 
             // Make sure nobody closes page while we're using it
-            synchronized(mPageOpenLock) {
+            synchronized (mPageOpenLock) {
                 try (OutputStream outputStream = new ParcelFileDescriptor.AutoCloseOutputStream(
                         mOutput)) {
                     if (mPage == null) {
@@ -236,7 +236,7 @@ public class PdfRenderService extends Service {
             int alphaPixelSize = mWidth * rows * 4;
 
             // Chop out the alpha byte
-            byte array[] = mBuffer.array();
+            byte[] array = mBuffer.array();
             int from, to;
             for (from = 0, to = 0; from < alphaPixelSize; from += 4, to += 3) {
                 array[to] = array[from];

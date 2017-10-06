@@ -28,7 +28,6 @@ import com.android.bips.ipp.CapabilitiesCache;
 import com.android.bips.jni.LocalPrinterCapabilities;
 
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.Collections;
 
 /**
@@ -65,8 +64,8 @@ class LocalPrinter implements CapabilitiesCache.OnLocalPrinterCapabilities {
 
     /** Return true if this printer should be aged out */
     boolean isExpired() {
-        return !mFound && (System.currentTimeMillis() - mLastSeenTime) >
-                LocalDiscoverySession.PRINTER_EXPIRATION_MILLIS;
+        return !mFound && (System.currentTimeMillis() - mLastSeenTime)
+                > LocalDiscoverySession.PRINTER_EXPIRATION_MILLIS;
     }
 
     /** Return capabilities or null if not present */
