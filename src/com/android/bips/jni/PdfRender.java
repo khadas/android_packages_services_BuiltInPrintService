@@ -43,6 +43,7 @@ public class PdfRender {
     private static final boolean DEBUG = false;
 
     /** The current singleton instance */
+    private static final Object sLock = new Object();
     private static PdfRender sInstance;
 
     private final Context mContext;
@@ -55,12 +56,13 @@ public class PdfRender {
      */
     public static PdfRender getInstance(Context context) {
         // Native code might call this without a context
-        if (sInstance == null && context != null) {
-            synchronized (PdfRender.class) {
+        synchronized (sLock) {
+            if (sInstance == null && context != null) {
                 sInstance = new PdfRender(context.getApplicationContext());
             }
+
+            return sInstance;
         }
-        return sInstance;
     }
 
     private ServiceConnection mConnection = new ServiceConnection() {
@@ -86,7 +88,10 @@ public class PdfRender {
     public void close() {
         mContext.unbindService(mConnection);
         mService = null;
-        sInstance = null;
+
+        synchronized (sLock) {
+            sInstance = null;
+        }
     }
 
     /**
