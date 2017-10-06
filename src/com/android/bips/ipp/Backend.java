@@ -301,10 +301,11 @@ public class Backend implements JobCallback {
      * @param capabilities printer capabilities for the printer being used
      * @param fileList list of files to be provided of the given MIME type
      * @param debugDir directory to receive debugging information, if any
+     * @param scheme URI scheme (e.g. ipp/ipps)
      * @return {@link BackendConstants#STATUS_OK} or an error code.
      */
     native int nativeStartJob(String address, int port, String mime_type, LocalJobParams jobParams,
-            LocalPrinterCapabilities capabilities, String[] fileList, String debugDir);
+            LocalPrinterCapabilities capabilities, String[] fileList, String debugDir, String scheme);
 
     /**
      * Request cancellation of the identified job.
