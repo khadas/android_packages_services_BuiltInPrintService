@@ -38,7 +38,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -205,8 +204,8 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
 
     /** A complete printer record is available */
     void handlePrinter(LocalPrinter localPrinter) {
-        if (localPrinter.getCapabilities() == null &&
-                !mKnownGood.contains(localPrinter.getPrinterId())) {
+        if (localPrinter.getCapabilities() == null
+                && !mKnownGood.contains(localPrinter.getPrinterId())) {
             // Ignore printers that have no capabilities and are not known-good
             return;
         }
@@ -231,8 +230,8 @@ class LocalDiscoverySession extends PrinterDiscoverySession implements Discovery
         }
 
         if (DEBUG) {
-            Log.d(TAG, "handlePrinter: reporting " + localPrinter +
-                    " caps=" + (info.getCapabilities() != null) + " status=" + info.getStatus());
+            Log.d(TAG, "handlePrinter: reporting " + localPrinter
+                    + " caps=" + (info.getCapabilities() != null) + " status=" + info.getStatus());
         }
 
         if (!isHandledByOtherService(localPrinter)) {

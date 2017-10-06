@@ -110,7 +110,7 @@ public class ManualPrintersFragment extends PreferenceFragment implements Servic
             if (screen.getPreference(i) instanceof ManualPrinterPreference) {
                 ManualPrinterPreference preference = (ManualPrinterPreference) screen
                         .getPreference(i);
-                if (preference.printer.path.equals(printer.path)) {
+                if (preference.mPrinter.path.equals(printer.path)) {
                     // We have it already, proceed
                     return;
                 }
@@ -126,7 +126,7 @@ public class ManualPrintersFragment extends PreferenceFragment implements Servic
         for (int i = 0; i < screen.getPreferenceCount(); i++) {
             Preference preference = screen.getPreference(i);
             if (preference instanceof ManualPrinterPreference) {
-                if (((ManualPrinterPreference) preference).printer.getUri()
+                if (((ManualPrinterPreference) preference).mPrinter.getUri()
                         .equals(printer.getUri())) {
                     screen.removePreference(preference);
                     break;
@@ -142,7 +142,7 @@ public class ManualPrintersFragment extends PreferenceFragment implements Servic
             int position = ((AdapterView.AdapterContextMenuInfo) menuInfo).position;
             Preference preference = getPreferenceScreen().getPreference(position);
             if (preference instanceof ManualPrinterPreference) {
-                final DiscoveredPrinter printer = ((ManualPrinterPreference) preference).printer;
+                final DiscoveredPrinter printer = ((ManualPrinterPreference) preference).mPrinter;
                 menu.setHeaderTitle(printer.name);
                 MenuItem forgetItem = menu.add(Menu.NONE, R.string.forget_printer,
                         Menu.NONE, R.string.forget_printer);
@@ -163,11 +163,11 @@ public class ManualPrintersFragment extends PreferenceFragment implements Servic
     }
 
     private static class ManualPrinterPreference extends Preference {
-        final DiscoveredPrinter printer;
+        final DiscoveredPrinter mPrinter;
 
         ManualPrinterPreference(Context context, DiscoveredPrinter printer) {
             super(context);
-            this.printer = printer;
+            mPrinter = printer;
             setLayoutResource(R.layout.printer_item);
             setTitle(printer.name);
             setSummary(printer.path.getHost());

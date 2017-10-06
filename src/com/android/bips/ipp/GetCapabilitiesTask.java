@@ -73,8 +73,8 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
 
         boolean online = isDeviceOnline(mUri);
         if (DEBUG) {
-            Log.d(TAG, "isDeviceOnline uri=" + mUri + " online=" + online +
-                    " (" + (System.currentTimeMillis() - start) + "ms)");
+            Log.d(TAG, "isDeviceOnline uri=" + mUri + " online=" + online
+                    + " (" + (System.currentTimeMillis() - start) + "ms)");
         }
 
         if (!online || isCancelled()) return null;
@@ -92,8 +92,8 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
         }
 
         if (DEBUG) {
-            Log.d(TAG, "callNativeGetCapabilities uri=" + mUri + " status=" + status +
-                    " (" + (System.currentTimeMillis() - start) + "ms)");
+            Log.d(TAG, "callNativeGetCapabilities uri=" + mUri + " status=" + status
+                    + " (" + (System.currentTimeMillis() - start) + "ms)");
         }
 
         return status == BackendConstants.STATUS_OK ? printerCaps : null;

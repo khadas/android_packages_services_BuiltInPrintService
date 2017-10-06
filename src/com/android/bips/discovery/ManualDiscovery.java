@@ -34,7 +34,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -217,7 +216,8 @@ public class ManualDiscovery extends Discovery implements AutoCloseable {
         }
 
         @Override
-        public void onCapabilities(DiscoveredPrinter printer, LocalPrinterCapabilities capabilities) {
+        public void onCapabilities(DiscoveredPrinter printer,
+                LocalPrinterCapabilities capabilities) {
             if (DEBUG) Log.d(TAG, "onCapabilities: " + capabilities);
             mUris.remove(printer.getUri());
             if (capabilities == null) {
@@ -232,7 +232,8 @@ public class ManualDiscovery extends Discovery implements AutoCloseable {
 
             // Deliver a successful response
             Uri uuid = TextUtils.isEmpty(capabilities.uuid) ? null : Uri.parse(capabilities.uuid);
-            String name = TextUtils.isEmpty(capabilities.name) ? printer.getUri().getHost() : capabilities.name;
+            String name = TextUtils.isEmpty(capabilities.name) ? printer.getUri().getHost()
+                    : capabilities.name;
 
             DiscoveredPrinter resolvedPrinter = new DiscoveredPrinter(uuid, name, printer.getUri(),
                     capabilities.location);
