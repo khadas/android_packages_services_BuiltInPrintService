@@ -296,7 +296,7 @@ public class Backend implements JobCallback {
      *
      * @param address IP address or hostname (e.g. "192.168.1.2")
      * @param port port to use (e.g. 631)
-     * @param mime_type MIME type of data being sent
+     * @param mimeType MIME type of data being sent
      * @param jobParams job parameters to use when providing the job to the printer
      * @param capabilities printer capabilities for the printer being used
      * @param fileList list of files to be provided of the given MIME type
@@ -304,8 +304,9 @@ public class Backend implements JobCallback {
      * @param scheme URI scheme (e.g. ipp/ipps)
      * @return {@link BackendConstants#STATUS_OK} or an error code.
      */
-    native int nativeStartJob(String address, int port, String mime_type, LocalJobParams jobParams,
-            LocalPrinterCapabilities capabilities, String[] fileList, String debugDir, String scheme);
+    native int nativeStartJob(String address, int port, String mimeType, LocalJobParams jobParams,
+            LocalPrinterCapabilities capabilities, String[] fileList, String debugDir,
+            String scheme);
 
     /**
      * Request cancellation of the identified job.

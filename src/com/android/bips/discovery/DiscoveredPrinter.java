@@ -153,10 +153,10 @@ public class DiscoveredPrinter {
     public boolean equals(Object obj) {
         if (!(obj instanceof DiscoveredPrinter)) return false;
         DiscoveredPrinter other = (DiscoveredPrinter) obj;
-        return Objects.equals(uuid, other.uuid) &&
-                Objects.equals(name, other.name) &&
-                Objects.equals(path, other.path) &&
-                Objects.equals(location, other.location);
+        return Objects.equals(uuid, other.uuid)
+                && Objects.equals(name, other.name)
+                && Objects.equals(path, other.path)
+                && Objects.equals(location, other.location);
     }
 
     @Override

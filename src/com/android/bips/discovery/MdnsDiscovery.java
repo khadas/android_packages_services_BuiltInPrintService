@@ -31,8 +31,6 @@ import java.net.Inet4Address;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Search the local network for devices advertising IPP print services
@@ -114,8 +112,8 @@ public class MdnsDiscovery extends Discovery {
         }
 
         String scheme = info.getServiceType().contains(SERVICE_IPPS) ? SCHEME_IPPS : SCHEME_IPP;
-        Uri path = Uri.parse(scheme + "://" + info.getHost().getHostAddress() + ":" + info.getPort() + "/" +
-                resourcePath);
+        Uri path = Uri.parse(scheme + "://" + info.getHost().getHostAddress() + ":" + info.getPort()
+                + "/" + resourcePath);
         String location = getStringAttribute(info, ATTRIBUTE_NOTE);
 
         return new DiscoveredPrinter(uuidUri, info.getServiceName(), path, location);
@@ -150,7 +148,8 @@ public class MdnsDiscovery extends Discovery {
                 mIppServiceListener = null;
             }
         };
-        mNsdManager.discoverServices(SERVICE_IPPS, NsdManager.PROTOCOL_DNS_SD, mIppsServiceListener);
+        mNsdManager.discoverServices(SERVICE_IPPS, NsdManager.PROTOCOL_DNS_SD,
+                mIppsServiceListener);
     }
 
     @Override
@@ -240,7 +239,8 @@ public class MdnsDiscovery extends Discovery {
                 DiscoveredPrinter oldPrinter = getPrinter(printerUri);
                 IppsDelay ippsDelay = mIppsDelays.get(printerUri);
                 if (oldPrinter == null && ippsDelay == null) {
-                    // This IPPS printer is not known yet so delay a short time to see if IPP arrives
+                    // This IPPS printer is not known yet so delay a short time to see if IPP
+                    // arrives
                     mIppsDelays.put(printerUri, new IppsDelay(printer));
                 }
                 return;
@@ -260,16 +260,17 @@ public class MdnsDiscovery extends Discovery {
     }
 
     private class IppsDelay implements Runnable {
-        final DiscoveredPrinter printer;
+        final DiscoveredPrinter mPrinter;
 
         IppsDelay(DiscoveredPrinter printer) {
-            this.printer = printer;
+            mPrinter = printer;
             mMainHandler.postDelayed(this, IPPS_DELAY);
         }
 
         @Override
         public void run() {
-            printerFound(printer);
+            printerFound(mPrinter);
         }
     }
 }
+

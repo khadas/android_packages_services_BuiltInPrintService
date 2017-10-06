@@ -78,7 +78,7 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
     private final PrintDocumentInfo mDocInfo;
     private final MediaSizes mMediaSizes;
 
-    public StartJobTask(Context context, Backend backend, Uri destination, PrintJob printJob,
+    StartJobTask(Context context, Backend backend, Uri destination, PrintJob printJob,
             LocalPrinterCapabilities capabilities) {
         mContext = context;
         mBackend = backend;
@@ -137,7 +137,7 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
                 Log.w(TAG, "Error while copying to " + pdfFile, e);
                 return Backend.ERROR_FILE;
             }
-            String files[] = new String[]{pdfFile.toString()};
+            String[] files = new String[]{pdfFile.toString()};
 
             // Address, without port.
             String address = mDestination.getHost() + mDestination.getPath();
@@ -161,13 +161,14 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
 
             if (isCancelled()) return Backend.ERROR_CANCEL;
             if (DEBUG) {
-                Log.d(TAG, "nativeStartJob address=" + address +
-                        " port=" + mDestination.getPort() + " mime=" + MIME_TYPE_PDF +
-                        " files=" + files[0] + " job=" + mJobParams);
+                Log.d(TAG, "nativeStartJob address=" + address
+                        + " port=" + mDestination.getPort() + " mime=" + MIME_TYPE_PDF
+                        + " files=" + files[0] + " job=" + mJobParams);
             }
             // Initiate job
             result = mBackend.nativeStartJob(Backend.getIp(address), mDestination.getPort(),
-                    MIME_TYPE_PDF, mJobParams, mCapabilities, files, null, mDestination.getScheme());
+                    MIME_TYPE_PDF, mJobParams, mCapabilities, files, null,
+                    mDestination.getScheme());
             if (result < 0) {
                 Log.w(TAG, "nativeStartJob failure: " + result);
                 return Backend.ERROR_UNKNOWN;
@@ -183,8 +184,8 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
     }
 
     private boolean isBorderless() {
-        return mCapabilities.borderless &&
-                mDocInfo.getContentType() == PrintDocumentInfo.CONTENT_TYPE_PHOTO;
+        return mCapabilities.borderless
+                && mDocInfo.getContentType() == PrintDocumentInfo.CONTENT_TYPE_PHOTO;
     }
 
     private int getSides() {
