@@ -74,8 +74,8 @@ public class WifiMonitor implements AutoCloseable {
 
         for (Network network : cm.getAllNetworks()) {
             NetworkInfo networkInfo = cm.getNetworkInfo(network);
-            if (networkInfo != null && networkInfo.isConnected() &&
-                    networkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
+            if (networkInfo != null && networkInfo.isConnected()
+                    && networkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
                 return true;
             }
         }

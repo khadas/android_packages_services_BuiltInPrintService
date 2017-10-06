@@ -134,17 +134,17 @@ public class CapabilitiesCache extends LruCache<Uri, LocalPrinterCapabilities> i
                 request = new Request(printer, FIRST_PASS_TIMEOUT);
             }
             mRequests.put(printerUri, request);
-        } else if (!request.printer.path.equals(printerPath)) {
-            Log.w(TAG, "Capabilities request for printer " + printer +
-                    " overlaps with different path " + request.printer.path);
+        } else if (!request.mPrinter.path.equals(printerPath)) {
+            Log.w(TAG, "Capabilities request for printer " + printer
+                    + " overlaps with different path " + request.mPrinter.path);
             onLocalPrinterCapabilities.onCapabilities(printer, null);
             return;
         }
 
-        request.callbacks.add(onLocalPrinterCapabilities);
+        request.mCallbacks.add(onLocalPrinterCapabilities);
 
         if (highPriority) {
-            request.highPriority = true;
+            request.mHighPriority = true;
         }
 
         startNextRequest();
@@ -157,12 +157,12 @@ public class CapabilitiesCache extends LruCache<Uri, LocalPrinterCapabilities> i
         List<Uri> toDrop = new ArrayList<>();
         for (Map.Entry<Uri, Request> entry : mRequests.entrySet()) {
             Request request = entry.getValue();
-            request.callbacks.remove(onLocalPrinterCapabilities);
-            if (request.callbacks.isEmpty()) {
+            request.mCallbacks.remove(onLocalPrinterCapabilities);
+            if (request.mCallbacks.isEmpty()) {
                 // There is no further interest in this request so cancel it
                 toDrop.add(entry.getKey());
-                if (request.query != null) {
-                    request.query.cancel(true);
+                if (request.mQuery != null) {
+                    request.mQuery.cancel(true);
                 }
             }
         }
@@ -174,54 +174,55 @@ public class CapabilitiesCache extends LruCache<Uri, LocalPrinterCapabilities> i
         final Request request = getNextRequest();
         if (request == null) return;
 
-        request.query = mBackend.getCapabilities(request.printer.path, request.timeout, capabilities -> {
-            DiscoveredPrinter printer = request.printer;
-            if (DEBUG) Log.d(TAG, "Capabilities for " + printer + " cap=" + capabilities);
+        request.mQuery = mBackend.getCapabilities(request.mPrinter.path, request.mTimeout,
+                capabilities -> {
+                    DiscoveredPrinter printer = request.mPrinter;
+                    if (DEBUG) Log.d(TAG, "Capabilities for " + printer + " cap=" + capabilities);
 
-            if (mClosed) return;
-            mRequests.remove(printer.getUri());
+                    if (mClosed) return;
+                    mRequests.remove(printer.getUri());
 
-            // Grab uuid from capabilities if possible
-            Uri capUuid = null;
-            if (capabilities != null) {
-                if (!TextUtils.isEmpty(capabilities.uuid)) {
-                    capUuid = Uri.parse(capabilities.uuid);
-                }
-                if (printer.uuid != null && !printer.uuid.equals(capUuid)) {
-                    Log.w(TAG, "UUID mismatch for " + printer + "; rejecting capabilities");
-                    capabilities = null;
-                }
-            }
-
-            if (capabilities == null) {
-                if (request.timeout == FIRST_PASS_TIMEOUT) {
-                    // Printer did not respond quickly, try again in the slow lane
-                    request.timeout = SECOND_PASS_TIMEOUT;
-                    request.query = null;
-                    mRequests.put(printer.getUri(), request);
-                    startNextRequest();
-                    return;
-                } else {
-                    remove(printer.getUri());
-                }
-            } else {
-                Uri key = printer.getUri();
-                if (printer.uuid == null) {
-                    // For non-uuid URIs, evict later
-                    evictOnNetworkChange(key);
-                    if (capUuid != null) {
-                        // Upgrade to UUID if we have it
-                        key = capUuid;
+                    // Grab uuid from capabilities if possible
+                    Uri capUuid = null;
+                    if (capabilities != null) {
+                        if (!TextUtils.isEmpty(capabilities.uuid)) {
+                            capUuid = Uri.parse(capabilities.uuid);
+                        }
+                        if (printer.uuid != null && !printer.uuid.equals(capUuid)) {
+                            Log.w(TAG, "UUID mismatch for " + printer + "; rejecting capabilities");
+                            capabilities = null;
+                        }
                     }
-                }
-                put(key, capabilities);
-            }
 
-            for (OnLocalPrinterCapabilities callback : request.callbacks) {
-                callback.onCapabilities(printer, capabilities);
-            }
-            startNextRequest();
-        });
+                    if (capabilities == null) {
+                        if (request.mTimeout == FIRST_PASS_TIMEOUT) {
+                            // Printer did not respond quickly, try again in the slow lane
+                            request.mTimeout = SECOND_PASS_TIMEOUT;
+                            request.mQuery = null;
+                            mRequests.put(printer.getUri(), request);
+                            startNextRequest();
+                            return;
+                        } else {
+                            remove(printer.getUri());
+                        }
+                    } else {
+                        Uri key = printer.getUri();
+                        if (printer.uuid == null) {
+                            // For non-uuid URIs, evict later
+                            evictOnNetworkChange(key);
+                            if (capUuid != null) {
+                                // Upgrade to UUID if we have it
+                                key = capUuid;
+                            }
+                        }
+                        put(key, capabilities);
+                    }
+
+                    for (OnLocalPrinterCapabilities callback : request.mCallbacks) {
+                        callback.onCapabilities(printer, capabilities);
+                    }
+                    startNextRequest();
+                });
     }
 
     /** Return the next request if it is appropriate to perform one */
@@ -229,10 +230,11 @@ public class CapabilitiesCache extends LruCache<Uri, LocalPrinterCapabilities> i
         Request found = null;
         int total = 0;
         for (Request request : mRequests.values()) {
-            if (request.query != null) {
+            if (request.mQuery != null) {
                 total++;
-            } else if (found == null || (!found.highPriority && request.highPriority) ||
-                    (found.highPriority == request.highPriority && request.timeout < found.timeout)) {
+            } else if (found == null || (!found.mHighPriority && request.mHighPriority)
+                    || (found.mHighPriority == request.mHighPriority
+                    && request.mTimeout < found.mTimeout)) {
                 // First valid or higher priority request
                 found = request;
             }
@@ -245,15 +247,15 @@ public class CapabilitiesCache extends LruCache<Uri, LocalPrinterCapabilities> i
 
     /** Holds an outstanding capabilities request */
     public class Request {
-        final DiscoveredPrinter printer;
-        final Set<OnLocalPrinterCapabilities> callbacks = new HashSet<>();
-        AsyncTask<?, ?, ?> query;
-        boolean highPriority = false;
-        long timeout;
+        final DiscoveredPrinter mPrinter;
+        final Set<OnLocalPrinterCapabilities> mCallbacks = new HashSet<>();
+        AsyncTask<?, ?, ?> mQuery;
+        boolean mHighPriority = false;
+        long mTimeout;
 
         Request(DiscoveredPrinter printer, long timeout) {
-            this.printer = printer;
-            this.timeout = timeout;
+            mPrinter = printer;
+            mTimeout = timeout;
         }
     }
 }

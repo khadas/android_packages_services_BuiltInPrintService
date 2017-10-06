@@ -80,7 +80,7 @@ public class BuiltInPrintService extends PrintService {
                 mManualDiscovery);
         mJobQueue = new JobQueue();
         mMainHandler = new Handler(getMainLooper());
-        WifiManager wifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
+        WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         mWifiLock = wifiManager.createWifiLock(WifiManager.WIFI_MODE_FULL, TAG);
     }
 
