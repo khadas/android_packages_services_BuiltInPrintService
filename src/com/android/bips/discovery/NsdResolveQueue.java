@@ -66,8 +66,8 @@ class NsdResolveQueue {
     public void resolve(NsdManager nsdManager, NsdServiceInfo serviceInfo,
             NsdManager.ResolveListener listener) {
         if (DEBUG) {
-            Log.d(TAG, "Adding resolve of " + serviceInfo.getServiceName() + " to queue size=" +
-                    mResolveRequests.size());
+            Log.d(TAG, "Adding resolve of " + serviceInfo.getServiceName() + " to queue size="
+                    + mResolveRequests.size());
         }
         mResolveRequests.addLast(new NsdResolveRequest(nsdManager, serviceInfo, listener));
         if (mResolveRequests.size() == 1) {
@@ -95,33 +95,33 @@ class NsdResolveQueue {
      * Holds a request to resolve a {@link NsdServiceInfo}
      */
     private class NsdResolveRequest implements NsdManager.ResolveListener {
-        final NsdManager nsdManager;
-        final NsdServiceInfo serviceInfo;
-        final NsdManager.ResolveListener listener;
+        final NsdManager mNsdManager;
+        final NsdServiceInfo mServiceInfo;
+        final NsdManager.ResolveListener mListener;
         private long mStartTime;
 
         private NsdResolveRequest(NsdManager nsdManager,
                 NsdServiceInfo serviceInfo,
                 NsdManager.ResolveListener listener) {
-            this.nsdManager = nsdManager;
-            this.serviceInfo = serviceInfo;
-            this.listener = listener;
+            mNsdManager = nsdManager;
+            mServiceInfo = serviceInfo;
+            mListener = listener;
         }
 
         public void start() {
             mStartTime = System.currentTimeMillis();
-            if (DEBUG) Log.d(TAG, "resolveService " + serviceInfo.getServiceName());
-            nsdManager.resolveService(serviceInfo, this);
+            if (DEBUG) Log.d(TAG, "resolveService " + mServiceInfo.getServiceName());
+            mNsdManager.resolveService(mServiceInfo, this);
         }
 
         @Override
         public void onResolveFailed(NsdServiceInfo serviceInfo, int errorCode) {
             if (DEBUG) {
-                Log.d(TAG, "onResolveFailed " + serviceInfo.getServiceName() + " errorCode=" +
-                        errorCode + " (" + (System.currentTimeMillis() - mStartTime) + " ms)");
+                Log.d(TAG, "onResolveFailed " + serviceInfo.getServiceName() + " errorCode="
+                        + errorCode + " (" + (System.currentTimeMillis() - mStartTime) + " ms)");
             }
             mMainHandler.post(() -> {
-                listener.onResolveFailed(serviceInfo, errorCode);
+                mListener.onResolveFailed(serviceInfo, errorCode);
                 mResolveRequests.pop();
                 resolveNextRequest();
             });
@@ -130,11 +130,11 @@ class NsdResolveQueue {
         @Override
         public void onServiceResolved(NsdServiceInfo serviceInfo) {
             if (DEBUG) {
-                Log.d(TAG, "onServiceResolved " + serviceInfo.getServiceName() +
-                        " (" + (System.currentTimeMillis() - mStartTime) + " ms)");
+                Log.d(TAG, "onServiceResolved " + serviceInfo.getServiceName()
+                        + " (" + (System.currentTimeMillis() - mStartTime) + " ms)");
             }
             mMainHandler.post(() -> {
-                listener.onServiceResolved(serviceInfo);
+                mListener.onServiceResolved(serviceInfo);
                 mResolveRequests.pop();
                 resolveNextRequest();
             });

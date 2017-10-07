@@ -43,6 +43,7 @@ public class PdfRender {
     private static final boolean DEBUG = false;
 
     /** The current singleton instance */
+    private static final Object sLock = new Object();
     private static PdfRender sInstance;
 
     private final Context mContext;
@@ -55,12 +56,13 @@ public class PdfRender {
      */
     public static PdfRender getInstance(Context context) {
         // Native code might call this without a context
-        if (sInstance == null && context != null) {
-            synchronized(PdfRender.class) {
+        synchronized (sLock) {
+            if (sInstance == null && context != null) {
                 sInstance = new PdfRender(context.getApplicationContext());
             }
+
+            return sInstance;
         }
-        return sInstance;
     }
 
     private ServiceConnection mConnection = new ServiceConnection() {
@@ -86,7 +88,10 @@ public class PdfRender {
     public void close() {
         mContext.unbindService(mConnection);
         mService = null;
-        sInstance = null;
+
+        synchronized (sLock) {
+            sInstance = null;
+        }
     }
 
     /**
@@ -141,8 +146,8 @@ public class PdfRender {
     public boolean renderPageStripe(int page, int y, int width, int height,
             double zoomFactor, ByteBuffer target) {
         if (DEBUG) {
-            Log.d(TAG, "renderPageStripe() page=" + page + " y=" + y + " w=" + width +
-                    " h=" + height + " zoom=" + zoomFactor);
+            Log.d(TAG, "renderPageStripe() page=" + page + " y=" + y + " w=" + width
+                    + " h=" + height + " zoom=" + zoomFactor);
         }
         if (mService == null) return false;
 
@@ -156,13 +161,13 @@ public class PdfRender {
             byte[] readBuffer = new byte[128 * 1024];
             try (InputStream in = new ParcelFileDescriptor.AutoCloseInputStream(input)) {
                 int length;
-                while((length = in.read(readBuffer, 0, readBuffer.length)) > 0) {
+                while ((length = in.read(readBuffer, 0, readBuffer.length)) > 0) {
                     target.put(readBuffer, 0, length);
                 }
             }
             if (target.position() != expectedSize) {
-                Log.w(TAG, "Render failed: expected " + target.position() + ", got " +
-                        expectedSize + " bytes");
+                Log.w(TAG, "Render failed: expected " + target.position() + ", got "
+                        + expectedSize + " bytes");
                 return false;
             }
 
