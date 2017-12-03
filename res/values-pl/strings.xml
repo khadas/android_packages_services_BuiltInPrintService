@@ -39,7 +39,7 @@
     <string name="media_size_4x6in" msgid="3093276425529958253">"4 x 6 cali"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
     <string name="title_activity_add_printer" msgid="3971541707589830268">"Drukarki dodane ręcznie"</string>
-    <string name="add_manual_printer" msgid="3990455596246121671">"Dodaj drukarkę ręczną"</string>
+    <string name="add_manual_printer" msgid="3990455596246121671">"Dodaj drukarkę ręcznie"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"Nazwa hosta lub adres IP"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"Dodaj"</string>
