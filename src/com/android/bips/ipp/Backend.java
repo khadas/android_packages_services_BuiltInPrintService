@@ -77,7 +77,7 @@ public class Backend implements JobCallback {
                 BackendConstants.WPRINT_APPLICATION_ID.toLowerCase(Locale.US));
     }
 
-    /** Return the current application version or VERISON_UNKNOWN */
+    /** Return the current application version or VERSION_UNKNOWN */
     private String getApplicationVersion(Context context) {
         try {
             PackageInfo packageInfo = context.getPackageManager()
@@ -89,11 +89,11 @@ public class Backend implements JobCallback {
     }
 
     /** Asynchronously get printer capabilities, returning results or null to a callback */
-    public AsyncTask<?, ?, ?> getCapabilities(Uri uri, long timeout,
+    public AsyncTask<?, ?, ?> getCapabilities(Uri uri, long timeout, boolean highPriority,
             final Consumer<LocalPrinterCapabilities> capabilitiesConsumer) {
         if (DEBUG) Log.d(TAG, "getCapabilities()");
 
-        return new GetCapabilitiesTask(this, uri, timeout) {
+        return new GetCapabilitiesTask(this, uri, timeout, highPriority) {
             @Override
             protected void onPostExecute(LocalPrinterCapabilities result) {
                 capabilitiesConsumer.accept(result);
@@ -115,13 +115,13 @@ public class Backend implements JobCallback {
         mStartTask = new StartJobTask(mContext, this, uri, printJob, capabilities) {
             @Override
             public void onCancelled(Integer result) {
-                if (DEBUG) Log.d(TAG, "StartJobTask::onCancelled " + result);
+                if (DEBUG) Log.d(TAG, "StartJobTask onCancelled " + result);
                 onPostExecute(ERROR_CANCEL);
             }
 
             @Override
             protected void onPostExecute(Integer result) {
-                if (DEBUG) Log.d(TAG, "StartJobTask::onPostExecute " + result);
+                if (DEBUG) Log.d(TAG, "StartJobTask onPostExecute " + result);
                 mStartTask = null;
                 if (result > 0) {
                     mCurrentJobStatus = new JobStatus.Builder(mCurrentJobStatus).setId(result)
