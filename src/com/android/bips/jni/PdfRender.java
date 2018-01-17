@@ -100,7 +100,9 @@ public class PdfRender {
      */
     private int openDocument(String fileName) {
         if (DEBUG) Log.d(TAG, "openDocument() " + fileName);
-        if (mService == null) return 0;
+        if (mService == null) {
+            return 0;
+        }
 
         if (mCurrentFile != null && !mCurrentFile.equals(fileName)) {
             closeDocument();
@@ -123,7 +125,9 @@ public class PdfRender {
      */
     public SizeD getPageSize(int page) {
         if (DEBUG) Log.d(TAG, "getPageSize() page=" + page);
-        if (mService == null) return null;
+        if (mService == null) {
+            return null;
+        }
 
         try {
             return mService.getPageSize(page - 1);
@@ -149,7 +153,9 @@ public class PdfRender {
             Log.d(TAG, "renderPageStripe() page=" + page + " y=" + y + " w=" + width
                     + " h=" + height + " zoom=" + zoomFactor);
         }
-        if (mService == null) return false;
+        if (mService == null) {
+            return false;
+        }
 
         try {
             long start = System.currentTimeMillis();
@@ -184,7 +190,9 @@ public class PdfRender {
      */
     public void closeDocument() {
         if (DEBUG) Log.d(TAG, "closeDocument()");
-        if (mService == null) return;
+        if (mService == null) {
+            return;
+        }
 
         try {
             mService.closeDocument();

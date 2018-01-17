@@ -63,13 +63,17 @@ public class PdfRenderService extends Service {
     private final IPdfRender.Stub mBinder = new IPdfRender.Stub() {
         @Override
         public int openDocument(ParcelFileDescriptor pfd) throws RemoteException {
-            if (!open(pfd)) return 0;
+            if (!open(pfd)) {
+                return 0;
+            }
             return mRenderer.getPageCount();
         }
 
         @Override
         public SizeD getPageSize(int page) throws RemoteException {
-            if (!openPage(page)) return null;
+            if (!openPage(page)) {
+                return null;
+            }
             return new SizeD(mPage.getWidth(), mPage.getHeight());
         }
 
@@ -77,7 +81,9 @@ public class PdfRenderService extends Service {
         public ParcelFileDescriptor renderPageStripe(int page, int y, int width, int height,
                 double zoomFactor)
                 throws RemoteException {
-            if (!openPage(page)) return null;
+            if (!openPage(page)) {
+                return null;
+            }
 
             // Create a pipe with input and output sides
             ParcelFileDescriptor[] pipes;
@@ -121,7 +127,9 @@ public class PdfRenderService extends Service {
          * returning true if successful.
          */
         private boolean openPage(int page) {
-            if (mRenderer == null) return false;
+            if (mRenderer == null) {
+                return false;
+            }
 
             // Close old page if this is a new page
             if (mPage != null && mPage.getIndex() != page) {
@@ -211,7 +219,9 @@ public class PdfRenderService extends Service {
                 } catch (IOException e) {
                     Log.e(TAG, "Failed to write", e);
                 } finally {
-                    if (bitmap != null) bitmap.recycle();
+                    if (bitmap != null) {
+                        bitmap.recycle();
+                    }
                 }
             }
         }
