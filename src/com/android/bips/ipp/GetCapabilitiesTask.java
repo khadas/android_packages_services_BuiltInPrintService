@@ -23,14 +23,13 @@ import android.util.Log;
 
 import com.android.bips.jni.BackendConstants;
 import com.android.bips.jni.LocalPrinterCapabilities;
+import com.android.bips.util.PriorityLock;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /** A background task that queries a specific URI for its complete capabilities */
 class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities> {
@@ -38,16 +37,18 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
     private static final boolean DEBUG = false;
 
     /** Lock to ensure we don't issue multiple simultaneous capability requests */
-    private static final Lock sJniLock = new ReentrantLock();
+    private static final PriorityLock sLock = new PriorityLock();
 
     private final Backend mBackend;
     private final Uri mUri;
     private final long mTimeout;
+    private final boolean mPriority;
 
-    GetCapabilitiesTask(Backend backend, Uri uri, long timeout) {
+    GetCapabilitiesTask(Backend backend, Uri uri, long timeout, boolean priority) {
         mUri = uri;
         mBackend = backend;
         mTimeout = timeout;
+        mPriority = priority;
     }
 
     private boolean isDeviceOnline(Uri uri) {
@@ -77,18 +78,27 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
                     + " (" + (System.currentTimeMillis() - start) + "ms)");
         }
 
-        if (!online || isCancelled()) return null;
+        if (!online || isCancelled()) {
+            return null;
+        }
 
         // Do not permit more than a single call to this API or crashes may result
-        sJniLock.lock();
+        try {
+            // Always allow priority capability requests to execute first
+            sLock.lock(mPriority ? 1 : 0);
+        } catch (InterruptedException e) {
+            return null;
+        }
         int status = -1;
         start = System.currentTimeMillis();
         try {
-            if (isCancelled()) return null;
+            if (isCancelled()) {
+                return null;
+            }
             status = mBackend.nativeGetCapabilities(Backend.getIp(mUri.getHost()),
                     mUri.getPort(), mUri.getPath(), mUri.getScheme(), mTimeout, printerCaps);
         } finally {
-            sJniLock.unlock();
+            sLock.unlock();
         }
 
         if (DEBUG) {

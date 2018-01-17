@@ -46,7 +46,9 @@ public class FileUtils {
             final byte[] buffer = new byte[BUFFER_SIZE];
             int count;
             while ((count = in.read(buffer)) > 0) {
-                if (count > 0) out.write(buffer, 0, count);
+                if (count > 0) {
+                    out.write(buffer, 0, count);
+                }
             }
         }
     }
@@ -57,7 +59,9 @@ public class FileUtils {
             Log.d(TAG, "Testing file " + dir + " exists=" + dir.exists()
                     + " isDirectory=" + dir.isDirectory());
         }
-        if (dir.exists()) return dir.isDirectory();
+        if (dir.exists()) {
+            return dir.isDirectory();
+        }
         return dir.mkdir();
     }
 }

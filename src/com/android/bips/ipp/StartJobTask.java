@@ -142,7 +142,9 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
             // Address, without port.
             String address = mDestination.getHost() + mDestination.getPath();
 
-            if (isCancelled()) return Backend.ERROR_CANCEL;
+            if (isCancelled()) {
+                return Backend.ERROR_CANCEL;
+            }
 
             // Get default job parameters
             int result = mBackend.nativeGetDefaultJobParameters(mJobParams);
@@ -151,7 +153,9 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
                 return Backend.ERROR_UNKNOWN;
             }
 
-            if (isCancelled()) return Backend.ERROR_CANCEL;
+            if (isCancelled()) {
+                return Backend.ERROR_CANCEL;
+            }
 
             // Fill in job parameters from capabilities and print job info.
             populateJobParams();
@@ -159,7 +163,9 @@ class StartJobTask extends AsyncTask<Void, Void, Integer> {
             // Finalize job parameters
             mBackend.nativeGetFinalJobParameters(mJobParams, mCapabilities);
 
-            if (isCancelled()) return Backend.ERROR_CANCEL;
+            if (isCancelled()) {
+                return Backend.ERROR_CANCEL;
+            }
             if (DEBUG) {
                 Log.d(TAG, "nativeStartJob address=" + address
                         + " port=" + mDestination.getPort() + " mime=" + MIME_TYPE_PDF
