@@ -18,6 +18,7 @@
 package com.android.bips.ui;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -59,13 +60,15 @@ class AddManualPrinterDialog extends AlertDialog implements TextWatcher,
     private static final Pattern HOSTNAME_PATTERN = Pattern.compile(HOSTNAME_REGEXP);
 
     private final ManualDiscovery mDiscovery;
+    private final Activity mActivity;
     private TextView mHostnameView;
     private Button mAddButton;
     private ProgressBar mProgressBar;
 
-    AddManualPrinterDialog(Context context, ManualDiscovery discovery) {
-        super(context);
+    AddManualPrinterDialog(Activity activity, ManualDiscovery discovery) {
+        super(activity);
         mDiscovery = discovery;
+        mActivity = activity;
     }
 
     @SuppressLint("InflateParams")
@@ -74,7 +77,7 @@ class AddManualPrinterDialog extends AlertDialog implements TextWatcher,
         if (DEBUG) Log.d(TAG, "onCreate");
         View view = getLayoutInflater().inflate(R.layout.manual_printer_add, null);
         setView(view);
-        setTitle(R.string.add_manual_printer);
+        setTitle(R.string.add_printer_by_ip);
         setButton(AlertDialog.BUTTON_NEGATIVE, getContext().getString(android.R.string.cancel),
                 (OnClickListener) null);
         setButton(AlertDialog.BUTTON_POSITIVE, getContext().getString(R.string.add),
@@ -132,6 +135,7 @@ class AddManualPrinterDialog extends AlertDialog implements TextWatcher,
                         if (supported) {
                             // Success case
                             dismiss();
+                            mActivity.finish();
                         } else {
                             error(getContext().getString(R.string.printer_not_supported));
                         }
