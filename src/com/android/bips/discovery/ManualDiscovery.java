@@ -27,7 +27,10 @@ import com.android.bips.jni.LocalPrinterCapabilities;
 import com.android.bips.util.WifiMonitor;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Manage a list of printers manually added by the user.
@@ -37,12 +40,15 @@ public class ManualDiscovery extends SavedDiscovery {
     private static final boolean DEBUG = false;
 
     // Likely paths at which a print service may be found
-    private static final Uri[] IPP_URIS = {Uri.parse("ipp://path:631/ipp/print"),
-            Uri.parse("ipp://path:80/ipp/print"), Uri.parse("ipp://path:631/ipp/printer"),
-            Uri.parse("ipp://path:631/ipp"), Uri.parse("ipp://path:631/")};
+    private static final Uri[] IPP_URIS = {Uri.parse("ipp://host:631/ipp/print"),
+            Uri.parse("ipp://host:80/ipp/print"), Uri.parse("ipp://host:631/ipp/printer"),
+            Uri.parse("ipp://host:631/ipp"), Uri.parse("ipp://host:631/"),
+            Uri.parse("ipps://host:631/ipp/print"), Uri.parse("ipps://host:443/ipp/print"),
+            Uri.parse("ipps://host:10443/ipp/print")};
 
     private WifiMonitor mWifiMonitor;
     private CapabilitiesCache mCapabilitiesCache;
+    private List<CapabilitiesFinder> mAddRequests = new ArrayList<>();
 
     public ManualDiscovery(BuiltInPrintService printService) {
         super(printService);
@@ -77,11 +83,54 @@ public class ManualDiscovery extends SavedDiscovery {
     }
 
     /**
-     * Asynchronously attempt to add a new manual printer, calling back with success
+     * Asynchronously attempt to add a new manual printer, calling back with success if
+     * printer capabilities were discovered.
+     *
+     * The supplied URI must include a hostname and may also include a scheme (either ipp:// or
+     * ipps://), a port (such as :443), and/or a path (like /ipp/print). If any parts are missing,
+     * typical known values are substituted and searched until success is found, or all are
+     * tried unsuccessfully.
+     *
+     * @param printerUri URI to search
      */
-    public void addManualPrinter(String hostname, PrinterAddCallback callback) {
-        if (DEBUG) Log.d(TAG, "addManualPrinter " + hostname);
-        new CapabilitiesFinder(hostname, callback);
+    public void addManualPrinter(Uri printerUri, PrinterAddCallback callback) {
+        if (DEBUG) Log.d(TAG, "addManualPrinter " + printerUri);
+
+        int givenPort = printerUri.getPort();
+        String givenPath = printerUri.getPath();
+        String hostname = printerUri.getHost();
+        String givenScheme = printerUri.getScheme();
+
+        // Use LinkedHashSet to eliminate duplicates but maintain order
+        Set<Uri> uris = new LinkedHashSet<>();
+        for (Uri uri : IPP_URIS) {
+            String scheme = uri.getScheme();
+            if (!TextUtils.isEmpty(givenScheme) && !scheme.equals(givenScheme)) {
+                // If scheme was supplied and doesn't match this uri template, skip
+                continue;
+            }
+            String authority = hostname + ":" + (givenPort == -1 ? uri.getPort() : givenPort);
+            String path = TextUtils.isEmpty(givenPath) ? uri.getPath() : givenPath;
+            Uri targetUri = uri.buildUpon().scheme(scheme).encodedAuthority(authority).path(path)
+                    .build();
+            uris.add(targetUri);
+        }
+
+        mAddRequests.add(new CapabilitiesFinder(uris, callback));
+    }
+
+    /**
+     * Cancel a prior {@link #addManualPrinter(Uri, PrinterAddCallback)} attempt having the same
+     * callback
+     */
+    public void cancelAddManualPrinter(PrinterAddCallback callback) {
+        for (CapabilitiesFinder finder : mAddRequests) {
+            if (finder.mFinalCallback == callback) {
+                mAddRequests.remove(finder);
+                finder.cancel();
+                return;
+            }
+        }
     }
 
     /** Used to convey response to {@link #addManualPrinter} */
@@ -113,27 +162,26 @@ public class ManualDiscovery extends SavedDiscovery {
         /**
          * Constructs a new finder
          *
-         * @param hostname Hostname to crawl for IPP endpoints
+         * @param uris     Locations to check for IPP endpoints
          * @param callback Callback to issue when the first successful response arrives, or
          *                 when all responses have failed.
          */
-        CapabilitiesFinder(String hostname, PrinterAddCallback callback) {
+        CapabilitiesFinder(Collection<Uri> uris, PrinterAddCallback callback) {
             mFinalCallback = callback;
-
-            for (Uri uri : IPP_URIS) {
-                Uri printerPath = uri.buildUpon().encodedAuthority(hostname + ":" + uri.getPort())
-                        .build();
+            for (Uri uri : uris) {
                 CapabilitiesCache.OnLocalPrinterCapabilities capabilitiesCallback =
                         new CapabilitiesCache.OnLocalPrinterCapabilities() {
                             @Override
                             public void onCapabilities(LocalPrinterCapabilities capabilities) {
                                 mRequests.remove(this);
-                                handleCapabilities(printerPath, capabilities);
+                                handleCapabilities(uri, capabilities);
                             }
                         };
                 mRequests.add(capabilitiesCallback);
 
-                mCapabilitiesCache.request(new DiscoveredPrinter(null, "", printerPath, null),
+                // Force a clean attempt from scratch
+                mCapabilitiesCache.remove(uri);
+                mCapabilitiesCache.request(new DiscoveredPrinter(null, "", uri, null),
                         true, capabilitiesCallback);
             }
         }
@@ -144,6 +192,7 @@ public class ManualDiscovery extends SavedDiscovery {
 
             if (capabilities == null) {
                 if (mRequests.isEmpty()) {
+                    mAddRequests.remove(this);
                     mFinalCallback.onNotFound();
                 }
                 return;
@@ -169,8 +218,16 @@ public class ManualDiscovery extends SavedDiscovery {
                     printerFound(resolvedPrinter);
                 }
             }
-
+            mAddRequests.remove(this);
             mFinalCallback.onFound(resolvedPrinter, capabilities.isSupported);
+        }
+
+        /** Stop all in-progress capability requests that are in progress */
+        public void cancel() {
+            for (CapabilitiesCache.OnLocalPrinterCapabilities callback : mRequests) {
+                mCapabilitiesCache.cancel(callback);
+            }
+            mRequests.clear();
         }
     }
 }
