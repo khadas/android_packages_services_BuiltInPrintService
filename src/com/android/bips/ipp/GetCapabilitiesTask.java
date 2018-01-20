@@ -32,7 +32,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /** A background task that queries a specific URI for its complete capabilities */
-class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities> {
+public class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities> {
     private static final String TAG = GetCapabilitiesTask.class.getSimpleName();
     private static final boolean DEBUG = false;
 
@@ -43,6 +43,7 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
     private final Uri mUri;
     private final long mTimeout;
     private final boolean mPriority;
+    private volatile Socket mSocket;
 
     GetCapabilitiesTask(Backend backend, Uri uri, long timeout, boolean priority) {
         mUri = uri;
@@ -53,11 +54,27 @@ class GetCapabilitiesTask extends AsyncTask<Void, Void, LocalPrinterCapabilities
 
     private boolean isDeviceOnline(Uri uri) {
         try (Socket socket = new Socket()) {
+            mSocket = socket;
             InetSocketAddress a = new InetSocketAddress(uri.getHost(), uri.getPort());
             socket.connect(a, (int) mTimeout);
             return true;
         } catch (IOException e) {
             return false;
+        } finally {
+            mSocket = null;
+        }
+    }
+
+    /** Forcibly cancel this task, including stopping any socket that was opened */
+    public void forceCancel() {
+        cancel(true);
+        Socket socket = mSocket;
+        if (socket != null) {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                // Ignored
+            }
         }
     }
 

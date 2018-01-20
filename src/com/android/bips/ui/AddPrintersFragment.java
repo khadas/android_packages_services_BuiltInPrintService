@@ -143,7 +143,7 @@ public class AddPrintersFragment extends PreferenceFragment implements ServiceCo
         if (P2pUtils.isP2p(printer)) {
             message = mPrintService.getString(R.string.connects_via_wifi_direct);
         } else {
-            message = mPrintService.getString(R.string.connects_via_network, printer.getHost());
+            message = mPrintService.getString(R.string.connects_via_network, printer.path);
         }
         new AlertDialog.Builder(getContext())
                 .setTitle(printer.name)
