@@ -230,7 +230,7 @@ public class CapabilitiesCache extends LruCache<Uri, LocalPrinterCapabilities> i
     public class Request implements Consumer<LocalPrinterCapabilities> {
         final DiscoveredPrinter mPrinter;
         final List<OnLocalPrinterCapabilities> mCallbacks = new ArrayList<>();
-        AsyncTask<?, ?, ?> mQuery;
+        GetCapabilitiesTask mQuery;
         boolean mHighPriority = false;
         long mTimeout;
 
@@ -245,7 +245,7 @@ public class CapabilitiesCache extends LruCache<Uri, LocalPrinterCapabilities> i
 
         private void cancel() {
             if (mQuery != null) {
-                mQuery.cancel(true);
+                mQuery.forceCancel();
                 mQuery = null;
             }
         }
