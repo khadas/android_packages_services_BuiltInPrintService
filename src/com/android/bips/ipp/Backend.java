@@ -89,16 +89,18 @@ public class Backend implements JobCallback {
     }
 
     /** Asynchronously get printer capabilities, returning results or null to a callback */
-    public AsyncTask<?, ?, ?> getCapabilities(Uri uri, long timeout, boolean highPriority,
+    public GetCapabilitiesTask getCapabilities(Uri uri, long timeout, boolean highPriority,
             final Consumer<LocalPrinterCapabilities> capabilitiesConsumer) {
         if (DEBUG) Log.d(TAG, "getCapabilities()");
 
-        return new GetCapabilitiesTask(this, uri, timeout, highPriority) {
+        GetCapabilitiesTask task = new GetCapabilitiesTask(this, uri, timeout, highPriority) {
             @Override
             protected void onPostExecute(LocalPrinterCapabilities result) {
                 capabilitiesConsumer.accept(result);
             }
-        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        };
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        return task;
     }
 
     /**
