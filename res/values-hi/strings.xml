@@ -27,7 +27,7 @@
     <string name="printer_door_open" msgid="2446302931916940874">"दरवाज़ा खुला है"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"जाम है"</string>
     <string name="printer_offline" msgid="9196864753298645066">"ऑफ़लाइन"</string>
-    <string name="printer_check" msgid="6428369671197132828">"प्रिंटर जांचें"</string>
+    <string name="printer_check" msgid="6428369671197132828">"प्रिंटर जाँचें"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"भेजने की प्रतीक्षा की जा रही है"</string>
     <string name="wifi_not_connected" msgid="8644760246612043851">"वाई-फ़ाई कनेक्ट नहीं है"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"दस्तावेज़ पढ़ा नहीं जा सका"</string>
