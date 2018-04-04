@@ -37,39 +37,24 @@
     <string name="media_size_8x10in" msgid="1872576638522812402">"8x10 ଇଞ୍ଚ"</string>
     <string name="media_size_4x6in" msgid="3093276425529958253">"4x6 ଇଞ୍ଚ"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
-    <!-- no translation found for title_activity_add_printer (9119216095769228566) -->
-    <skip />
-    <!-- no translation found for add_printer_by_ip (562864787592910327) -->
-    <skip />
+    <string name="title_activity_add_printer" msgid="9119216095769228566">"ପ୍ରିଣ୍ଟର୍‌ ଯୋଡ଼ନ୍ତୁ"</string>
+    <string name="add_printer_by_ip" msgid="562864787592910327">"IP ଠିକଣା ମାଧ୍ୟମରେ ପ୍ରିଣ୍ଟର୍‌କୁ ଯୋଡ଼ନ୍ତୁ"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"ହୋଷ୍ଟନେମ୍‍ କିମ୍ବା IP ଠିକଣା"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"ଯୋଡ଼ନ୍ତୁ"</string>
-    <!-- no translation found for add_named (9074106244018070583) -->
-    <skip />
+    <string name="add_named" msgid="9074106244018070583">"<xliff:g id="PRINTER">%1$s</xliff:g>କୁ ଯୋଡ଼ନ୍ତୁ"</string>
     <string name="no_printer_found" msgid="4777867380924351173">"ଏହି ଠିକଣାରେ କୌଣସି ପ୍ରିଣ୍ଟର ମିଳିଲା ନାହିଁ"</string>
     <string name="printer_not_supported" msgid="281955849350938408">"ପ୍ରିଣ୍ଟର୍‍ ସପୋର୍ଟ କରୁନାହିଁ"</string>
-    <!-- no translation found for wifi_direct (4629404342852294985) -->
-    <skip />
-    <!-- no translation found for find_wifi_direct (5270504288829123954) -->
-    <skip />
-    <!-- no translation found for wifi_direct_printers (541168032444693191) -->
-    <skip />
-    <!-- no translation found for searching (2114018057619514587) -->
-    <skip />
-    <!-- no translation found for connect_hint_text (587112503851044234) -->
-    <skip />
-    <!-- no translation found for connecting_to (2665161014972086194) -->
-    <skip />
-    <!-- no translation found for failed_printer_connection (4196305972749960362) -->
-    <skip />
-    <!-- no translation found for failed_connection (8068661997318286575) -->
-    <skip />
-    <!-- no translation found for saved_printers (4567534965213125526) -->
-    <skip />
-    <!-- no translation found for forget (892068061425802502) -->
-    <skip />
-    <!-- no translation found for connects_via_wifi_direct (652300632780158437) -->
-    <skip />
-    <!-- no translation found for connects_via_network (5990041581556733898) -->
-    <skip />
+    <string name="wifi_direct" msgid="4629404342852294985">"ୱାଇ-ଫାଇ ଡାଇରେକ୍ଟ"</string>
+    <string name="find_wifi_direct" msgid="5270504288829123954">"ୱାଇ-ଫାଇ ଡାଇରେକ୍ଟ ପ୍ରିଣ୍ଟର୍‌ ଖୋଜନ୍ତୁ"</string>
+    <string name="wifi_direct_printers" msgid="541168032444693191">"ୱାଇ-ଫାଇ ଡାଇରେକ୍ଟ ପ୍ରିଣ୍ଟର୍"</string>
+    <string name="searching" msgid="2114018057619514587">"ଖୋଜୁଛି…"</string>
+    <string name="connect_hint_text" msgid="587112503851044234">"ପ୍ରିଣ୍ଟର୍‌ର ସାମ୍ନା ପ୍ୟାନେଲ୍‌ରୁ ଆପଣ ଏହି କନେକ୍ସନ୍‌କୁ ଅନୁମୋଦନ କରିପାରିବେ"</string>
+    <string name="connecting_to" msgid="2665161014972086194">"<xliff:g id="PRINTER">%1$s</xliff:g> ସହିତ କନେକ୍ଟ ହେଉଛି"</string>
+    <string name="failed_printer_connection" msgid="4196305972749960362">"ପ୍ରିଣ୍ଟର ସହିତ କନେକ୍ଟ ହେଲାନାହିଁ"</string>
+    <string name="failed_connection" msgid="8068661997318286575">"<xliff:g id="PRINTER">%1$s</xliff:g> ସହିତ କନେକ୍ଟ ହେଲାନାହିଁ"</string>
+    <string name="saved_printers" msgid="4567534965213125526">"ସେଭ୍ ହୋଇଥିବା ପ୍ରିଣ୍ଟର୍"</string>
+    <string name="forget" msgid="892068061425802502">"ଭୁଲିଯାଆନ୍ତୁ"</string>
+    <string name="connects_via_wifi_direct" msgid="652300632780158437">"ୱାଇ-ଫାଇ ଡାଇରେକ୍ଟ ମାଧ୍ୟମରେ କନେକ୍ଟ ହେବ"</string>
+    <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g>ରେ ବର୍ତ୍ତମାନର ନେଟ୍‌ୱର୍କ ମାଧ୍ୟମରେ କନେକ୍ଟ କରାଯାଇଥାଏ"</string>
 </resources>
