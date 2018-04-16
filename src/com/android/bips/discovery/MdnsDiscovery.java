@@ -20,6 +20,7 @@ package com.android.bips.discovery;
 import android.net.Uri;
 import android.net.nsd.NsdManager;
 import android.net.nsd.NsdServiceInfo;
+import android.net.wifi.WifiManager;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -59,6 +60,9 @@ public class MdnsDiscovery extends Discovery {
     private final List<NsdServiceListener> mServiceListeners = new ArrayList<>();
     private final List<Resolver> mResolvers = new ArrayList<>();
     private final NsdResolveQueue mNsdResolveQueue;
+
+    /** Lock to keep multi-cast enabled */
+    private WifiManager.MulticastLock mMulticastLock;
 
     public MdnsDiscovery(BuiltInPrintService printService, String scheme) {
         super(printService);
@@ -135,6 +139,16 @@ public class MdnsDiscovery extends Discovery {
                 // Do nothing
             }
         };
+
+        WifiManager wifiManager = getPrintService().getSystemService(WifiManager.class);
+        if (wifiManager != null) {
+            if (mMulticastLock == null) {
+                mMulticastLock = wifiManager.createMulticastLock(this.getClass().getName());
+            }
+
+            mMulticastLock.acquire();
+        }
+
         NsdManager nsdManager = mNsdResolveQueue.getNsdManager();
         nsdManager.discoverServices(mServiceName, NsdManager.PROTOCOL_DNS_SD, serviceListener);
         mServiceListeners.add(serviceListener);
@@ -153,6 +167,10 @@ public class MdnsDiscovery extends Discovery {
             resolver.cancel();
         }
         mResolvers.clear();
+
+        if (mMulticastLock != null) {
+            mMulticastLock.release();
+        }
     }
 
     /**
