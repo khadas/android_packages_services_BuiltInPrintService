@@ -55,6 +55,6 @@
     <string name="failed_connection" msgid="8068661997318286575">"Povezivanje s pisačem <xliff:g id="PRINTER">%1$s</xliff:g> nije uspjelo"</string>
     <string name="saved_printers" msgid="4567534965213125526">"Spremljeni pisači"</string>
     <string name="forget" msgid="892068061425802502">"Zaboravi"</string>
-    <string name="connects_via_wifi_direct" msgid="652300632780158437">"Povezuje se putem Izravnog Wi-Fi-ja"</string>
+    <string name="connects_via_wifi_direct" msgid="652300632780158437">"Povezuje se putem Izravnog Wi-Fija"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Povezuje se putem trenutačne mreže na IP adresi <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
 </resources>
