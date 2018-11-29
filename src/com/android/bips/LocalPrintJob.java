@@ -27,6 +27,7 @@ import com.android.bips.discovery.DiscoveredPrinter;
 import com.android.bips.discovery.MdnsDiscovery;
 import com.android.bips.ipp.Backend;
 import com.android.bips.ipp.CapabilitiesCache;
+import com.android.bips.ipp.CertificateStore;
 import com.android.bips.ipp.JobStatus;
 import com.android.bips.jni.BackendConstants;
 import com.android.bips.jni.LocalPrinterCapabilities;
@@ -51,8 +52,9 @@ class LocalPrintJob implements MdnsDiscovery.Listener, ConnectionListener,
     private static final int STATE_DISCOVERY = 1;
     private static final int STATE_CAPABILITIES = 2;
     private static final int STATE_DELIVERING = 3;
-    private static final int STATE_CANCEL = 4;
-    private static final int STATE_DONE = 5;
+    private static final int STATE_CERTIFICATE = 4;
+    private static final int STATE_CANCEL = 5;
+    private static final int STATE_DONE = 6;
 
     private final BuiltInPrintService mPrintService;
     private final PrintJob mPrintJob;
@@ -63,6 +65,7 @@ class LocalPrintJob implements MdnsDiscovery.Listener, ConnectionListener,
     private Uri mPath;
     private DelayedAction mDiscoveryTimeout;
     private P2pPrinterConnection mConnection;
+    private LocalPrinterCapabilities mCapabilities;
 
     /**
      * Construct the object; use {@link #start(Consumer)} to begin job processing.
@@ -107,12 +110,24 @@ class LocalPrintJob implements MdnsDiscovery.Listener, ConnectionListener,
         mPrintService.getDiscovery().start(this);
     }
 
+    /**
+     * Restart the job if possible.
+     */
+    void restart() {
+        if (DEBUG) Log.d(TAG, "restart() " + mPrintJob + " in state " + mState);
+        if (mState == STATE_CERTIFICATE) {
+            mCapabilities.certificate = mPrintService.getCertificateStore().get(mCapabilities.uuid);
+            deliver();
+        }
+    }
+
     void cancel() {
         if (DEBUG) Log.d(TAG, "cancel() " + mPrintJob + " in state " + mState);
 
         switch (mState) {
             case STATE_DISCOVERY:
             case STATE_CAPABILITIES:
+            case STATE_CERTIFICATE:
                 // Cancel immediately
                 mState = STATE_CANCEL;
                 finish(false, null);
@@ -156,6 +171,14 @@ class LocalPrintJob implements MdnsDiscovery.Listener, ConnectionListener,
         mPrintService.getDiscovery().stop(this);
         mState = STATE_CAPABILITIES;
         mPath = printer.path;
+        // Upgrade to IPPS path if present
+        for (Uri path : printer.paths) {
+            if (path.getScheme().equals("ipps")) {
+                mPath = path;
+                break;
+            }
+        }
+
         mPrintService.getCapabilitiesCache().request(printer, true, this);
     }
 
@@ -213,14 +236,30 @@ class LocalPrintJob implements MdnsDiscovery.Listener, ConnectionListener,
             if (mDiscoveryTimeout != null) {
                 mDiscoveryTimeout.cancel();
             }
-            mState = STATE_DELIVERING;
-            mPrintJob.start();
-            mBackend.print(mPath, mPrintJob, capabilities, this::handleJobStatus);
+            mCapabilities = capabilities;
+            deliver();
         }
+    }
+
+    private void deliver() {
+        mState = STATE_DELIVERING;
+        mPrintJob.start();
+        mBackend.print(mPath, mPrintJob, mCapabilities, this::handleJobStatus);
     }
 
     private void handleJobStatus(JobStatus jobStatus) {
         if (DEBUG) Log.d(TAG, "onJobStatus() " + jobStatus);
+
+        byte[] certificate = jobStatus.getCertificate();
+        if (certificate != null && mCapabilities != null) {
+            CertificateStore store = mPrintService.getCertificateStore();
+            // If there is no certificate, record this one
+            if (store.get(mCapabilities.uuid) == null) {
+                if (DEBUG) Log.d(TAG, "Recording new certificate");
+                store.put(mCapabilities.uuid, certificate);
+            }
+        }
+
         switch (jobStatus.getJobState()) {
             case BackendConstants.JOB_STATE_DONE:
                 switch (jobStatus.getJobResult()) {
@@ -236,7 +275,11 @@ class LocalPrintJob implements MdnsDiscovery.Listener, ConnectionListener,
                         break;
                     default:
                         // Job failed
-                        finish(false, null);
+                        if (jobStatus.getBlockedReasonId() == R.string.printer_bad_certificate) {
+                            handleBadCertificate(jobStatus);
+                        } else {
+                            finish(false, null);
+                        }
                         break;
                 }
                 break;
@@ -257,6 +300,20 @@ class LocalPrintJob implements MdnsDiscovery.Listener, ConnectionListener,
                 }
                 mPrintJob.start();
                 break;
+        }
+    }
+
+    private void handleBadCertificate(JobStatus jobStatus) {
+        byte[] certificate = jobStatus.getCertificate();
+
+        if (certificate == null) {
+            mPrintJob.fail(mPrintService.getString(R.string.printer_bad_certificate));
+        } else {
+            if (DEBUG) Log.d(TAG, "Certificate change detected.");
+            mState = STATE_CERTIFICATE;
+            mPrintJob.block(mPrintService.getString(R.string.printer_bad_certificate));
+            mPrintService.notifyCertificateChange(mCapabilities.name,
+                    mPrintJob.getInfo().getPrinterId(), mCapabilities.uuid, certificate);
         }
     }
 

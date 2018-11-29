@@ -29,6 +29,7 @@
     <string name="printer_door_open">Door open</string>
     <string name="printer_jammed">Jammed</string>
     <string name="printer_offline">Offline</string>
+    <string name="printer_bad_certificate">Bad certificate</string>
     <string name="printer_check">Check printer</string>
     <string name="waiting_to_send">Waiting to send</string>
 
@@ -81,5 +82,14 @@
     <string name="connects_via_network">Connects via current network at
         <xliff:g example="192.168.0.101" id="ip_address">%1$s</xliff:g>
     </string>
+    <!-- Channel name for security-related notifications [CHAR LIMIT=40] -->
+    <string name="security">Security</string>
+    <!-- Message shown in notification if a printer presented a changes security certificate [CHAR LIMIT=UNLIMITED] -->
+    <string name="certificate_update_request">This printer provided a new security certificate, or another
+        device is impersonating it. Accept the new certificate?</string>
+    <!-- Button label in a notification. This button a accepts a changed security certificate presented by a printer [CHAR LIMIT=20] -->
+    <string name="accept">Accept</string>
+    <!-- Button label in a notification. This button a rejects a changed security certificate presented by a printer [CHAR LIMIT=20] -->
+    <string name="reject">Reject</string>
 
 </resources>
