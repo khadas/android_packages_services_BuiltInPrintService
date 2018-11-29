@@ -17,13 +17,20 @@
 
 package com.android.bips;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Icon;
 import android.net.nsd.NsdManager;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
+import android.print.PrinterId;
 import android.printservice.PrintJob;
 import android.printservice.PrintService;
 import android.printservice.PrinterDiscoverySession;
@@ -40,6 +47,7 @@ import com.android.bips.discovery.NsdResolveQueue;
 import com.android.bips.discovery.P2pDiscovery;
 import com.android.bips.ipp.Backend;
 import com.android.bips.ipp.CapabilitiesCache;
+import com.android.bips.ipp.CertificateStore;
 import com.android.bips.p2p.P2pMonitor;
 import com.android.bips.p2p.P2pUtils;
 import com.android.bips.util.BroadcastMonitor;
@@ -51,6 +59,17 @@ public class BuiltInPrintService extends PrintService {
     private static final boolean DEBUG = false;
     private static final int IPPS_PRINTER_DELAY = 150;
     private static final int P2P_DISCOVERY_DELAY = 1000;
+    private static final String CHANNEL_ID_SECURITY = "security";
+    private static final String TAG_CERTIFICATE_REQUEST =
+            BuiltInPrintService.class.getCanonicalName() + ".CERTIFICATE_REQUEST";
+    private static final String ACTION_CERTIFICATE_ACCEPT =
+            BuiltInPrintService.class.getCanonicalName() + ".CERTIFICATE_ACCEPT";
+    private static final String ACTION_CERTIFICATE_REJECT =
+            BuiltInPrintService.class.getCanonicalName() + ".CERTIFICATE_REJECT";
+    private static final String EXTRA_CERTIFICATE = "certificate";
+    private static final String EXTRA_PRINTER_ID = "printer-id";
+    private static final String EXTRA_PRINTER_UUID = "printer-uuid";
+    private static final int CERTIFICATE_REQUEST_ID = 1000;
 
     // Present because local activities can bind, but cannot access this object directly
     private static WeakReference<BuiltInPrintService> sInstance;
@@ -60,6 +79,7 @@ public class BuiltInPrintService extends PrintService {
     private Discovery mMdnsDiscovery;
     private ManualDiscovery mManualDiscovery;
     private CapabilitiesCache mCapabilitiesCache;
+    private CertificateStore mCertificateStore;
     private JobQueue mJobQueue;
     private Handler mMainHandler;
     private Backend mBackend;
@@ -85,9 +105,11 @@ public class BuiltInPrintService extends PrintService {
             }
         }
         super.onCreate();
+        createNotificationChannel();
 
         sInstance = new WeakReference<>(this);
         mBackend = new Backend(this);
+        mCertificateStore = new CertificateStore(this);
         mCapabilitiesCache = new CapabilitiesCache(this, mBackend,
                 CapabilitiesCache.DEFAULT_MAX_CONCURRENT);
         mP2pMonitor = new P2pMonitor(this);
@@ -200,6 +222,13 @@ public class BuiltInPrintService extends PrintService {
     }
 
     /**
+     * Return a store of certificate public keys for supporting trust-on-first-use.
+     */
+    public CertificateStore getCertificateStore() {
+        return mCertificateStore;
+    }
+
+    /**
      * Return the main handler for posting {@link Runnable} objects to the main UI
      */
     public Handler getMainHandler() {
@@ -228,6 +257,13 @@ public class BuiltInPrintService extends PrintService {
         }
     }
 
+    /**
+     * Return an icon ID appropriate for displaying a printer.
+     */
+    public int getIconId(DiscoveredPrinter printer) {
+        return printer.isSecure() ? R.drawable.ic_printer_locked : R.drawable.ic_printer;
+    }
+
     /** Prevent Wi-Fi from going to sleep until {@link #unlockWifi} is called */
     public void lockWifi() {
         if (!mWifiLock.isHeld()) {
@@ -240,5 +276,84 @@ public class BuiltInPrintService extends PrintService {
         if (mWifiLock.isHeld()) {
             mWifiLock.release();
         }
+    }
+
+    /**
+     * Set up a channel for notifications.
+     */
+    private void createNotificationChannel() {
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID_SECURITY,
+                getString(R.string.security), NotificationManager.IMPORTANCE_HIGH);
+
+        NotificationManager manager = (NotificationManager) getSystemService(
+                Context.NOTIFICATION_SERVICE);
+        manager.createNotificationChannel(channel);
+    }
+
+    /**
+     * Notify the user of a certificate change (could be a MITM attack) and allow response.
+     */
+    void notifyCertificateChange(String printerName, PrinterId printerId, String printerUuid,
+                                 byte[] certificate) {
+        String message = getString(R.string.certificate_update_request);
+
+        Intent rejectIntent = new Intent(this, BuiltInPrintService.class)
+                .setAction(ACTION_CERTIFICATE_REJECT)
+                .putExtra(EXTRA_PRINTER_ID, printerId);
+        PendingIntent pendingRejectIntent = PendingIntent.getService(this, CERTIFICATE_REQUEST_ID,
+                rejectIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Notification.Action rejectAction = new Notification.Action.Builder(
+                Icon.createWithResource(this, R.drawable.ic_printservice),
+                getString(R.string.reject), pendingRejectIntent).build();
+
+        PendingIntent deleteIntent = PendingIntent.getService(this, CERTIFICATE_REQUEST_ID,
+                rejectIntent, 0);
+
+        Intent acceptIntent = new Intent(this, BuiltInPrintService.class)
+                .setAction(ACTION_CERTIFICATE_ACCEPT)
+                .putExtra(EXTRA_CERTIFICATE, certificate)
+                .putExtra(EXTRA_PRINTER_UUID, printerUuid)
+                .putExtra(EXTRA_PRINTER_ID, printerId);
+        PendingIntent pendingAcceptIntent = PendingIntent.getService(this, CERTIFICATE_REQUEST_ID,
+                acceptIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Notification.Action acceptAction = new Notification.Action.Builder(
+                Icon.createWithResource(this, R.drawable.ic_printservice),
+                getString(R.string.accept), pendingAcceptIntent).build();
+
+        Notification notification = new Notification.Builder(this, CHANNEL_ID_SECURITY)
+                .setContentTitle(printerName)
+                .setSmallIcon(R.drawable.ic_printservice)
+                .setStyle(new Notification.BigTextStyle().bigText(message))
+                .setContentText(message)
+                .setAutoCancel(true)
+                .addAction(rejectAction)
+                .addAction(acceptAction)
+                .setDeleteIntent(deleteIntent)
+                .build();
+
+        NotificationManager manager = (NotificationManager) getSystemService(
+                Context.NOTIFICATION_SERVICE);
+        manager.notify(TAG_CERTIFICATE_REQUEST, CERTIFICATE_REQUEST_ID, notification);
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        if (DEBUG) Log.d(TAG, "Received action=" + intent.getAction());
+        if (ACTION_CERTIFICATE_ACCEPT.equals(intent.getAction())) {
+            byte[] certificate = intent.getByteArrayExtra(EXTRA_CERTIFICATE);
+            PrinterId printerId = intent.getParcelableExtra(EXTRA_PRINTER_ID);
+            String printerUuid = intent.getStringExtra(EXTRA_PRINTER_UUID);
+            mCertificateStore.put(printerUuid, certificate);
+            // Restart the job with the new certificate in place
+            mJobQueue.restart(printerId);
+        } else if (ACTION_CERTIFICATE_REJECT.equals(intent.getAction())) {
+            // Cancel any job in certificate state for this uuid
+            PrinterId printerId = intent.getParcelableExtra(EXTRA_PRINTER_ID);
+            mJobQueue.cancel(printerId);
+        }
+        NotificationManager manager = (NotificationManager) getSystemService(
+                Context.NOTIFICATION_SERVICE);
+        manager.cancel(TAG_CERTIFICATE_REQUEST, CERTIFICATE_REQUEST_ID);
+        return START_NOT_STICKY;
     }
 }

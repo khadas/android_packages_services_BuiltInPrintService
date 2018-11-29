@@ -47,7 +47,7 @@ class PrinterPreference extends Preference {
         }
 
         setSummary(mPrintService.getDescription(printer));
-        setIcon(R.drawable.ic_printer);
+        setIcon(mPrintService.getIconId(printer));
     }
 
     DiscoveredPrinter getPrinter() {
