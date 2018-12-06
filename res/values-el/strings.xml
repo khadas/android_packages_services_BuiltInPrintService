@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Η θύρα είναι ανοιχτή"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Εμπλοκή χαρτιού"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Εκτός σύνδεσης"</string>
+    <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
+    <skip />
     <string name="printer_check" msgid="6428369671197132828">"Έλεγχος εκτυπωτή"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Αναμονή για αποστολή"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Δεν ήταν δυνατή η ανάγνωση του εγγράφου"</string>
@@ -57,4 +59,12 @@
     <string name="forget" msgid="892068061425802502">"Κατάργηση απομνημόνευσης"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Συνδέεται μέσω του Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Συνδέεται μέσω του τρέχοντος δικτύου στη διεύθυνση <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
+    <!-- no translation found for security (2279008326210305401) -->
+    <skip />
+    <!-- no translation found for certificate_update_request (1314796413107139475) -->
+    <skip />
+    <!-- no translation found for accept (4426153292469698134) -->
+    <skip />
+    <!-- no translation found for reject (24751635160440693) -->
+    <skip />
 </resources>
