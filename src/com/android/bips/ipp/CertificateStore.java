@@ -61,6 +61,13 @@ public class CertificateStore {
         }
     }
 
+    /** Remove any certificate associated with the specified UUID. */
+    public void remove(String uuid) {
+        if (mCertificates.remove(uuid) != null) {
+            save();
+        }
+    }
+
     /** Return the known certificate public key for a printer having the specified UUID, or null. */
     public byte[] get(String uuid) {
         return mCertificates.get(uuid);
