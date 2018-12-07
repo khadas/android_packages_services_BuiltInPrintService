@@ -30,6 +30,7 @@
     <string name="printer_jammed">Jammed</string>
     <string name="printer_offline">Offline</string>
     <string name="printer_bad_certificate">Bad certificate</string>
+    <string name="printer_not_encrypted">Not encrypted</string>
     <string name="printer_check">Check printer</string>
     <string name="waiting_to_send">Waiting to send</string>
 
@@ -87,9 +88,11 @@
     <!-- Message shown in notification if a printer presented a changes security certificate [CHAR LIMIT=UNLIMITED] -->
     <string name="certificate_update_request">This printer provided a new security certificate, or another
         device is impersonating it. Accept the new certificate?</string>
-    <!-- Button label in a notification. This button a accepts a changed security certificate presented by a printer [CHAR LIMIT=20] -->
+    <!-- Message shown in notification if a printer no longer supports encryption [CHAR LIMIT=UNLIMITED] -->
+    <string name="not_encrypted_request">This printer no longer accepts encrypted jobs. Continue printing?</string>
+    <!-- Button label in a notification. This button accepts a printer security change [CHAR LIMIT=20] -->
     <string name="accept">Accept</string>
-    <!-- Button label in a notification. This button a rejects a changed security certificate presented by a printer [CHAR LIMIT=20] -->
+    <!-- Button label in a notification. This button rejects a printer security change [CHAR LIMIT=20] -->
     <string name="reject">Reject</string>
 
 </resources>
