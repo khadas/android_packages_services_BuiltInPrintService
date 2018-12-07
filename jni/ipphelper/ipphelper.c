@@ -784,6 +784,15 @@ void parse_printerAttributes(ipp_t *response, printer_capabilities_t *capabiliti
             }
         }
     }
+    if ((attrptr = ippFindAttribute(response, "print-quality-supported", IPP_TAG_ENUM)) !=
+            NULL) {
+        for (i = 0; i < ippGetCount(attrptr) && capabilities->numSupportedQuality
+                < MAX_QUALITY_SUPPORTED; i++) {
+            LOGD("print-quality-supported: %d", ippGetInteger(attrptr, i));
+            capabilities->supportedQuality[capabilities->numSupportedQuality++] =
+                ippGetInteger(attrptr, i);
+        }
+    }
 
     char imagePCLm[] = "application/PCLm";
     char imagePWG[] = "image/pwg-raster";

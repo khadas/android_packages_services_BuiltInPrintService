@@ -1455,6 +1455,16 @@ static bool is_supported(media_size_t media_size) {
 }
 
 /*
+ * Return true if the specified int array of the supplied length contains a value.
+ */
+static bool int_array_contains(const int *array, int length, int value) {
+    for (int i = 0; i < length; i++) {
+        if (array[i] == value) return true;
+    }
+    return false;
+}
+
+/*
  * Checks printers reported media sizes and validates that wprint supports them
  */
 static void _validate_supported_media_sizes(printer_capabilities_t *printer_cap) {
@@ -1721,6 +1731,12 @@ status_t wprintGetFinalJobParams(wprint_job_params_t *job_params,
     // make sure the number of copies is valid
     if (job_params->num_copies <= 0) {
         job_params->num_copies = 1;
+    }
+
+    // If printing photo and HIGH quality is supported, specify it.
+    if (strcasecmp(job_params->docCategory, "photo") == 0 && int_array_contains(
+            printer_cap->supportedQuality, printer_cap->numSupportedQuality, IPP_QUALITY_HIGH)) {
+        job_params->print_quality = IPP_QUALITY_HIGH;
     }
 
     // confirm that the media size is supported
