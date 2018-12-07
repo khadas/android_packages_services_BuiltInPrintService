@@ -257,13 +257,6 @@ public class BuiltInPrintService extends PrintService {
         }
     }
 
-    /**
-     * Return an icon ID appropriate for displaying a printer.
-     */
-    public int getIconId(DiscoveredPrinter printer) {
-        return printer.isSecure() ? R.drawable.ic_printer_locked : R.drawable.ic_printer;
-    }
-
     /** Prevent Wi-Fi from going to sleep until {@link #unlockWifi} is called */
     public void lockWifi() {
         if (!mWifiLock.isHeld()) {
@@ -292,10 +285,17 @@ public class BuiltInPrintService extends PrintService {
 
     /**
      * Notify the user of a certificate change (could be a MITM attack) and allow response.
+     *
+     * When certificate is null, the printer is being downgraded to no-encryption.
      */
     void notifyCertificateChange(String printerName, PrinterId printerId, String printerUuid,
                                  byte[] certificate) {
-        String message = getString(R.string.certificate_update_request);
+        String message;
+        if (certificate == null) {
+            message = getString(R.string.not_encrypted_request);
+        } else {
+            message = getString(R.string.certificate_update_request);
+        }
 
         Intent rejectIntent = new Intent(this, BuiltInPrintService.class)
                 .setAction(ACTION_CERTIFICATE_REJECT)
@@ -311,9 +311,11 @@ public class BuiltInPrintService extends PrintService {
 
         Intent acceptIntent = new Intent(this, BuiltInPrintService.class)
                 .setAction(ACTION_CERTIFICATE_ACCEPT)
-                .putExtra(EXTRA_CERTIFICATE, certificate)
                 .putExtra(EXTRA_PRINTER_UUID, printerUuid)
                 .putExtra(EXTRA_PRINTER_ID, printerId);
+        if (certificate != null) {
+            acceptIntent.putExtra(EXTRA_CERTIFICATE, certificate);
+        }
         PendingIntent pendingAcceptIntent = PendingIntent.getService(this, CERTIFICATE_REQUEST_ID,
                 acceptIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification.Action acceptAction = new Notification.Action.Builder(
@@ -343,8 +345,12 @@ public class BuiltInPrintService extends PrintService {
             byte[] certificate = intent.getByteArrayExtra(EXTRA_CERTIFICATE);
             PrinterId printerId = intent.getParcelableExtra(EXTRA_PRINTER_ID);
             String printerUuid = intent.getStringExtra(EXTRA_PRINTER_UUID);
-            mCertificateStore.put(printerUuid, certificate);
-            // Restart the job with the new certificate in place
+            if (certificate != null) {
+                mCertificateStore.put(printerUuid, certificate);
+            } else {
+                mCertificateStore.remove(printerUuid);
+            }
+            // Restart the job with the updated certificate in place
             mJobQueue.restart(printerId);
         } else if (ACTION_CERTIFICATE_REJECT.equals(intent.getAction())) {
             // Cancel any job in certificate state for this uuid
