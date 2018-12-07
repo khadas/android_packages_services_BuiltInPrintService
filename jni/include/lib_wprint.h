@@ -184,6 +184,7 @@ typedef struct {
     bool accepts_pclm;
     bool accepts_pdf;
     bool copies_supported;
+    int print_quality;
     const char *useragent;
     char docCategory[10];
     const char *media_default;
