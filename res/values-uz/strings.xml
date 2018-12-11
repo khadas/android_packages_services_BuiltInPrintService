@@ -29,6 +29,7 @@
     <string name="printer_offline" msgid="9196864753298645066">"Oflayn"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"Shifrlanmagan"</string>
     <string name="printer_check" msgid="6428369671197132828">"Printerni tekshirish"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Yuborilishi kutilmoqda"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Hujjatni o‘qib bo‘lmadi"</string>
@@ -63,6 +64,7 @@
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
     <skip />
+    <string name="not_encrypted_request" msgid="4871472176807381642">"Bu printer endi shifrlangan vazifalarni qabul qilmaydi. Bosmaga chiqarilsinmi?"</string>
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />
     <!-- no translation found for reject (24751635160440693) -->

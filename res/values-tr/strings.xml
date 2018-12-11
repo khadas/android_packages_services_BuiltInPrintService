@@ -29,6 +29,8 @@
     <string name="printer_offline" msgid="9196864753298645066">"Çevrimdışı"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
+    <!-- no translation found for printer_not_encrypted (1913051469275483673) -->
+    <skip />
     <string name="printer_check" msgid="6428369671197132828">"Yazıcıyı kontrol et"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Gönderilmeyi bekliyor"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Doküman okunamadı"</string>
@@ -62,6 +64,8 @@
     <!-- no translation found for security (2279008326210305401) -->
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
+    <skip />
+    <!-- no translation found for not_encrypted_request (4871472176807381642) -->
     <skip />
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />

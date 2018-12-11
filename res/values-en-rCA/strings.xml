@@ -29,6 +29,7 @@
     <string name="printer_offline" msgid="9196864753298645066">"Offline"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"Not encrypted"</string>
     <string name="printer_check" msgid="6428369671197132828">"Check printer"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Waiting to send"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Could not read document"</string>
@@ -63,6 +64,7 @@
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
     <skip />
+    <string name="not_encrypted_request" msgid="4871472176807381642">"This printer no longer accepts encrypted jobs. Continue printing?"</string>
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />
     <!-- no translation found for reject (24751635160440693) -->
