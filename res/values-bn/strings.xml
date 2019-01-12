@@ -29,8 +29,7 @@
     <string name="printer_offline" msgid="9196864753298645066">"অফলাইন"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
-    <!-- no translation found for printer_not_encrypted (1913051469275483673) -->
-    <skip />
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"এনক্রিপ্ট করা হয়নি"</string>
     <string name="printer_check" msgid="6428369671197132828">"প্রিন্টারটি পরীক্ষা করুন"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"পাঠানোর জন্য অপেক্ষা করা হচ্ছে"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"দস্তাবেজটি পড়া যাবেনা"</string>
@@ -65,8 +64,7 @@
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
     <skip />
-    <!-- no translation found for not_encrypted_request (4871472176807381642) -->
-    <skip />
+    <string name="not_encrypted_request" msgid="4871472176807381642">"এই প্রিন্টারের মাধ্যমে আর এনক্রিপ্ট করা ডকুমেন্ট প্রিন্ট করা যাবে না। প্রিন্টিং করা চালিয়ে যেতে চান?"</string>
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />
     <!-- no translation found for reject (24751635160440693) -->

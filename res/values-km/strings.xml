@@ -29,8 +29,7 @@
     <string name="printer_offline" msgid="9196864753298645066">"គ្មានអ៊ីនធឺណិត"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
-    <!-- no translation found for printer_not_encrypted (1913051469275483673) -->
-    <skip />
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"មិនបាន​អ៊ីនគ្រីប​ទេ"</string>
     <string name="printer_check" msgid="6428369671197132828">"ពិនិត្យ​ម៉ាស៊ីនបោះពុម្ព"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"កំពុងរង់ចាំផ្ញើ"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"មិនអាច​អាន​ឯកសារ​បាន​ទេ"</string>
@@ -65,8 +64,7 @@
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
     <skip />
-    <!-- no translation found for not_encrypted_request (4871472176807381642) -->
-    <skip />
+    <string name="not_encrypted_request" msgid="4871472176807381642">"ម៉ាស៊ីនបោះ​ពុម្ពនេះលែង​ទទួល​កិច្ចការ​ដែលមាន​ការអ៊ីនគ្រីប​ទៀតហើយ។ បន្តបោះ​ពុម្ព?"</string>
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />
     <!-- no translation found for reject (24751635160440693) -->

@@ -29,8 +29,7 @@
     <string name="printer_offline" msgid="9196864753298645066">"ഓഫ്‌ലൈന്‍‍"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
-    <!-- no translation found for printer_not_encrypted (1913051469275483673) -->
-    <skip />
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"എൻക്രിപ്റ്റ് ചെയ്‌തിട്ടില്ല"</string>
     <string name="printer_check" msgid="6428369671197132828">"പ്രിന്റർ പരിശോധിക്കുക"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"അയയ്‌ക്കാൻ കാത്തിരിക്കുന്നു"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"ഡോക്യുമെന്റ് റീഡുചെയ്യാനായില്ല"</string>
@@ -65,8 +64,7 @@
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
     <skip />
-    <!-- no translation found for not_encrypted_request (4871472176807381642) -->
-    <skip />
+    <string name="not_encrypted_request" msgid="4871472176807381642">"ഈ പ്രിന്റർ ഇനി എൻക്രിപ്റ്റ് ചെയ്‌ത ജോലികൾ സ്വീകരിക്കില്ല. പ്രിന്റ് ചെയ്യൽ തുടരണോ?"</string>
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />
     <!-- no translation found for reject (24751635160440693) -->

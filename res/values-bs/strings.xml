@@ -29,7 +29,7 @@
     <string name="printer_offline" msgid="9196864753298645066">"Van mreže"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"Nije kriptirano"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"Nije šifrirano"</string>
     <string name="printer_check" msgid="6428369671197132828">"Provjerite štampač"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Čeka se slanje"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Dokument nije pročitan"</string>
@@ -64,7 +64,7 @@
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
     <skip />
-    <string name="not_encrypted_request" msgid="4871472176807381642">"Ovaj pisač više ne prihvaća kriptirane zadatke. Želite li nastaviti s ispisom?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"Ovaj štampač više ne prihvata šifrirane zadatke. Nastaviti štampati?"</string>
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />
     <!-- no translation found for reject (24751635160440693) -->

@@ -29,8 +29,7 @@
     <string name="printer_offline" msgid="9196864753298645066">"오프라인"</string>
     <!-- no translation found for printer_bad_certificate (1366180387095466268) -->
     <skip />
-    <!-- no translation found for printer_not_encrypted (1913051469275483673) -->
-    <skip />
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"암호화되지 않음"</string>
     <string name="printer_check" msgid="6428369671197132828">"프린터 확인"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"전송 대기 중"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"문서를 읽을 수 없음"</string>
@@ -65,8 +64,7 @@
     <skip />
     <!-- no translation found for certificate_update_request (1314796413107139475) -->
     <skip />
-    <!-- no translation found for not_encrypted_request (4871472176807381642) -->
-    <skip />
+    <string name="not_encrypted_request" msgid="4871472176807381642">"프린터가 더 이상 암호화된 작업을 지원하지 않습니다. 인쇄를 계속하시겠습니까?"</string>
     <!-- no translation found for accept (4426153292469698134) -->
     <skip />
     <!-- no translation found for reject (24751635160440693) -->
