@@ -54,7 +54,7 @@
     <string name="failed_printer_connection" msgid="4196305972749960362">"Printerga ulanmadi"</string>
     <string name="failed_connection" msgid="8068661997318286575">"Ulanmadi: <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
     <string name="saved_printers" msgid="4567534965213125526">"Saqlangan printerlar"</string>
-    <string name="forget" msgid="892068061425802502">"Olib tashlash"</string>
+    <string name="forget" msgid="892068061425802502">"Unutish"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct orqali ulanadi"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g> manzilida joriy tarmoq orqali ulanadi"</string>
 </resources>

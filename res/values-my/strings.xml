@@ -37,7 +37,7 @@
     <string name="media_size_8x10in" msgid="1872576638522812402">"၈x၁၀ လက်မ"</string>
     <string name="media_size_4x6in" msgid="3093276425529958253">"၄x၆ လက်မ"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
-    <string name="title_activity_add_printer" msgid="9119216095769228566">"ပုံနှိပ်စက် ထည့်ရန်"</string>
+    <string name="title_activity_add_printer" msgid="9119216095769228566">"ပရင်တာ ထည့်ရန်"</string>
     <string name="add_printer_by_ip" msgid="562864787592910327">"ပရင်တာကို အိုင်ပီလိပ်စာဖြင့် ထည့်ရန်"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"အင်တာနက်လက်ခံဝန်ဆောင်ပေးသူအမည် သို့မဟုတ် အိုင်ပီလိပ်စာ"</string>
     <string name="ip_hint" msgid="7939777481941979799">"၁၉၂.၁၆၈.၀.၄"</string>
