@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Porta aberta"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Encravada"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Offline"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"Certificado incorreto"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"Não encriptada."</string>
     <string name="printer_check" msgid="6428369671197132828">"Verificar impressora"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"A aguardar para enviar…"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Não foi possível ler o documento"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"Esquecer"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"A ligação é efetuada através de Wi-Fi Direct."</string>
     <string name="connects_via_network" msgid="5990041581556733898">"A ligação é efetuada através da rede atual em <xliff:g id="IP_ADDRESS">%1$s</xliff:g>."</string>
+    <string name="security" msgid="2279008326210305401">"Segurança"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"Esta impressora forneceu um novo certificado de segurança ou outro dispositivo está a roubar a respetiva identidade. Pretende aceitar o novo certificado?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"Esta impressora já não aceita tarefas encriptadas. Pretende continuar com a impressão?"</string>
+    <string name="accept" msgid="4426153292469698134">"Aceitar"</string>
+    <string name="reject" msgid="24751635160440693">"Rejeitar"</string>
 </resources>

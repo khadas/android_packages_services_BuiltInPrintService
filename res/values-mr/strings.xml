@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"दार उघडे आहे"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"अडकले"</string>
     <string name="printer_offline" msgid="9196864753298645066">"ऑफलाइन"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"खराब सर्टिफिकेट"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"एंक्रिप्ट केलेले नाही"</string>
     <string name="printer_check" msgid="6428369671197132828">"प्रिंटर तपासा"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"पाठवण्‍याची प्रतीक्षा करत आहे"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"दस्तऐवज वाचता आला नाही"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"विसरा"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"वाय-फाय थेट मार्फत कनेक्ट होते"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g> वर सध्याच्या नेटवर्कमार्फत कनेक्ट होते"</string>
+    <string name="security" msgid="2279008326210305401">"सुरक्षितता"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"हा प्रिंटर नवीन सुरक्षा सर्टिफिकेट प्रदान करतो किंवा दुसरे एखादे डिव्हाइस तोतयागिरी करत असेल. नवीन सर्टिफिकेट स्वीकारायचे का?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"यापुढे हा प्रिंटर एंक्रिप्ट केलेली कामे स्वीकारणार नाही. प्रिंट करणे सुरू ठेवायचे आहे का?"</string>
+    <string name="accept" msgid="4426153292469698134">"स्वीकारा"</string>
+    <string name="reject" msgid="24751635160440693">"नकार द्या"</string>
 </resources>

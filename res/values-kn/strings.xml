@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"ಬಾಗಿಲು ತೆರೆದಿದೆ"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"ಜಾಮ್ ಆಗಿದೆ"</string>
     <string name="printer_offline" msgid="9196864753298645066">"ಆಫ್‌ಲೈನ್"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"ತಪ್ಪು ಪ್ರಮಾಣಪತ್ರ"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಲಾಗಿಲ್ಲ"</string>
     <string name="printer_check" msgid="6428369671197132828">"ಪ್ರಿಂಟರ್ ಪರಿಶೀಲಿಸಿ"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"ಕಳುಹಿಸಲು ಕಾಯುತ್ತಿದೆ"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"ಡಾಕ್ಯುಮೆಂಟ್ ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"ಮರೆಯಿರಿ"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"ವೈ-ಫೈ ಡೈರೆಕ್ಟ್ ಮೂಲಕ ಸಂಪರ್ಕಿಸುತ್ತದೆ"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"ಪ್ರಸ್ತುತ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿ <xliff:g id="IP_ADDRESS">%1$s</xliff:g> ಮೂಲಕ ಸಂಪರ್ಕಿಸುತ್ತದೆ"</string>
+    <string name="security" msgid="2279008326210305401">"ಭದ್ರತೆ"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"ಈ ಪ್ರಿಂಟರ್ ಹೊಸ ಭದ್ರತೆ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಒದಗಿಸಿದೆ ಅಥವಾ ಇನ್ನೊಂದು ಸಾಧನ ಅದನ್ನು ಸೋಗು ಹಾಕುತ್ತಿದೆ. ಹೊಸ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಸ್ವೀಕರಿಸುವುದೇ?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"ಪ್ರಿಂಟರ್ ಇನ್ನು ಮುಂದೆ ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿದ ಕೆಲಸಗಳನ್ನು ಸ್ವೀಕರಿಸುವುದಿಲ್ಲ. ಪ್ರಿಂಟಿಂಗ್ ಮುಂದುವರಿಸುವುದೇ?"</string>
+    <string name="accept" msgid="4426153292469698134">"ಸ್ವೀಕರಿಸಿ"</string>
+    <string name="reject" msgid="24751635160440693">"ತಿರಸ್ಕರಿಸಿ"</string>
 </resources>

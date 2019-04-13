@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"ទ្វារចំហ"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"ស្ទះ"</string>
     <string name="printer_offline" msgid="9196864753298645066">"គ្មានអ៊ីនធឺណិត"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"វិញ្ញាបនបត្រ​មិនល្អ"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"មិនបាន​អ៊ីនគ្រីប​ទេ"</string>
     <string name="printer_check" msgid="6428369671197132828">"ពិនិត្យ​ម៉ាស៊ីនបោះពុម្ព"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"កំពុងរង់ចាំផ្ញើ"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"មិនអាច​អាន​ឯកសារ​បាន​ទេ"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"បំភ្លេច"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"ភ្ជាប់​តាមរយៈ Wi-Fi​ ផ្ទាល់"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"ភ្ជាប់​តាមរយៈ​បណ្តាញបច្ចុប្បន្ន​នៅ <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
+    <string name="security" msgid="2279008326210305401">"សុវត្ថិភាព"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"ម៉ាស៊ីនបោះពុម្ព​នេះបានផ្តល់​វិញ្ញាបនបត្រ​សុវត្ថិភាពថ្មី ឬ​មានឧបករណ៍​ផ្សេងកំពុង​បន្លំខ្លួនជា​ម៉ាស៊ីនបោះពុម្ព។ ទទួលយក​វិញ្ញាបនបត្រ​ថ្មី?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"ម៉ាស៊ីនបោះ​ពុម្ពនេះលែង​ទទួល​កិច្ចការ​ដែលមាន​ការអ៊ីនគ្រីប​ទៀតហើយ។ បន្តបោះ​ពុម្ព?"</string>
+    <string name="accept" msgid="4426153292469698134">"ទទួលយក"</string>
+    <string name="reject" msgid="24751635160440693">"បដិសេធ"</string>
 </resources>
