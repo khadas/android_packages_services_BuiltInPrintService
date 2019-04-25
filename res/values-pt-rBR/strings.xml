@@ -17,7 +17,7 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name" msgid="3551052199033657984">"Serviço de impressão padrão"</string>
+    <string name="app_name" msgid="3551052199033657984">"Impressão padrão"</string>
     <string name="printer_busy" msgid="8604311528104955859">"Ocupada"</string>
     <string name="printer_out_of_paper" msgid="4882186432807703877">"Sem papel"</string>
     <string name="printer_out_of_ink" msgid="7361897651097675464">"Sem tinta"</string>
@@ -48,7 +48,7 @@
     <string name="no_printer_found" msgid="4777867380924351173">"Nenhuma impressora encontrada nesse endereço"</string>
     <string name="printer_not_supported" msgid="281955849350938408">"Impressora não compatível"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
-    <string name="find_wifi_direct" msgid="5270504288829123954">"Encontrar impressoras que usam o Wi-Fi Direct"</string>
+    <string name="find_wifi_direct" msgid="5270504288829123954">"Buscar impressoras com Wi-Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Impressoras com Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Pesquisando…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Talvez seja necessário aprovar essa conexão no painel frontal da impressora"</string>
