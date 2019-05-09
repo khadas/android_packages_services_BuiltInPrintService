@@ -27,8 +27,6 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Atidarytos durelės"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Užstrigęs"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Neprisijungęs"</string>
-    <string name="printer_bad_certificate" msgid="1366180387095466268">"Netinkamas sertifikatas"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"Nešifruota"</string>
     <string name="printer_check" msgid="6428369671197132828">"Tikrinti spausdintuvą"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Laukiama, kol bus išsiųsta"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Nepavyko nuskaityti dokumento"</string>
@@ -59,9 +57,4 @@
     <string name="forget" msgid="892068061425802502">"Pamiršti"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Užmezgamas ryšys per „Wi-Fi Direct“"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Užmezgamas ryšys per dabartinį tinklą adresu <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
-    <string name="security" msgid="2279008326210305401">"Sauga"</string>
-    <string name="certificate_update_request" msgid="1314796413107139475">"Šis spausdintuvas pateikė naują saugos sertifikatą arba kitas įrenginys juo apsimetinėja. Priimti naują sertifikatą?"</string>
-    <string name="not_encrypted_request" msgid="4871472176807381642">"Šis spausdintuvas nebepriima šifruotų užduočių. Spausdinti toliau?"</string>
-    <string name="accept" msgid="4426153292469698134">"Sutikti"</string>
-    <string name="reject" msgid="24751635160440693">"Atmesti"</string>
 </resources>

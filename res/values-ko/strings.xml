@@ -27,8 +27,6 @@
     <string name="printer_door_open" msgid="2446302931916940874">"덮개 열림"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"종이가 낌"</string>
     <string name="printer_offline" msgid="9196864753298645066">"오프라인"</string>
-    <string name="printer_bad_certificate" msgid="1366180387095466268">"잘못된 인증서"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"암호화되지 않음"</string>
     <string name="printer_check" msgid="6428369671197132828">"프린터 확인"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"전송 대기 중"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"문서를 읽을 수 없음"</string>
@@ -59,9 +57,4 @@
     <string name="forget" msgid="892068061425802502">"삭제"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct를 통해 연결"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g>에서 현재 네트워크를 통해 연결"</string>
-    <string name="security" msgid="2279008326210305401">"보안"</string>
-    <string name="certificate_update_request" msgid="1314796413107139475">"이 프린터에서 새로운 보안 인증서를 제공했거나 다른 기기가 이 프린터로 위장하고 있습니다. 새 인증서를 수락할까요?"</string>
-    <string name="not_encrypted_request" msgid="4871472176807381642">"프린터가 더 이상 암호화된 작업을 지원하지 않습니다. 인쇄를 계속하시겠습니까?"</string>
-    <string name="accept" msgid="4426153292469698134">"수락"</string>
-    <string name="reject" msgid="24751635160440693">"거부"</string>
 </resources>

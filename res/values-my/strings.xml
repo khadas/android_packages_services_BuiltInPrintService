@@ -27,8 +27,6 @@
     <string name="printer_door_open" msgid="2446302931916940874">"တံခါးပွင့်နေသည်"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"စာရွက်ညှပ်နေသည်"</string>
     <string name="printer_offline" msgid="9196864753298645066">"အော့ဖ်လိုင်းဖြစ်နေသည်"</string>
-    <string name="printer_bad_certificate" msgid="1366180387095466268">"အသိအမှတ်ပြုလက်မှတ် မမှန်ကန်ပါ"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"အသွင်ဝှက် မထားပါ"</string>
     <string name="printer_check" msgid="6428369671197132828">"ပုံနှိပ်စက်ကို စစ်ဆေးရန်"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"ပို့ရန် စောင့်နေသည်"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"စာရွက်စာတမ်းကို ဖတ်၍မရပါ"</string>
@@ -39,7 +37,7 @@
     <string name="media_size_8x10in" msgid="1872576638522812402">"၈x၁၀ လက်မ"</string>
     <string name="media_size_4x6in" msgid="3093276425529958253">"၄x၆ လက်မ"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
-    <string name="title_activity_add_printer" msgid="9119216095769228566">"ပုံနှိပ်စက် ထည့်ရန်"</string>
+    <string name="title_activity_add_printer" msgid="9119216095769228566">"ပရင်တာ ထည့်ရန်"</string>
     <string name="add_printer_by_ip" msgid="562864787592910327">"ပရင်တာကို အိုင်ပီလိပ်စာဖြင့် ထည့်ရန်"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"အင်တာနက်လက်ခံဝန်ဆောင်ပေးသူအမည် သို့မဟုတ် အိုင်ပီလိပ်စာ"</string>
     <string name="ip_hint" msgid="7939777481941979799">"၁၉၂.၁၆၈.၀.၄"</string>
@@ -59,9 +57,4 @@
     <string name="forget" msgid="892068061425802502">"မေ့ပစ်ရန်"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct ဖြင့် ချိတ်ဆက်သည်"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g> ရှိ လက်ရှိကွန်ရက် မှတစ်ဆင့် ချိတ်ဆက်သည်"</string>
-    <string name="security" msgid="2279008326210305401">"လုံခြုံရေး"</string>
-    <string name="certificate_update_request" msgid="1314796413107139475">"ဤပုံနှိပ်ထုတ်စက်က လုံခြုံရေး အသိအမှတ်ပြုလက်မှတ်အသစ်ကို ထုတ်ပေးလိုက်သည် သို့မဟုတ် အခြားစက်ပစ္စည်းတစ်ခုက ၎င်းအဖြစ် အယောင်ဆောင်နေခြင်းဖြစ်သည်။ အသိအမှတ်ပြုလက်မှတ်အသစ်ကို လက်ခံမလား။"</string>
-    <string name="not_encrypted_request" msgid="4871472176807381642">"ဤပုံနှိပ်ထုတ်စက်က အသွင်ဝှက်ထားသော အလုပ်များကို လက်ခံတော့မည် မဟုတ်ပါ။ ဆက်လက် ပုံနှိပ်ထုတ်လိုသလား။"</string>
-    <string name="accept" msgid="4426153292469698134">"လက်ခံရန်"</string>
-    <string name="reject" msgid="24751635160440693">"ပယ်ရန်"</string>
 </resources>

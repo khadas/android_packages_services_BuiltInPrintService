@@ -27,8 +27,6 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Porta oberta"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Paper encallat"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Sense connexió"</string>
-    <string name="printer_bad_certificate" msgid="1366180387095466268">"Certificat incorrecte"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"Sense encriptar"</string>
     <string name="printer_check" msgid="6428369671197132828">"Comprova la impressora"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"S\'està esperant que s\'enviï"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"No s\'ha pogut llegir el document"</string>
@@ -59,9 +57,4 @@
     <string name="forget" msgid="892068061425802502">"Oblida"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Es connecta per Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Es connecta a través de la xarxa actual a l\'adreça IP <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
-    <string name="security" msgid="2279008326210305401">"Seguretat"</string>
-    <string name="certificate_update_request" msgid="1314796413107139475">"Aquesta impressora ha proporcionat un certificat de seguretat nou o bé hi ha un altre dispositiu suplantant-la. Vols acceptar el certificat nou?"</string>
-    <string name="not_encrypted_request" msgid="4871472176807381642">"Aquesta impressora ja no accepta tasques encriptades. Vols continuar imprimint?"</string>
-    <string name="accept" msgid="4426153292469698134">"Accepta"</string>
-    <string name="reject" msgid="24751635160440693">"Rebutja"</string>
 </resources>

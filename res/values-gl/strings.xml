@@ -27,8 +27,6 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Tapa aberta"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Atasco"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Sen conexión"</string>
-    <string name="printer_bad_certificate" msgid="1366180387095466268">"Certificado incorrecto"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"Sen encriptar"</string>
     <string name="printer_check" msgid="6428369671197132828">"Comprobar impresora"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Esperando para o envío"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Non se puido ler o documento"</string>
@@ -56,12 +54,7 @@
     <string name="failed_printer_connection" msgid="4196305972749960362">"Non se puido conectar coa impresora"</string>
     <string name="failed_connection" msgid="8068661997318286575">"Non se puido conectar coa impresora <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
     <string name="saved_printers" msgid="4567534965213125526">"Impresoras gardadas"</string>
-    <string name="forget" msgid="892068061425802502">"Esquecer"</string>
+    <string name="forget" msgid="892068061425802502">"Borrar"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Conéctase a través de Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Conéctase a través da rede actual ao enderezo IP <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
-    <string name="security" msgid="2279008326210305401">"Seguranza"</string>
-    <string name="certificate_update_request" msgid="1314796413107139475">"Esta impresora proporcionou un novo certificado de seguranza ou ben outro dispositivo está suplantando a súa identidade. Queres aceptar o novo certificado?"</string>
-    <string name="not_encrypted_request" msgid="4871472176807381642">"Esta impresora xa non acepta traballos encriptados. Queres continuar coa impresión?"</string>
-    <string name="accept" msgid="4426153292469698134">"Aceptar"</string>
-    <string name="reject" msgid="24751635160440693">"Rexeitar"</string>
 </resources>

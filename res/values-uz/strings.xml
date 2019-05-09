@@ -27,8 +27,6 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Eshikchasi ochiq"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Tiqilib qolgan"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Oflayn"</string>
-    <string name="printer_bad_certificate" msgid="1366180387095466268">"Sertifikat buzilgan"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"Shifrlanmagan"</string>
     <string name="printer_check" msgid="6428369671197132828">"Printerni tekshirish"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Yuborilishi kutilmoqda"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Hujjatni o‘qib bo‘lmadi"</string>
@@ -56,12 +54,7 @@
     <string name="failed_printer_connection" msgid="4196305972749960362">"Printerga ulanmadi"</string>
     <string name="failed_connection" msgid="8068661997318286575">"Ulanmadi: <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
     <string name="saved_printers" msgid="4567534965213125526">"Saqlangan printerlar"</string>
-    <string name="forget" msgid="892068061425802502">"Olib tashlash"</string>
+    <string name="forget" msgid="892068061425802502">"Unutish"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct orqali ulanadi"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g> manzilida joriy tarmoq orqali ulanadi"</string>
-    <string name="security" msgid="2279008326210305401">"Xavfsizlik"</string>
-    <string name="certificate_update_request" msgid="1314796413107139475">"Bu printerga yangi xavfsizlik sertifikati berilgan. Bu printer nomi ostida boshqa printer ishlayotganga oʻxshaydi. Yangi sertifikatni qabul qilasizmi?"</string>
-    <string name="not_encrypted_request" msgid="4871472176807381642">"Bu printer endi shifrlangan vazifalarni qabul qilmaydi. Bosmaga chiqarilsinmi?"</string>
-    <string name="accept" msgid="4426153292469698134">"Roziman"</string>
-    <string name="reject" msgid="24751635160440693">"Rad etaman"</string>
 </resources>

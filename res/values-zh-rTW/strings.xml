@@ -27,8 +27,6 @@
     <string name="printer_door_open" msgid="2446302931916940874">"擋門處於開啟狀態"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"卡紙"</string>
     <string name="printer_offline" msgid="9196864753298645066">"離線"</string>
-    <string name="printer_bad_certificate" msgid="1366180387095466268">"錯誤的憑證"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"未加密"</string>
     <string name="printer_check" msgid="6428369671197132828">"請檢查印表機"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"正在等待傳送"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"無法讀取文件"</string>
@@ -59,9 +57,4 @@
     <string name="forget" msgid="892068061425802502">"清除"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"透過 Wi-Fi Direct 連線"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"透過目前的網路 (<xliff:g id="IP_ADDRESS">%1$s</xliff:g>) 連線"</string>
-    <string name="security" msgid="2279008326210305401">"安全性"</string>
-    <string name="certificate_update_request" msgid="1314796413107139475">"這台印表機提供新的安全性憑證，或有其他裝置冒用該印表機的身分。要接受新的憑證嗎？"</string>
-    <string name="not_encrypted_request" msgid="4871472176807381642">"這台印表機不再支援已加密的工作。要繼續列印嗎？"</string>
-    <string name="accept" msgid="4426153292469698134">"接受"</string>
-    <string name="reject" msgid="24751635160440693">"拒絕"</string>
 </resources>
