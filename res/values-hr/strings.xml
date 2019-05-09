@@ -48,8 +48,8 @@
     <string name="no_printer_found" msgid="4777867380924351173">"Na ovoj adresi nije pronađen pisač"</string>
     <string name="printer_not_supported" msgid="281955849350938408">"Pisač nije podržan"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
-    <string name="find_wifi_direct" msgid="5270504288829123954">"Pronađi pisače s Izravnim Wi-Fi-jem"</string>
-    <string name="wifi_direct_printers" msgid="541168032444693191">"Pisači s Izravnim Wi-Fi-jem"</string>
+    <string name="find_wifi_direct" msgid="5270504288829123954">"Pronađi pisače s Izravnim Wi-Fijem"</string>
+    <string name="wifi_direct_printers" msgid="541168032444693191">"Pisači s Izravnim Wi-Fijem"</string>
     <string name="searching" msgid="2114018057619514587">"Pretraživanje…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Možda ćete morati odobriti tu vezu na prednjoj ploči pisača"</string>
     <string name="connecting_to" msgid="2665161014972086194">"Povezivanje s pisačem <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
