@@ -34,8 +34,8 @@
     <string name="unreadable_input" msgid="2199948329556527912">"無法讀取文件"</string>
     <string name="media_size_l" msgid="164416542021598181">"大"</string>
     <string name="media_size_5x7in" msgid="1275128379533195285">"5x7 吋"</string>
-    <string name="media_size_89x119mm" msgid="6828167243395807385">"89x119 毫米"</string>
-    <string name="media_size_54x86mm" msgid="1301991206183343895">"54x86 毫米"</string>
+    <string name="media_size_89x119mm" msgid="6828167243395807385">"89x119 公釐"</string>
+    <string name="media_size_54x86mm" msgid="1301991206183343895">"54x86 公釐"</string>
     <string name="media_size_8x10in" msgid="1872576638522812402">"8x10 吋"</string>
     <string name="media_size_4x6in" msgid="3093276425529958253">"4x6 吋"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s - %2$s"</string>
