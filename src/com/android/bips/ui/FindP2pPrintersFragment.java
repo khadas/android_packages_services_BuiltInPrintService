@@ -91,10 +91,10 @@ public class FindP2pPrintersFragment extends PreferenceFragment implements Servi
         }
 
         // If we do not yet have permissions, ask.
-        if (getContext().checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+        if (getContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             getActivity().requestPermissions(
-                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_PERMISSION);
         } else {
             startP2pDiscovery();
@@ -110,8 +110,8 @@ public class FindP2pPrintersFragment extends PreferenceFragment implements Servi
 
     @Override
     public void onPermissionChange() {
-        // P2P discovery requires dangerous ACCESS_COARSE_LOCATION
-        if (getContext().checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+        // P2P discovery requires dangerous ACCESS_FINE_LOCATION
+        if (getContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             startP2pDiscovery();
         } else {
