@@ -49,7 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"មិនស្គាល់ម៉ាស៊ីនបោះពុម្ពទេ"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"តាម Wi-Fi ផ្ទាល់"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"ស្វែងរក​ម៉ាស៊ីនបោះពុម្ព​តាម Wi-Fi ផ្ទាល់"</string>
-    <string name="wifi_direct_printers" msgid="541168032444693191">"ម៉ាសីុនបោះពុម្ព​តាម Wi-Fi ផ្ទាល់"</string>
+    <string name="wifi_direct_printers" msgid="541168032444693191">"ម៉ាស៊ីនបោះពុម្ព​តាម Wi-Fi ផ្ទាល់"</string>
     <string name="searching" msgid="2114018057619514587">"កំពុងស្វែង​រក…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"អ្នកប្រហែល​ជា​ចាំបាច់ត្រូវ​យល់ព្រម​លើការភ្ជាប់នេះ​នៅលើ​ផ្ទាំងខាងមុខ​នៃម៉ាសីុន​បោះពុម្ព​របស់អ្នក"</string>
     <string name="connecting_to" msgid="2665161014972086194">"កំពុងភ្ជាប់​ជាមួយ <xliff:g id="PRINTER">%1$s</xliff:g>"</string>

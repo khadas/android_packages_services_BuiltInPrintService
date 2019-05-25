@@ -49,7 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"A impresora non é compatible"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Buscar impresoras con Wi-Fi Direct"</string>
-    <string name="wifi_direct_printers" msgid="541168032444693191">"Impresoras compatibles con Wi-Fi Direct"</string>
+    <string name="wifi_direct_printers" msgid="541168032444693191">"Impresoras con Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Buscando…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"É posible que teñas que aprobar esta conexión desde o panel frontal da impresora"</string>
     <string name="connecting_to" msgid="2665161014972086194">"Conectando coa impresora <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
