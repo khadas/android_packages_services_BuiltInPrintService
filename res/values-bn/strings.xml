@@ -56,7 +56,7 @@
     <string name="failed_printer_connection" msgid="4196305972749960362">"প্রিন্টারের সাথে সংযুক্ত করা যায়নি"</string>
     <string name="failed_connection" msgid="8068661997318286575">"<xliff:g id="PRINTER">%1$s</xliff:g> এর সাথে সংযুক্ত করা যায়নি"</string>
     <string name="saved_printers" msgid="4567534965213125526">"সেভ করা প্রিন্টার"</string>
-    <string name="forget" msgid="892068061425802502">"ভুলে যান"</string>
+    <string name="forget" msgid="892068061425802502">"সরিয়ে দিন"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"ওয়াই-ফাই ডাইরেক্টের মাধ্যমে সংযুক্ত হয়"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"বর্তমান নেটওয়ার্কের মাধ্যমে <xliff:g id="IP_ADDRESS">%1$s</xliff:g> অ্যাড্রেসে সংযুক্ত হয়"</string>
     <string name="security" msgid="2279008326210305401">"নিরাপত্তা"</string>
