@@ -66,10 +66,13 @@ public class BuiltInPrintService extends PrintService {
             BuiltInPrintService.class.getCanonicalName() + ".CERTIFICATE_ACCEPT";
     private static final String ACTION_CERTIFICATE_REJECT =
             BuiltInPrintService.class.getCanonicalName() + ".CERTIFICATE_REJECT";
+    public static final String ACTION_P2P_PERMISSION_CANCEL =
+            BuiltInPrintService.class.getCanonicalName() + ".P2P_PERMISSION_CANCEL";
     private static final String EXTRA_CERTIFICATE = "certificate";
     private static final String EXTRA_PRINTER_ID = "printer-id";
     private static final String EXTRA_PRINTER_UUID = "printer-uuid";
     private static final int CERTIFICATE_REQUEST_ID = 1000;
+    public static final int P2P_PERMISSION_REQUEST_ID = 1001;
 
     // Present because local activities can bind, but cannot access this object directly
     private static WeakReference<BuiltInPrintService> sInstance;
@@ -86,6 +89,7 @@ public class BuiltInPrintService extends PrintService {
     private WifiManager.WifiLock mWifiLock;
     private P2pMonitor mP2pMonitor;
     private NsdResolveQueue mNsdResolveQueue;
+    private P2pPermissionManager mP2pPermissionManager;
 
     /**
      * Return the current print service instance, if running
@@ -106,6 +110,8 @@ public class BuiltInPrintService extends PrintService {
         }
         super.onCreate();
         createNotificationChannel();
+        mP2pPermissionManager = new P2pPermissionManager(this);
+        mP2pPermissionManager.reset();
 
         sInstance = new WeakReference<>(this);
         mBackend = new Backend(this);
@@ -138,6 +144,7 @@ public class BuiltInPrintService extends PrintService {
     @Override
     public void onDestroy() {
         if (DEBUG) Log.d(TAG, "onDestroy()");
+        mP2pPermissionManager.closeNotification();
         mCapabilitiesCache.close();
         mP2pMonitor.stopAll();
         mBackend.close();
@@ -205,6 +212,13 @@ public class BuiltInPrintService extends PrintService {
      */
     public NsdResolveQueue getNsdResolveQueue() {
         return mNsdResolveQueue;
+    }
+
+    /**
+     * Return a general {@link P2pPermissionManager}
+     */
+    public P2pPermissionManager getP2pPermissionManager() {
+        return mP2pPermissionManager;
     }
 
     /**
@@ -341,6 +355,8 @@ public class BuiltInPrintService extends PrintService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (DEBUG) Log.d(TAG, "Received action=" + intent.getAction());
+        NotificationManager manager = (NotificationManager) getSystemService(
+                Context.NOTIFICATION_SERVICE);
         if (ACTION_CERTIFICATE_ACCEPT.equals(intent.getAction())) {
             byte[] certificate = intent.getByteArrayExtra(EXTRA_CERTIFICATE);
             PrinterId printerId = intent.getParcelableExtra(EXTRA_PRINTER_ID);
@@ -352,14 +368,16 @@ public class BuiltInPrintService extends PrintService {
             }
             // Restart the job with the updated certificate in place
             mJobQueue.restart(printerId);
+            manager.cancel(TAG_CERTIFICATE_REQUEST, CERTIFICATE_REQUEST_ID);
         } else if (ACTION_CERTIFICATE_REJECT.equals(intent.getAction())) {
             // Cancel any job in certificate state for this uuid
             PrinterId printerId = intent.getParcelableExtra(EXTRA_PRINTER_ID);
             mJobQueue.cancel(printerId);
+            manager.cancel(TAG_CERTIFICATE_REQUEST, CERTIFICATE_REQUEST_ID);
+        } else if (ACTION_P2P_PERMISSION_CANCEL.equals(intent.getAction())) {
+            // Inform p2pPermissionManager the user canceled the notification (non-permanent)
+            mP2pPermissionManager.applyPermissionChange(false);
         }
-        NotificationManager manager = (NotificationManager) getSystemService(
-                Context.NOTIFICATION_SERVICE);
-        manager.cancel(TAG_CERTIFICATE_REQUEST, CERTIFICATE_REQUEST_ID);
         return START_NOT_STICKY;
     }
 }
