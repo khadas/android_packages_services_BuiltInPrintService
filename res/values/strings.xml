@@ -65,6 +65,8 @@
     <string name="printer_not_supported">Printer not supported</string>
     <string name="wifi_direct">Wi-Fi Direct</string>
     <string name="find_wifi_direct">Find Wi-Fi Direct printers</string>
+    <!-- Preference name for enable/disable of Wi-Fi Direct printing [CHAR LIMIT=UNLIMITED] -->
+    <string name="wifi_direct_printing">Wi-Fi Direct printing</string>
     <string name="wifi_direct_printers">Wi-Fi Direct printers</string>
     <string name="searching">Searching\u2026</string>
     <string name="connect_hint_text">You may need to approve this connection on your printer\'s
@@ -95,4 +97,11 @@
     <!-- Button label in a notification. This button rejects a printer security change [CHAR LIMIT=20] -->
     <string name="reject">Reject</string>
 
+    <!-- Channel name for connection-related notifications [CHAR LIMIT=40] -->
+    <string name="connections">Connections</string>
+    <!-- Message shown in dialog, toast, or notification if the service cannot get Wi-Fi Direct permissions [CHAR LIMIT=UNLIMITED] -->
+    <string name="wifi_direct_permission_rationale">Default Print Service needs location permissions
+        to access Wi-Fi Direct printers because your location can be inferred from nearby devices.</string>
+    <!-- Button label in a notification or dialog. This button leads to a request to grant permissions [CHAR LIMIT=20] -->
+    <string name="fix">Fix</string>
 </resources>
