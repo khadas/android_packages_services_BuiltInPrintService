@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"不支援的打印機"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"尋找 Wi-Fi Direct 打印機"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct 列印"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi Direct 打印機"</string>
     <string name="searching" msgid="2114018057619514587">"正在搜尋…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"您可能需要在打印機的前置面板上核准此連線"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"此打印機不再接受加密工作。要繼續列印嗎？"</string>
     <string name="accept" msgid="4426153292469698134">"接受"</string>
     <string name="reject" msgid="24751635160440693">"拒絕"</string>
+    <string name="connections" msgid="8895413761760117180">"連線"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"「預設列印服務」需要位置資訊權限，以尋找附近的裝置。"</string>
+    <string name="fix" msgid="7784394272611365393">"查看權限"</string>
 </resources>

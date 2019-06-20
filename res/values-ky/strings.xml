@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Принтер колдоого алынбайт"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi Direct принтерлерин табуу"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct аркылуу басып чыгаруу"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi Direct принтерлери"</string>
     <string name="searching" msgid="2114018057619514587">"Издөөдө…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Бул туташууга принтериңиздин алдыңкы панелинен уруксат беришиңиз мүмкүн"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"Бул принтер мындан ары шифрленген тапшырмаларды кабыл албайт. Бастыра бересизби?"</string>
     <string name="accept" msgid="4426153292469698134">"Макул"</string>
     <string name="reject" msgid="24751635160440693">"Четке кагуу"</string>
+    <string name="connections" msgid="8895413761760117180">"Туташуулар"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Жакын жердеги түзмөктөрдү табуу үчүн демейки басып чыгаруу кызматына жайгашкан жерди көрүүгө уруксат керек."</string>
+    <string name="fix" msgid="7784394272611365393">"Уруксатты карап чыгуу"</string>
 </resources>

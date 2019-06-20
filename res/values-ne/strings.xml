@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"प्रिन्टरलाई समर्थन छैन"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi प्रत्यक्ष"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi प्रत्यक्ष प्रिन्टरहरू फेला पार्नुहोस्‌"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi प्रत्यक्षको छाप्ने सुविधा"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi प्रत्यक्षका प्रिन्टरहरू"</string>
     <string name="searching" msgid="2114018057619514587">"खोजी गरिँदै छ…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"तपाईंले आफ्नो प्रिन्टरको अग्रभागको प्यानलमा यो जडानलाई अनुमोदन गर्नु पर्ने हुन सक्छ"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"यो प्रिन्टरले अब उप्रान्त इन्क्रिप्ट गरिएका कार्यहरू स्वीकार गर्दैन। छाप्ने कार्य जारी राख्ने हो?"</string>
     <string name="accept" msgid="4426153292469698134">"स्वीकार गर्नुहोस्"</string>
     <string name="reject" msgid="24751635160440693">"अस्वीकार गर्नुहोस्"</string>
+    <string name="connections" msgid="8895413761760117180">"जडानहरू"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"पूर्वनिर्धारित छपाइ सेवालाई वरपरका यन्त्रहरू फेला पार्न स्थानसम्बन्धी अनुमति चाहिन्छ।"</string>
+    <string name="fix" msgid="7784394272611365393">"अनुमतिको समीक्षा गर्नु"</string>
 </resources>

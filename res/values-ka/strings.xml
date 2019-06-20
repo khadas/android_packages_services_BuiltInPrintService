@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"პრინტერი მხარდაუჭერელია"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi Direct პრინტერების პოვნა"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct-ით ბეჭდვა"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi Direct პრინტერები"</string>
     <string name="searching" msgid="2114018057619514587">"ძიება…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"შესაძლოა დაგჭირდეთ ამ კავშირის დადასტურება თქვენი პრინტერის წინა პანელზე"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"ეს პრინტერი აღარ იღებს დაშიფრულ დავალებებს. გსურთ ბეჭდვის გაგრძელება?"</string>
     <string name="accept" msgid="4426153292469698134">"მიღება"</string>
     <string name="reject" msgid="24751635160440693">"უარყოფა"</string>
+    <string name="connections" msgid="8895413761760117180">"კავშირები"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"ბეჭდვის ნაგულისხმევ სერვისს სჭირდება მდებარეობის ნებართვა ახლომახლო მოწყობილობების საპოვნელად."</string>
+    <string name="fix" msgid="7784394272611365393">"ნებართვის მიმოხილვა"</string>
 </resources>

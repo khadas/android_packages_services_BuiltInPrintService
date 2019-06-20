@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"አታሚ አይደገፍም"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi ቀጥታ አገናኝ"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"የWi-Fi Direct አታሚዎችን አግኝ"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct ሕትመት"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"የWi-Fi ቀጥታ አገናኝ አታሚዎች"</string>
     <string name="searching" msgid="2114018057619514587">"በመፈለግ ላይ…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"በእርስዎ አታሚ የፊት ፓናል ላይ ይህን ግንኙነት ማጽደቅ ያስፈልግዎት ይሆናል"</string>
@@ -64,4 +65,9 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"ይህ አታሚ ከእንግዲህ የተመሰጠሩ ስራዎችን አይቀበልም። ማተም ይቀጥሉ?"</string>
     <string name="accept" msgid="4426153292469698134">"ተቀበል"</string>
     <string name="reject" msgid="24751635160440693">"አትቀበል"</string>
+    <string name="connections" msgid="8895413761760117180">"ግንኙነቶች"</string>
+    <!-- no translation found for wifi_direct_permission_rationale (3599186620970379218) -->
+    <skip />
+    <!-- no translation found for fix (7784394272611365393) -->
+    <skip />
 </resources>

@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"પ્રિન્ટર સમર્થિત નથી"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi Direct પ્રિન્ટર શોધો"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct પ્રિન્ટિંગ"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi Direct પ્રિન્ટર"</string>
     <string name="searching" msgid="2114018057619514587">"શોધી રહ્યાં છીએ…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"તમારે આ કનેક્શનને તમારા પ્રિન્ટરની ફ્રન્ટ પૅનલ પરથી મંજૂર કરવું જરૂરી હોઈ શકે છે"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"આ પ્રિન્ટર હવે કોઈ એન્ક્રિપ્ટ કરેલા કાર્યનો સ્વીકાર કરતું નથી. પ્રિન્ટ કરવાનું ચાલુ રાખીએ?"</string>
     <string name="accept" msgid="4426153292469698134">"સ્વીકારો"</string>
     <string name="reject" msgid="24751635160440693">"નકારો"</string>
+    <string name="connections" msgid="8895413761760117180">"કનેક્શન"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"ડિફૉલ્ટ પ્રિન્ટ સેવાને નજીકના ડિવાઇસ શોઘવા સ્થાન માટેની પરવાનગીની જરૂર છે."</string>
+    <string name="fix" msgid="7784394272611365393">"પરવાનગીનો રિવ્યૂ કરો"</string>
 </resources>
