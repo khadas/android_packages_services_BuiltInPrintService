@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Tiskárna není podporována"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Najít tiskárny s podporou funkce Wi-Fi Direct"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Tisk Wi-Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Tiskárny Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Vyhledávání…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Připojení možná budete muset schválit na předním panelu tiskárny"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"Tato tiskárna už nepřijímá šifrované tiskové úlohy. Pokračovat v tisku?"</string>
     <string name="accept" msgid="4426153292469698134">"Přijmout"</string>
     <string name="reject" msgid="24751635160440693">"Odmítnout"</string>
+    <string name="connections" msgid="8895413761760117180">"Připojení"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Služba výchozího tisku potřebuje oprávnění pro přístup k poloze, aby mohla vyhledat zařízení v okolí."</string>
+    <string name="fix" msgid="7784394272611365393">"Kontrola oprávnění"</string>
 </resources>

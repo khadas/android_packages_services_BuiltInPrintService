@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"ပုံနှိပ်စက်ကို ပံ့ပိုးခြင်းမရှိပါ"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi တိုက်ရိုက်သုံး ပရင်တာများကို ရှာရန်"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"\'တိုက်ရိုက် Wi-Fi\' ပုံနှိပ်ခြင်း"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi Direct သုံး ပရင်တာများ"</string>
     <string name="searching" msgid="2114018057619514587">"ရှာဖွေနေသည်…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"သင့်ပရင်တာ၏ အရှေ့ဘက်အကွက်တွင် ဤချိတ်ဆက်မှုကို အတည်ပြုရန် လိုအပ်နိုင်သည်"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"ဤပုံနှိပ်ထုတ်စက်က အသွင်ဝှက်ထားသော အလုပ်များကို လက်ခံတော့မည် မဟုတ်ပါ။ ဆက်လက် ပုံနှိပ်ထုတ်လိုသလား။"</string>
     <string name="accept" msgid="4426153292469698134">"လက်ခံရန်"</string>
     <string name="reject" msgid="24751635160440693">"ပယ်ရန်"</string>
+    <string name="connections" msgid="8895413761760117180">"ချိတ်ဆက်မှုများ"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"\'ပုံသေ ပုံနှိပ်ပေးမှု ဝန်ဆောင်မှု\' သည် အနီးရှိ စက်ပစ္စည်းများကို ရှာရန် တည်နေရာ ခွင့်ပြုချက်များ လိုအပ်ပါသည်။"</string>
+    <string name="fix" msgid="7784394272611365393">"ခွင့်ပြုချက် စစ်ရန်"</string>
 </resources>
