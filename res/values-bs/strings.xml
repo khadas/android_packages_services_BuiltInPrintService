@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Štampač nije podržan"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"WiFi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Pronađite štampače s opcijom WiFi Direct"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Štampanje putem opcije Wi-Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Štampači s opcijom WiFi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Pretraživanje…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Možda ćete morati odobriti ovo povezivanje na prednjoj tabli vašeg štampača"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"Ovaj štampač više ne prihvata šifrirane zadatke. Nastaviti štampati?"</string>
     <string name="accept" msgid="4426153292469698134">"Prihvati"</string>
     <string name="reject" msgid="24751635160440693">"Odbij"</string>
+    <string name="connections" msgid="8895413761760117180">"Veze"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Usluzi za zadano štampanje je potrebno odobrenje za lokaciju da pronađe uređaje u blizini."</string>
+    <string name="fix" msgid="7784394272611365393">"Pregledaj odobrenje"</string>
 </resources>

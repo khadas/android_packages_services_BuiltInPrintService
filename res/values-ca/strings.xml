@@ -40,7 +40,7 @@
     <string name="media_size_4x6in" msgid="3093276425529958253">"4 x 6 polzades"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s: %2$s"</string>
     <string name="title_activity_add_printer" msgid="9119216095769228566">"Afegeix una impressora"</string>
-    <string name="add_printer_by_ip" msgid="562864787592910327">"Afegeix impressora mitjançant adreça IP"</string>
+    <string name="add_printer_by_ip" msgid="562864787592910327">"Afegeix impressora per adreça IP"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"Nom d\'amfitrió o adreça IP"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"Afegeix"</string>
@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"La impressora no és compatible"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Cerca impressores Wi-Fi Direct"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Impressió Wi‑Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Impressores Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"S\'està cercant…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"És possible que hagis d\'aprovar aquesta connexió al tauler frontal de la impressora"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"Aquesta impressora ja no accepta tasques encriptades. Vols continuar imprimint?"</string>
     <string name="accept" msgid="4426153292469698134">"Accepta"</string>
     <string name="reject" msgid="24751635160440693">"Rebutja"</string>
+    <string name="connections" msgid="8895413761760117180">"Connexions"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"El servei d\'impressió predeterminat necessita permisos d\'ubicació per trobar dispositius propers."</string>
+    <string name="fix" msgid="7784394272611365393">"Revisa els permisos"</string>
 </resources>
