@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Imprimante non compatible"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Rechercher des imprimantes Wi-Fi Direct"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Impression Wi-Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Imprimantes Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Recherche…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Vous devrez peut-être approuver cette connexion sur le panneau avant de votre imprimante"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"Cette imprimante n\'accepte plus les tâches chiffrées. Poursuivre l\'impression ?"</string>
     <string name="accept" msgid="4426153292469698134">"Accepter"</string>
     <string name="reject" msgid="24751635160440693">"Refuser"</string>
+    <string name="connections" msgid="8895413761760117180">"Connexions"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Le service d\'impression par défaut a besoin de l\'autorisation d\'accéder à la position pour détecter les appareils à proximité."</string>
+    <string name="fix" msgid="7784394272611365393">"Voir l\'autorisation"</string>
 </resources>

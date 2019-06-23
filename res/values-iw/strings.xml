@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"המדפסת לא נתמכת"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"‏‫Wi-Fi ישיר"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"‏איתור מדפסות Wi-Fi ישיר"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"‏הדפסה דרך Wi-Fi ישיר"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"‏מדפסות Wi-Fi ישיר"</string>
     <string name="searching" msgid="2114018057619514587">"מחפש…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"ייתכן שיהיה עליך לאשר את החיבור הזה בלוח הקדמי שבמדפסת"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"מדפסת זו כבר לא מקבלת משימות מוצפנות. האם להמשיך בהדפסה?"</string>
     <string name="accept" msgid="4426153292469698134">"אישור"</string>
     <string name="reject" msgid="24751635160440693">"דחייה"</string>
+    <string name="connections" msgid="8895413761760117180">"חיבורים"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"לשירות ההדפסה המוגדר כברירת מחדל נדרשת הרשאת מיקום כדי למצוא מכשירים בקרבת מקום."</string>
+    <string name="fix" msgid="7784394272611365393">"בדיקת ההרשאות"</string>
 </resources>

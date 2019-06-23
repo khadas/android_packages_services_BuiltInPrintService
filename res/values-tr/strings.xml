@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Yazıcı desteklenmiyor"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Kablosuz Doğrudan Bağlantı"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Kablosuz Doğrudan Bağlantı yazıcılarını bul"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Kablosuz Doğrudan Bağlantı ile yazdırma"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Kablosuz Doğrudan Bağlantı yazıcıları"</string>
     <string name="searching" msgid="2114018057619514587">"Aranıyor…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Bu bağlantıyı yazıcınızın ön panelinden onaylamanız gerekebilir"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"Bu yazıcı artık şifrelenmiş işleri kabul etmiyor. Yazdırmaya devam etmek istiyor musunuz?"</string>
     <string name="accept" msgid="4426153292469698134">"Kabul et"</string>
     <string name="reject" msgid="24751635160440693">"Reddet"</string>
+    <string name="connections" msgid="8895413761760117180">"Bağlantılar"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Varsayılan Yazdırma Hizmeti\'nin yakındaki cihazları bulabilmesi için konum iznine ihtiyacı var."</string>
+    <string name="fix" msgid="7784394272611365393">"İzni incele"</string>
 </resources>
