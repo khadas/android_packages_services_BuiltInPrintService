@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Hindi sinusuportahan ang printer"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Humanap ng mga Wi-Fi Direct na printer"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Pag-print sa Wi-Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Mga Wi-Fi Direct na printer"</string>
     <string name="searching" msgid="2114018057619514587">"Naghahanap…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Maaaring kailanganin mong aprubahan ang koneksyong ito sa harapang panel ng iyong printer"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"Hindi na tumatanggap ng mga naka-encrypt na gawa ang printer na ito. Ipagpatuloy ang pag-print?"</string>
     <string name="accept" msgid="4426153292469698134">"Tanggapin"</string>
     <string name="reject" msgid="24751635160440693">"Tanggihan"</string>
+    <string name="connections" msgid="8895413761760117180">"Mga Koneksyon"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Kailangan ng Default na Serbisyo sa Pag-print ng pahintulot sa lokayson para maghanap ng mga device sa malapit."</string>
+    <string name="fix" msgid="7784394272611365393">"Pahintulot na sumuri"</string>
 </resources>

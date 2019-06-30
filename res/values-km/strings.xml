@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"មិនស្គាល់ម៉ាស៊ីនបោះពុម្ពទេ"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"តាម Wi-Fi ផ្ទាល់"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"ស្វែងរក​ម៉ាស៊ីនបោះពុម្ព​តាម Wi-Fi ផ្ទាល់"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"ការ​បោះពុម្ព​តាម Wi-Fi ផ្ទាល់"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"ម៉ាស៊ីនបោះពុម្ព​តាម Wi-Fi ផ្ទាល់"</string>
     <string name="searching" msgid="2114018057619514587">"កំពុងស្វែង​រក…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"អ្នកប្រហែល​ជា​ចាំបាច់ត្រូវ​យល់ព្រម​លើការភ្ជាប់នេះ​នៅលើ​ផ្ទាំងខាងមុខ​នៃម៉ាសីុន​បោះពុម្ព​របស់អ្នក"</string>
@@ -64,4 +65,7 @@
     <string name="not_encrypted_request" msgid="4871472176807381642">"ម៉ាស៊ីនបោះ​ពុម្ពនេះលែង​ទទួល​កិច្ចការ​ដែលមាន​ការអ៊ីនគ្រីប​ទៀតហើយ។ បន្តបោះ​ពុម្ព?"</string>
     <string name="accept" msgid="4426153292469698134">"ទទួលយក"</string>
     <string name="reject" msgid="24751635160440693">"បដិសេធ"</string>
+    <string name="connections" msgid="8895413761760117180">"ការ​តភ្ជាប់"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"សេវាកម្ម​ការបោះពុម្ពលំនាំដើម​ត្រូវការ​ការអនុញ្ញាត​ទីតាំង ដើម្បី​រក​ឧបករណ៍​ដែលនៅជិត។"</string>
+    <string name="fix" msgid="7784394272611365393">"ពិនិត្យមើលការអនុញ្ញាត"</string>
 </resources>
