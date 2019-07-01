@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"తలుపు తెరుచుకుని ఉంది"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"ఇరుక్కుపోయింది"</string>
     <string name="printer_offline" msgid="9196864753298645066">"ఆఫ్‌లైన్"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"సర్టిఫికెట్‌ చెల్లదు"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"ఎన్‌క్రిప్ట్ చేయబడలేదు"</string>
     <string name="printer_check" msgid="6428369671197132828">"ప్రింటర్‌ని తనిఖీ చేయి"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"పంపడానికి వేచి ఉంది"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"పత్రాన్ని చదవడం సాధ్యం కాలేదు"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"విస్మరించండి"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct ద్వారా కనెక్ట్ చేస్తోంది"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g> వద్ద ప్రస్తుత నెట్‌వర్క్ ద్వారా కనెక్ట్ చేస్తోంది"</string>
+    <string name="security" msgid="2279008326210305401">"భద్రత"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"ఈ ప్రింటర్‌కి కొత్త భద్రతా సర్టిఫికెట్‌ అందించి ఉండవచ్చు లేదా వేరే పరికరం ఏదైనా దీన్ని అనుకరిస్తూ ఉండవచ్చు. కొత్త సర్టిఫికెట్‌ని ఆమోదిస్తారా?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"ఈ ప్రింటర్ ఇకపై ఎన్‌క్రిప్ట్ చేసిన ఫైల్‌లను తీసుకోదు అయినా ప్రింట్ చేయడాన్ని కొనసాగిస్తారా?"</string>
+    <string name="accept" msgid="4426153292469698134">"ఆమోదించు"</string>
+    <string name="reject" msgid="24751635160440693">"తిరస్కరించు"</string>
 </resources>

@@ -31,7 +31,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Icon;
 import android.util.Log;
-import android.view.ContextThemeWrapper;
 import android.widget.Toast;
 
 import com.android.bips.ui.AddPrintersActivity;
@@ -166,8 +165,7 @@ public class P2pPermissionManager {
             }
         };
 
-        new AlertDialog.Builder(new ContextThemeWrapper(activity,
-                android.R.style.Theme_Material_Settings))
+        new AlertDialog.Builder(activity, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert)
                 .setMessage(mContext.getString(R.string.wifi_direct_permission_rationale))
                 .setPositiveButton(R.string.fix, clickListener)
                 .show();

@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Açıq qapı"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Sıxılmış"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Oflayn"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"Uyğun olmayan sertifikat"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"Şifrələnmədi"</string>
     <string name="printer_check" msgid="6428369671197132828">"Printeri yoxlayın"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Göndərmək üçü gözlənilir"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Sənədi oxumaq mümkün deyil"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"Unudun"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct ilə qoşulur"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Cari şəbəkə ilə <xliff:g id="IP_ADDRESS">%1$s</xliff:g> ünvanında qoşulur"</string>
+    <string name="security" msgid="2279008326210305401">"Təhlükəsizlik"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"Bu printer yeni sertifikat təqdim etdi və ya digər cihaz onun şəxsiyyətini oğurlayır. Yeni sertifikat qəbul edilsin?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"Bu printer artıq şifrələnmiş işləri qəbul etmir. Çapa davam edilsin?"</string>
+    <string name="accept" msgid="4426153292469698134">"Qəbul edin"</string>
+    <string name="reject" msgid="24751635160440693">"Rədd edin"</string>
 </resources>

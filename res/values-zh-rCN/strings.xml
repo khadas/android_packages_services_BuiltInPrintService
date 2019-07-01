@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"机盖未关"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"卡纸"</string>
     <string name="printer_offline" msgid="9196864753298645066">"离线"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"证书有误"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"未加密"</string>
     <string name="printer_check" msgid="6428369671197132828">"检查打印机"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"正在等待发送"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"无法读取文档"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"忽略"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"通过 WLAN 直连连接"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"在 <xliff:g id="IP_ADDRESS">%1$s</xliff:g> 通过当前网络连接"</string>
+    <string name="security" msgid="2279008326210305401">"安全"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"此打印机提供了新的安全证书，或其他设备正在冒充此打印机。要接受新证书吗？"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"此打印机不再接受加密的作业。要继续打印吗？"</string>
+    <string name="accept" msgid="4426153292469698134">"接受"</string>
+    <string name="reject" msgid="24751635160440693">"拒绝"</string>
 </resources>
