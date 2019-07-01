@@ -26,7 +26,9 @@ LOCAL_SDK_VERSION := current
 LOCAL_CFLAGS += \
       -DINCLUDE_PDF=1 -Werror -Wextra -Wno-unused-parameter \
       -Wno-sign-compare -Wno-missing-field-initializers \
-      -Wno-implicit-function-declaration -Wno-format -Wno-missing-braces
+      -Wno-implicit-function-declaration -Wno-format -Wno-missing-braces \
+      -Wno-deprecated-declarations
+
 
 PLUGINS_SRCS := \
       $(PLUGINS_DIR)/lib_pclm.c $(PLUGINS_DIR)/lib_pwg.c \
