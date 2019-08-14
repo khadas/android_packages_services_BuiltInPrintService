@@ -1044,7 +1044,7 @@ static void *_job_thread(void *param) {
 
                             jq->job_params.copy_num = (i + 1);
                             jq->job_params.copy_page_num = page.page_num;
-                            jq->job_params.page_backside = (per_copy_page_num & 0x1);
+                            jq->job_params.page_backside = !(per_copy_page_num & 0x1);
                             jq->job_params.page_corrupted = (page.corrupted ? 1 : 0);
                             jq->job_params.page_printing = true;
                             _unlock();
@@ -1090,7 +1090,7 @@ static void *_job_thread(void *param) {
 
                         // make sure we always print an even number of pages in duplex jobs
                         if (page.last_page && (jq->job_params.duplex != DUPLEX_MODE_NONE)
-                                && (jq->job_params.page_backside)
+                                && !(jq->job_params.page_backside)
                                 && (jq->plugin->print_blank_page != NULL)) {
                             _unlock();
                             jq->plugin->print_blank_page(job_handle, &(jq->job_params));
