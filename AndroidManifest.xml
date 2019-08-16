@@ -52,6 +52,13 @@
         </service>
 
         <activity
+            android:name="com.android.bips.ui.MoreOptionsActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Settings"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:permission="android.permission.START_PRINT_SERVICE_CONFIG_ACTIVITY" />
+
+        <activity
             android:name="com.android.bips.ui.AddPrintersActivity"
             android:label="@string/title_activity_add_printer"
             android:theme="@android:style/Theme.DeviceDefault.Settings"
@@ -59,6 +66,5 @@
             android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:permission="android.permission.START_PRINT_SERVICE_CONFIG_ACTIVITY" />
-
     </application>
 </manifest>
