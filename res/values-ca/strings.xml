@@ -60,6 +60,11 @@
     <string name="forget" msgid="892068061425802502">"Oblida"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Es connecta per Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Es connecta a través de la xarxa actual a l\'adreça IP <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
+    <string name="recommendation_summary" msgid="2979700524954307566">"El servei d\'impressió predeterminat ofereix algunes opcions bàsiques. Pot ser que hi hagi més opcions disponibles per a aquesta impressora en un altre servei d\'impressió."</string>
+    <string name="recommendations_heading" msgid="5086762263560605249">"Serveis recomanats"</string>
+    <string name="recommendation_install_summary" msgid="374785283809791669">"Selecciona\'n un per instal·lar-lo"</string>
+    <string name="recommendation_enable_summary" msgid="3500907868251326224">"Selecciona\'n per activar-lo"</string>
+    <string name="recommendation_manage" msgid="4683640588502866284">"Gestiona els serveis"</string>
     <string name="security" msgid="2279008326210305401">"Seguretat"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"Aquesta impressora ha proporcionat un certificat de seguretat nou o bé hi ha un altre dispositiu suplantant-la. Vols acceptar el certificat nou?"</string>
     <string name="not_encrypted_request" msgid="4871472176807381642">"Aquesta impressora ja no accepta tasques encriptades. Vols continuar imprimint?"</string>

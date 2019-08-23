@@ -60,6 +60,11 @@
     <string name="forget" msgid="892068061425802502">"बिर्सनुहोस्"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi प्रत्यक्षमार्फत जडान गर्छ"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g> को हालको नेटवर्कमार्फत जडान गर्छ"</string>
+    <string name="recommendation_summary" msgid="2979700524954307566">"पूर्वनिर्धारित छपाइ सेवाले आधारभूत विकल्पहरू प्रदान गर्दछ। यो प्रिन्टरका अन्य विकल्पहरू अन्य छपाइ सेवाबाट उपलब्ध हुन सक्छन्।"</string>
+    <string name="recommendations_heading" msgid="5086762263560605249">"सिफारिस गरिएका सेवाहरू"</string>
+    <string name="recommendation_install_summary" msgid="374785283809791669">"स्थापना गर्न चयन गर्नुहोस्"</string>
+    <string name="recommendation_enable_summary" msgid="3500907868251326224">"सक्षम पार्न चयन गर्नुहोस्"</string>
+    <string name="recommendation_manage" msgid="4683640588502866284">"सेवाहरूको व्यवस्थापन गर्नुहोस्"</string>
     <string name="security" msgid="2279008326210305401">"सुरक्षा"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"यो प्रिन्टरले सुरक्षासम्बन्धी कुनै नयाँ प्रमाणपत्र प्रदान गर्‍यो नयाँ प्रमाणपत्र स्वीकार गर्ने हो?"</string>
     <string name="not_encrypted_request" msgid="4871472176807381642">"यो प्रिन्टरले अब उप्रान्त इन्क्रिप्ट गरिएका कार्यहरू स्वीकार गर्दैन। छाप्ने कार्य जारी राख्ने हो?"</string>

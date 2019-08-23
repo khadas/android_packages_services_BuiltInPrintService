@@ -60,6 +60,11 @@
     <string name="forget" msgid="892068061425802502">"পাহৰক"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"ৱাই-ফাই ডাইৰেক্টৰ জৰিয়তে সংযোগ কৰে"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"<xliff:g id="IP_ADDRESS">%1$s</xliff:g> ঠিকনাত চলিত নেটৱৰ্কৰ জৰিয়তে সংযোগ কৰে"</string>
+    <string name="recommendation_summary" msgid="2979700524954307566">"ডিফ’ল্ট প্ৰিণ্ট সেৱাটোৱে সাধাৰণ বিকল্পসমূহ প্ৰদান কৰে। এই প্ৰিণ্টাৰটোৰ অন্য বিকল্পসমূহ বেলেগ এটা প্ৰিণ্ট সেৱাৰ পৰা ল’ব পৰা যাব পাৰে।"</string>
+    <string name="recommendations_heading" msgid="5086762263560605249">"চুপাৰিছ কৰা সেৱাসমূহ"</string>
+    <string name="recommendation_install_summary" msgid="374785283809791669">"ইনষ্টল কৰিবলৈ বাছনি কৰক"</string>
+    <string name="recommendation_enable_summary" msgid="3500907868251326224">"সক্ষম কৰিবলৈ বাছনি কৰক"</string>
+    <string name="recommendation_manage" msgid="4683640588502866284">"সেৱাসমূহ পৰিচালনা কৰক"</string>
     <string name="security" msgid="2279008326210305401">"সুৰক্ষা"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"এই প্ৰিণ্টাৰটোৱে এখন নতুন সুৰক্ষা প্ৰমাণপত্ৰ যোগান ধৰিছে বা আন এটা ডিভাইচে সেইটোৰ ভাও ধৰিছে। নতুন প্ৰমাণপত্ৰখন গ্ৰহণ কৰিবনে?"</string>
     <string name="not_encrypted_request" msgid="4871472176807381642">"প্ৰিণ্টাৰটোৱে আৰু এনক্ৰিপ্ট কৰা কার্য সমথর্ন নকৰে প্ৰিণ্ট কৰা কার্য অব্যাহত ৰাখিবনে?"</string>

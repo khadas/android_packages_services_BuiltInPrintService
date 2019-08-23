@@ -60,6 +60,11 @@
     <string name="forget" msgid="892068061425802502">"Pozabi"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Vzpostavitev povezave prek povezave Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Vzpostavitev povezave prek trenutnega omrežja z naslovom <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
+    <string name="recommendation_summary" msgid="2979700524954307566">"Privzeta storitev tiskanja zagotavlja osnovne možnosti. Druge možnosti za ta tiskalnik so morda na voljo v kateri drugi storitvi tiskanja."</string>
+    <string name="recommendations_heading" msgid="5086762263560605249">"Priporočene storitve"</string>
+    <string name="recommendation_install_summary" msgid="374785283809791669">"Izberite, če želite namestiti"</string>
+    <string name="recommendation_enable_summary" msgid="3500907868251326224">"Izberite, če želite omogočiti"</string>
+    <string name="recommendation_manage" msgid="4683640588502866284">"Upravljanje storitev"</string>
     <string name="security" msgid="2279008326210305401">"Varnost"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"Ta tiskalnik je posredoval novo varnostno potrdilo ali pa se zanj lažno predstavlja druga naprava. Želite sprejeti novo potrdilo?"</string>
     <string name="not_encrypted_request" msgid="4871472176807381642">"Ta tiskalnik ne sprejema več šifriranih opravil. Želite nadaljevati tiskanje?"</string>
