@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"ખુલ્લો દરવાજો"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"જામ થઇ ગયું છે"</string>
     <string name="printer_offline" msgid="9196864753298645066">"ઑફલાઇન"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"ખોટું પ્રમાણપત્ર"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"એન્ક્રિપ્ટ કરેલું નથી"</string>
     <string name="printer_check" msgid="6428369671197132828">"પ્રિન્ટર તપાસો"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"મોકલવાની રાહ જોઇ રહ્યાં છીએ"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"દસ્તાવેજ વાંચી શકાતા નથી"</string>
@@ -39,7 +41,7 @@
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
     <string name="title_activity_add_printer" msgid="9119216095769228566">"પ્રિન્ટર ઉમેરો"</string>
     <string name="add_printer_by_ip" msgid="562864787592910327">"IP ઍડ્રેસ દ્વારા પ્રિન્ટર ઉમેરો"</string>
-    <string name="hostname_or_ip" msgid="3460546103553992915">"હોસ્ટનું નામ અથવા IP સરનામું"</string>
+    <string name="hostname_or_ip" msgid="3460546103553992915">"હોસ્ટનું નામ અથવા IP ઍડ્રેસ"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"ઉમેરો"</string>
     <string name="add_named" msgid="9074106244018070583">"<xliff:g id="PRINTER">%1$s</xliff:g> ઉમેરો"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"ભૂલી જાઓ"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct મારફતે કનેક્ટ થશે"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"હાલના નેટવર્ક મારફતે <xliff:g id="IP_ADDRESS">%1$s</xliff:g> પર કનેક્ટ થશે"</string>
+    <string name="security" msgid="2279008326210305401">"સુરક્ષા"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"આ પ્રિન્ટરે નવું સુરક્ષા પ્રમાણપત્ર રજૂ કર્યું છે અથવા કોઈ અન્ય ડિવાઇસ ખોટી ઓળખ રજૂ કરી રહ્યું છે. શું નવા પ્રમાણપત્રનો સ્વીકાર કરીએ?"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"આ પ્રિન્ટર હવે કોઈ એન્ક્રિપ્ટ કરેલા કાર્યનો સ્વીકાર કરતું નથી. પ્રિન્ટ કરવાનું ચાલુ રાખીએ?"</string>
+    <string name="accept" msgid="4426153292469698134">"સ્વીકારો"</string>
+    <string name="reject" msgid="24751635160440693">"નકારો"</string>
 </resources>

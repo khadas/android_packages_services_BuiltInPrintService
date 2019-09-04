@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Կափարիչը բաց է"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Թղթի ծամում"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Անցանց"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"Անվավեր հավաստագիր"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"Գաղտնագրված չէ"</string>
     <string name="printer_check" msgid="6428369671197132828">"Ստուգել տպիչը"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Սպասում է ուղարկման"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Հնարավոր չէ կարդալ փաստաթուղթը"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"Չհիշել"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Միանում է Wi-Fi Direct-ի միջոցով"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Միանում է ընթացիկ ցանցի միջոցով (IP հասցե՝ <xliff:g id="IP_ADDRESS">%1$s</xliff:g>)"</string>
+    <string name="security" msgid="2279008326210305401">"Անվտանգություն"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"Այս տպիչը տրամադրել է անվտանգության նոր հավաստագիր, կամ մեկ այլ սարք նմանակում է դրան։ Ընդունե՞լ նոր հավաստագիրը:"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"Տպիչն այլևս չի ընդունում գաղտնագրված առաջադրանքներ: Շարունակե՞լ տպումը:"</string>
+    <string name="accept" msgid="4426153292469698134">"Ընդունել"</string>
+    <string name="reject" msgid="24751635160440693">"Մերժել"</string>
 </resources>

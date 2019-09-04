@@ -27,6 +27,8 @@
     <string name="printer_door_open" msgid="2446302931916940874">"Η θύρα είναι ανοιχτή"</string>
     <string name="printer_jammed" msgid="5104099859384749499">"Εμπλοκή χαρτιού"</string>
     <string name="printer_offline" msgid="9196864753298645066">"Εκτός σύνδεσης"</string>
+    <string name="printer_bad_certificate" msgid="1366180387095466268">"Ακατάλληλο πιστοποιητικό"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"Χωρίς κρυπτογράφηση"</string>
     <string name="printer_check" msgid="6428369671197132828">"Έλεγχος εκτυπωτή"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"Αναμονή για αποστολή"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"Δεν ήταν δυνατή η ανάγνωση του εγγράφου"</string>
@@ -57,4 +59,9 @@
     <string name="forget" msgid="892068061425802502">"Κατάργηση απομνημόνευσης"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Συνδέεται μέσω του Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Συνδέεται μέσω του τρέχοντος δικτύου στη διεύθυνση <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
+    <string name="security" msgid="2279008326210305401">"Ασφάλεια"</string>
+    <string name="certificate_update_request" msgid="1314796413107139475">"Αυτός ο εκτυπωτής παρείχε ένα νέο πιστοποιητικό ασφαλείας ή κάποια άλλη συσκευή έχει κλέψει τα στοιχεία ταυτότητάς του. Αποδοχή του νέου πιστοποιητικού ασφαλείας;"</string>
+    <string name="not_encrypted_request" msgid="4871472176807381642">"Αυτός ο εκτυπωτής δεν δέχεται πλέον κρυπτογραφημένες εργασίες. Να συνεχιστεί η εκτύπωση;"</string>
+    <string name="accept" msgid="4426153292469698134">"Αποδοχή"</string>
+    <string name="reject" msgid="24751635160440693">"Απόρριψη"</string>
 </resources>
