@@ -37,7 +37,7 @@
     <string name="media_size_89x119mm" msgid="6828167243395807385">"89 × 119 mm"</string>
     <string name="media_size_54x86mm" msgid="1301991206183343895">"54 × 86 mm"</string>
     <string name="media_size_8x10in" msgid="1872576638522812402">"8 × 10 palců"</string>
-    <string name="media_size_4x6in" msgid="3093276425529958253">"4 × 6 palců"</string>
+    <string name="media_size_4x6in" msgid="3093276425529958253">"4 × 6\""</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
     <string name="title_activity_add_printer" msgid="9119216095769228566">"Přidat tiskárnu"</string>
     <string name="add_printer_by_ip" msgid="562864787592910327">"Přidat tiskárnu podle IP adresy"</string>
