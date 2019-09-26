@@ -49,6 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"打印机不受支持"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"WLAN 直连"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"查找 WLAN 直连打印机"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"WLAN 直连打印"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"WLAN 直连打印机"</string>
     <string name="searching" msgid="2114018057619514587">"正在搜索…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"您可能需要在打印机的前置面板上批准此连接"</string>
@@ -59,9 +60,17 @@
     <string name="forget" msgid="892068061425802502">"忽略"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"通过 WLAN 直连连接"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"在 <xliff:g id="IP_ADDRESS">%1$s</xliff:g> 通过当前网络连接"</string>
+    <string name="recommendation_summary" msgid="2979700524954307566">"默认打印服务会提供基本选项。这个打印机的其他选项可能由其他打印服务提供。"</string>
+    <string name="recommendations_heading" msgid="5086762263560605249">"推荐的服务"</string>
+    <string name="recommendation_install_summary" msgid="374785283809791669">"选择以安装"</string>
+    <string name="recommendation_enable_summary" msgid="3500907868251326224">"选择以启用"</string>
+    <string name="recommendation_manage" msgid="4683640588502866284">"管理服务"</string>
     <string name="security" msgid="2279008326210305401">"安全"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"此打印机提供了新的安全证书，或其他设备正在冒充此打印机。要接受新证书吗？"</string>
     <string name="not_encrypted_request" msgid="4871472176807381642">"此打印机不再接受加密的作业。要继续打印吗？"</string>
     <string name="accept" msgid="4426153292469698134">"接受"</string>
     <string name="reject" msgid="24751635160440693">"拒绝"</string>
+    <string name="connections" msgid="8895413761760117180">"连接"</string>
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"默认打印服务需要位置信息获取权才能寻找附近的设备。"</string>
+    <string name="fix" msgid="7784394272611365393">"查看权限"</string>
 </resources>
