@@ -49,7 +49,6 @@
     <string name="printer_not_supported" msgid="281955849350938408">"プリンタがサポートされていません"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi Direct 対応プリンタを検出"</string>
-    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct 印刷"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi Direct 対応プリンタ"</string>
     <string name="searching" msgid="2114018057619514587">"検索しています…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"プリンタの前面パネルでこの接続を承認しなければならない場合があります"</string>
@@ -60,17 +59,9 @@
     <string name="forget" msgid="892068061425802502">"削除"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct 経由で接続する"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"現在のネットワーク（<xliff:g id="IP_ADDRESS">%1$s</xliff:g>）経由で接続する"</string>
-    <string name="recommendation_summary" msgid="2979700524954307566">"デフォルトの印刷サービスには基本的なオプションがあります。このプリンタの他のオプションは別の印刷サービスから利用できる場合があります。"</string>
-    <string name="recommendations_heading" msgid="5086762263560605249">"推奨されているサービス"</string>
-    <string name="recommendation_install_summary" msgid="374785283809791669">"選択してインストール"</string>
-    <string name="recommendation_enable_summary" msgid="3500907868251326224">"選択して有効にする"</string>
-    <string name="recommendation_manage" msgid="4683640588502866284">"サービスを管理"</string>
     <string name="security" msgid="2279008326210305401">"セキュリティ"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"このプリンタが新しいセキュリティ証明書を提示しました。これは他のデバイスによるなりすましの可能性もあります。新しい証明書を承認しますか？"</string>
     <string name="not_encrypted_request" msgid="4871472176807381642">"このプリンタは暗号化されたジョブに対応しなくなりました。印刷を続行しますか？"</string>
     <string name="accept" msgid="4426153292469698134">"承認"</string>
     <string name="reject" msgid="24751635160440693">"拒否"</string>
-    <string name="connections" msgid="8895413761760117180">"接続"</string>
-    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"デフォルト印刷サービスが近くのデバイスを検出するには、位置情報の利用許可が必要です。"</string>
-    <string name="fix" msgid="7784394272611365393">"権限を確認"</string>
 </resources>
