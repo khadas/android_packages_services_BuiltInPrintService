@@ -52,7 +52,7 @@
     <string name="wifi_direct_printing" msgid="8423811041563144048">"Udskrivning via Wi-Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Printere med Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Søger…"</string>
-    <string name="connect_hint_text" msgid="587112503851044234">"Denne forbindelse skal muligvis godkendes på printerens betjeningspanel"</string>
+    <string name="connect_hint_text" msgid="587112503851044234">"Denne forbindelse skal muligvis godkendes på printerens kontrolpanel"</string>
     <string name="connecting_to" msgid="2665161014972086194">"Opretter forbindelse til <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
     <string name="failed_printer_connection" msgid="4196305972749960362">"Der kunne ikke oprettes forbindelse til printeren"</string>
     <string name="failed_connection" msgid="8068661997318286575">"Der kunne ikke oprettes forbindelse til <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
