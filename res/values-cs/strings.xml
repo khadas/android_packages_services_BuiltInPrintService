@@ -37,7 +37,7 @@
     <string name="media_size_89x119mm" msgid="6828167243395807385">"89 × 119 mm"</string>
     <string name="media_size_54x86mm" msgid="1301991206183343895">"54 × 86 mm"</string>
     <string name="media_size_8x10in" msgid="1872576638522812402">"8 × 10 palců"</string>
-    <string name="media_size_4x6in" msgid="3093276425529958253">"4 × 6\""</string>
+    <string name="media_size_4x6in" msgid="3093276425529958253">"4 × 6 palců"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
     <string name="title_activity_add_printer" msgid="9119216095769228566">"Přidat tiskárnu"</string>
     <string name="add_printer_by_ip" msgid="562864787592910327">"Přidat tiskárnu podle IP adresy"</string>
@@ -49,7 +49,6 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Tiskárna není podporována"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Najít tiskárny s podporou funkce Wi-Fi Direct"</string>
-    <string name="wifi_direct_printing" msgid="8423811041563144048">"Tisk Wi-Fi Direct"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Tiskárny Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Vyhledávání…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Připojení možná budete muset schválit na předním panelu tiskárny"</string>
@@ -60,17 +59,9 @@
     <string name="forget" msgid="892068061425802502">"Odstranit"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Připojení prostřednictvím Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Připojení prostřednictvím stávající sítě s IP adresou <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
-    <string name="recommendation_summary" msgid="2979700524954307566">"Výchozí služba tisku nabízí základní možnosti. Další možnosti mohou být k dispozici z jiné služby tisku."</string>
-    <string name="recommendations_heading" msgid="5086762263560605249">"Doporučené služby"</string>
-    <string name="recommendation_install_summary" msgid="374785283809791669">"Vyberte, co nainstalovat"</string>
-    <string name="recommendation_enable_summary" msgid="3500907868251326224">"Vyberte, co aktivovat"</string>
-    <string name="recommendation_manage" msgid="4683640588502866284">"Spravovat služby"</string>
     <string name="security" msgid="2279008326210305401">"Zabezpečení"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"Tato tiskárna poskytla nový bezpečnostní certifikát, nebo se za ni vydává jiné zařízení. Chcete nový certifikát přijmout?"</string>
     <string name="not_encrypted_request" msgid="4871472176807381642">"Tato tiskárna už nepřijímá šifrované tiskové úlohy. Pokračovat v tisku?"</string>
     <string name="accept" msgid="4426153292469698134">"Přijmout"</string>
     <string name="reject" msgid="24751635160440693">"Odmítnout"</string>
-    <string name="connections" msgid="8895413761760117180">"Připojení"</string>
-    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Služba výchozího tisku potřebuje oprávnění pro přístup k poloze, aby mohla vyhledat zařízení v okolí."</string>
-    <string name="fix" msgid="7784394272611365393">"Kontrola oprávnění"</string>
 </resources>
