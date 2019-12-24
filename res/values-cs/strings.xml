@@ -57,7 +57,7 @@
     <string name="failed_printer_connection" msgid="4196305972749960362">"K tiskárně se nelze připojit"</string>
     <string name="failed_connection" msgid="8068661997318286575">"K tiskárně <xliff:g id="PRINTER">%1$s</xliff:g> se nelze připojit"</string>
     <string name="saved_printers" msgid="4567534965213125526">"Uložené tiskárny"</string>
-    <string name="forget" msgid="892068061425802502">"Odstranit"</string>
+    <string name="forget" msgid="892068061425802502">"Zapomenout"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Připojení prostřednictvím Wi-Fi Direct"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Připojení prostřednictvím stávající sítě s IP adresou <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
     <string name="security" msgid="2279008326210305401">"Zabezpečení"</string>
