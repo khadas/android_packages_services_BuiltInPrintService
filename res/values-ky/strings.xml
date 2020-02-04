@@ -39,7 +39,7 @@
     <string name="media_size_8x10in" msgid="1872576638522812402">"8x10 дюйм"</string>
     <string name="media_size_4x6in" msgid="3093276425529958253">"4x6 дюйм"</string>
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
-    <string name="title_activity_add_printer" msgid="9119216095769228566">"Принтерди кошуу"</string>
+    <string name="title_activity_add_printer" msgid="9119216095769228566">"Принтер кошуу"</string>
     <string name="add_printer_by_ip" msgid="562864787592910327">"IP дареги аркылуу принтер кошуу"</string>
     <string name="hostname_or_ip" msgid="3460546103553992915">"Түйүндүн аталышы же IP дареги"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
