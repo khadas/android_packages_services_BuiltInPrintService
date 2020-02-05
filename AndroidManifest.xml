@@ -67,5 +67,29 @@
             android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:permission="android.permission.START_PRINT_SERVICE_CONFIG_ACTIVITY" />
+
+        <activity
+            android:name="com.android.bips.ImagePrintActivity"
+            android:label="@string/print"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.bips.PdfPrintActivity"
+            android:label="@string/print"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/pdf" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
