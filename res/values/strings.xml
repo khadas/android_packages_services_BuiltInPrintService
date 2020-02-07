@@ -115,4 +115,7 @@
     <string name="wifi_direct_permission_rationale">Default Print Service needs location permission to find nearby devices.</string>
     <!-- Button label in a notification or dialog. This button leads to a request to grant permissions [CHAR LIMIT=20] -->
     <string name="fix">Review permission</string>
+
+    <!-- Share-to-print label [CHAR LIMIT=20] -->
+    <string name="print">Print</string>
 </resources>
