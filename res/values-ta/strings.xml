@@ -73,4 +73,6 @@
     <string name="connections" msgid="8895413761760117180">"இணைப்புகள்"</string>
     <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"அருகிலுள்ள சாதனங்களைக் கண்டறிய \'இயல்புநிலை அச்சிடுதல் சேவைக்கு\' இருப்பிட அனுமதி தேவை."</string>
     <string name="fix" msgid="7784394272611365393">"அனுமதியைச் சரிபார்"</string>
+    <!-- no translation found for print (7851318072404916362) -->
+    <skip />
 </resources>

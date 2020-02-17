@@ -73,4 +73,5 @@
     <string name="connections" msgid="8895413761760117180">"Поврзувања"</string>
     <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"Услугата за стандардно печатење има потреба од дозвола за локација за да најде уреди во близина."</string>
     <string name="fix" msgid="7784394272611365393">"Прикажи ја дозволата"</string>
+    <string name="print" msgid="7851318072404916362">"Печати"</string>
 </resources>

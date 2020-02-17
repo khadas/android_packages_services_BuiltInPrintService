@@ -73,4 +73,6 @@
     <string name="connections" msgid="8895413761760117180">"કનેક્શન"</string>
     <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"ડિફૉલ્ટ પ્રિન્ટ સેવાને નજીકના ડિવાઇસ શોઘવા સ્થાન માટેની પરવાનગીની જરૂર છે."</string>
     <string name="fix" msgid="7784394272611365393">"પરવાનગીનો રિવ્યૂ કરો"</string>
+    <!-- no translation found for print (7851318072404916362) -->
+    <skip />
 </resources>
