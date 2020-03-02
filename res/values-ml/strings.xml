@@ -73,6 +73,5 @@
     <string name="connections" msgid="8895413761760117180">"കണക്ഷനുകൾ"</string>
     <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"സമീപമുള്ള ഉപകരണങ്ങൾ കണ്ടെത്താൻ ഡിഫോൾട്ട് പ്രിന്റ് സേവനത്തിന് ലൊക്കേഷൻ അനുമതി ആവശ്യമാണ്."</string>
     <string name="fix" msgid="7784394272611365393">"അനുമതി അവലോകനം"</string>
-    <!-- no translation found for print (7851318072404916362) -->
-    <skip />
+    <string name="print" msgid="7851318072404916362">"അച്ചടിക്കുക"</string>
 </resources>

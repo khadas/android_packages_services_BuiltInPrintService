@@ -73,6 +73,5 @@
     <string name="connections" msgid="8895413761760117180">"कनेक्शन"</string>
     <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"आपके आस-पास मौजूद डिवाइस ढूंढने के लिए, डिफ़ॉल्ट प्रिंटिंग सेवा को जगह की जानकारी ऐक्सेस करने की अनुमति की ज़रूरत होती है."</string>
     <string name="fix" msgid="7784394272611365393">"अनुमति दें"</string>
-    <!-- no translation found for print (7851318072404916362) -->
-    <skip />
+    <string name="print" msgid="7851318072404916362">"प्रिंट करें"</string>
 </resources>
