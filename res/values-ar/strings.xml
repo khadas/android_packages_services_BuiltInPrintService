@@ -28,7 +28,7 @@
     <string name="printer_jammed" msgid="5104099859384749499">"الأوراق عالقة"</string>
     <string name="printer_offline" msgid="9196864753298645066">"بلا اتصال"</string>
     <string name="printer_bad_certificate" msgid="1366180387095466268">"شهادة غير صالحة"</string>
-    <string name="printer_not_encrypted" msgid="1913051469275483673">"بدون تشفير"</string>
+    <string name="printer_not_encrypted" msgid="1913051469275483673">"بدون ترميز"</string>
     <string name="printer_check" msgid="6428369671197132828">"التحقق من الطابعة"</string>
     <string name="waiting_to_send" msgid="2022115199902822180">"في انتظار الإرسال"</string>
     <string name="unreadable_input" msgid="2199948329556527912">"تعذرت قراءة المستند"</string>
