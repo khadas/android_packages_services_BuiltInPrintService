@@ -847,7 +847,7 @@ static void *_job_thread(void *param) {
                             && printer_state.printer_reasons[0] == PRINT_STATUS_UNKNOWN) {
                         // no status available, break out and hope for the best
                         printer_state.printer_status = PRINT_STATUS_IDLE;
-                    } else if (status == PRINT_STATUS_SVC_REQUEST
+                    } else if ((status == PRINT_STATUS_UNKNOWN || status == PRINT_STATUS_SVC_REQUEST)
                             && ((printer_state.printer_reasons[0] == PRINT_STATUS_UNABLE_TO_CONNECT)
                                 || (printer_state.printer_reasons[0] == PRINT_STATUS_OFFLINE))) {
                         if (_is_certificate_allowed(jq)) {
