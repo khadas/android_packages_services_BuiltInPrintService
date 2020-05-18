@@ -49,7 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"ప్రింటర్‌కి మద్దతు లేదు"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi Direct ప్రింటర్‌లను కనుగొనండి"</string>
-    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct ముద్రణ"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct ప్రింటింగ్"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Wi-Fi Direct ప్రింటర్‌లు"</string>
     <string name="searching" msgid="2114018057619514587">"వెతుకుతోంది…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"మీరు మీ ప్రింటర్ ముందు ప్యానెల్‌లో ఈ కనెక్షన్‌ని ఆమోదించవలసి రావచ్చు"</string>

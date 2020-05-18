@@ -50,7 +50,7 @@
     <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Poišči tiskalnike s povezavo Wi-Fi Direct"</string>
     <string name="wifi_direct_printing" msgid="8423811041563144048">"Tiskanje s funkcijo Wi-Fi Direct"</string>
-    <string name="wifi_direct_printers" msgid="541168032444693191">"Tiskalniki s povezavo Wi-Fi Direct"</string>
+    <string name="wifi_direct_printers" msgid="541168032444693191">"Tiskalniki Wi-Fi Direct"</string>
     <string name="searching" msgid="2114018057619514587">"Iskanje …"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Morda boste morali to povezavo odobriti na nadzorni plošči tiskalnika"</string>
     <string name="connecting_to" msgid="2665161014972086194">"Vzpostavljanje povezave s tiskalnikom <xliff:g id="PRINTER">%1$s</xliff:g>"</string>

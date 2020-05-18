@@ -57,7 +57,7 @@
     <string name="failed_printer_connection" msgid="4196305972749960362">"无法连接到打印机"</string>
     <string name="failed_connection" msgid="8068661997318286575">"无法连接到“<xliff:g id="PRINTER">%1$s</xliff:g>”"</string>
     <string name="saved_printers" msgid="4567534965213125526">"已保存的打印机"</string>
-    <string name="forget" msgid="892068061425802502">"忽略"</string>
+    <string name="forget" msgid="892068061425802502">"取消保存"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"通过 WLAN 直连连接"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"在 <xliff:g id="IP_ADDRESS">%1$s</xliff:g> 通过当前网络连接"</string>
     <string name="security" msgid="2279008326210305401">"安全"</string>
