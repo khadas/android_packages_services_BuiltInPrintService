@@ -71,9 +71,7 @@
     <string name="accept" msgid="4426153292469698134">"수락"</string>
     <string name="reject" msgid="24751635160440693">"거부"</string>
     <string name="connections" msgid="8895413761760117180">"연결"</string>
-    <!-- no translation found for wifi_direct_permission_rationale (3599186620970379218) -->
-    <skip />
-    <!-- no translation found for fix (7784394272611365393) -->
-    <skip />
+    <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"기본 인쇄 서비스를 사용하여 주변 기기를 찾으려면 위치 정보 액세스 권한이 필요합니다."</string>
+    <string name="fix" msgid="7784394272611365393">"액세스 권한 검토"</string>
     <string name="print" msgid="7851318072404916362">"인쇄"</string>
 </resources>

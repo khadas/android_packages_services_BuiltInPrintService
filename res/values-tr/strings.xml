@@ -49,7 +49,7 @@
     <string name="printer_not_supported" msgid="281955849350938408">"Yazıcı desteklenmiyor"</string>
     <string name="wifi_direct" msgid="4629404342852294985">"Kablosuz Doğrudan Bağlantı"</string>
     <string name="find_wifi_direct" msgid="5270504288829123954">"Kablosuz Doğrudan Bağlantı yazıcılarını bul"</string>
-    <string name="wifi_direct_printing" msgid="8423811041563144048">"Kablosuz Doğrudan Bağlantı ile yazdırma"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Kablosuz Doğrudan yazdırma"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"Kablosuz Doğrudan Bağlantı yazıcıları"</string>
     <string name="searching" msgid="2114018057619514587">"Aranıyor…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Bu bağlantıyı yazıcınızın ön panelinden onaylamanız gerekebilir"</string>
