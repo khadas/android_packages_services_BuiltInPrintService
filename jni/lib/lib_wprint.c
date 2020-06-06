@@ -473,6 +473,9 @@ static int _recycle_handle(wJob_t job_handle) {
         if (jq->job_params.useragent != NULL) {
             free((void *) jq->job_params.useragent);
         }
+        if (jq->job_params.certificate != NULL) {
+            free((void *) jq->job_params.certificate);
+        }
         free(jq->printer_addr);
         jq->job_state = JOB_STATE_FREE;
         if (jq->job_debug_fd != -1) {
@@ -1906,6 +1909,15 @@ wJob_t wprintStartJob(const char *printer_addr, port_t port_num,
         if (useragent != NULL) {
             snprintf(useragent, useragent_len, USERAGENT_PREFIX "%s", jq->job_params.docCategory);
             jq->job_params.useragent = useragent;
+        }
+
+        // Make a copy of the job_params certificate if it is present
+        if (job_params->certificate) {
+            jq->job_params.certificate = malloc(job_params->certificate_len);
+            if (jq->job_params.certificate) {
+                memcpy(jq->job_params.certificate, job_params->certificate,
+                        job_params->certificate_len);
+            }
         }
 
         jq->job_params.page_num = 0;
