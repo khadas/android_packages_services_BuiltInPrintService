@@ -128,7 +128,7 @@ public class ImagePrintActivity extends Activity {
         private Bitmap loadBitmap(Uri contentUri, BitmapFactory.Options options) {
             try (InputStream inputStream = getContentResolver().openInputStream(contentUri)) {
                 return BitmapFactory.decodeStream(inputStream, null, options);
-            } catch (IOException e) {
+            } catch (IOException | SecurityException e) {
                 Log.w(TAG, "Failed to load bitmap", e);
                 return null;
             }
