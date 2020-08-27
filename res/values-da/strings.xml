@@ -41,7 +41,7 @@
     <string name="printer_description" msgid="8580767673213837142">"%1$s – %2$s"</string>
     <string name="title_activity_add_printer" msgid="9119216095769228566">"Tilføj printer"</string>
     <string name="add_printer_by_ip" msgid="562864787592910327">"Tilføj printer efter IP-adresse"</string>
-    <string name="hostname_or_ip" msgid="3460546103553992915">"Hostnavn eller IP-adresse"</string>
+    <string name="hostname_or_ip" msgid="3460546103553992915">"Hostname eller IP-adresse"</string>
     <string name="ip_hint" msgid="7939777481941979799">"192.168.0.4"</string>
     <string name="add" msgid="1950342261671100906">"Tilføj"</string>
     <string name="add_named" msgid="9074106244018070583">"Tilføj <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
