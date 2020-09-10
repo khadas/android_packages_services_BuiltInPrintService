@@ -47,9 +47,9 @@
     <string name="add_named" msgid="9074106244018070583">"<xliff:g id="PRINTER">%1$s</xliff:g> ചേർക്കുക"</string>
     <string name="no_printer_found" msgid="4777867380924351173">"ഈ വിലാസത്തിൽ ‌പ്രിന്റർ ഒന്നും കണ്ടെത്തിയില്ല"</string>
     <string name="printer_not_supported" msgid="281955849350938408">"പ്രിന്ററിന് പിന്തുണയില്ല"</string>
-    <string name="wifi_direct" msgid="4629404342852294985">"വൈഫൈ ഡയറക്‌ട്"</string>
-    <string name="find_wifi_direct" msgid="5270504288829123954">"വൈഫൈ ഡയറക്‌റ്റ് പ്രിന്‍ററുകൾ കണ്ടെത്തുക"</string>
-    <string name="wifi_direct_printing" msgid="8423811041563144048">"വൈഫൈ ഡയറക്‌ട് പ്രിൻ്റിംഗ്"</string>
+    <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi ഡയറക്‌ട്"</string>
+    <string name="find_wifi_direct" msgid="5270504288829123954">"Wi-Fi ഡയറക്‌റ്റ് പ്രിന്‍ററുകൾ കണ്ടെത്തുക"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi ഡയറക്‌ട് പ്രിൻ്റിംഗ്"</string>
     <string name="wifi_direct_printers" msgid="541168032444693191">"വൈഫൈ ഡയറക്‌ട് പ്രിന്‍ററുകൾ"</string>
     <string name="searching" msgid="2114018057619514587">"തിരയുന്നു..."</string>
     <string name="connect_hint_text" msgid="587112503851044234">"പ്രിന്‍ററിന്‍റെ മുൻഭാഗത്തെ പാനലിൽ ഈ കണക്ഷന് അനുമതി നൽകേണ്ടതായി വന്നേക്കാം"</string>
@@ -73,6 +73,5 @@
     <string name="connections" msgid="8895413761760117180">"കണക്ഷനുകൾ"</string>
     <string name="wifi_direct_permission_rationale" msgid="3599186620970379218">"സമീപമുള്ള ഉപകരണങ്ങൾ കണ്ടെത്താൻ ഡിഫോൾട്ട് പ്രിന്റ് സേവനത്തിന് ലൊക്കേഷൻ അനുമതി ആവശ്യമാണ്."</string>
     <string name="fix" msgid="7784394272611365393">"അനുമതി അവലോകനം"</string>
-    <!-- no translation found for print (7851318072404916362) -->
-    <skip />
+    <string name="print" msgid="7851318072404916362">"അച്ചടിക്കുക"</string>
 </resources>
