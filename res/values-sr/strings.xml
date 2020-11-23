@@ -47,10 +47,10 @@
     <string name="add_named" msgid="9074106244018070583">"Додај штампач <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
     <string name="no_printer_found" msgid="4777867380924351173">"На овој адреси нисмо пронашли ниједан штампач"</string>
     <string name="printer_not_supported" msgid="281955849350938408">"Штампач није подржан"</string>
-    <string name="wifi_direct" msgid="4629404342852294985">"Wi-Fi Direct"</string>
-    <string name="find_wifi_direct" msgid="5270504288829123954">"Пронађи са Wi-Fi Direct-ом"</string>
-    <string name="wifi_direct_printing" msgid="8423811041563144048">"Wi-Fi Direct штампање"</string>
-    <string name="wifi_direct_printers" msgid="541168032444693191">"Штампачи са Wi-Fi Direct-ом"</string>
+    <string name="wifi_direct" msgid="4629404342852294985">"WiFi Direct"</string>
+    <string name="find_wifi_direct" msgid="5270504288829123954">"Пронађи са WiFi Direct-ом"</string>
+    <string name="wifi_direct_printing" msgid="8423811041563144048">"WiFi Direct штампање"</string>
+    <string name="wifi_direct_printers" msgid="541168032444693191">"Штампачи са WiFi Direct-ом"</string>
     <string name="searching" msgid="2114018057619514587">"Претражује се…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Можда треба да одобрите ову везу на предњој табли штампача"</string>
     <string name="connecting_to" msgid="2665161014972086194">"Повезује се са штампачем <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
@@ -58,7 +58,7 @@
     <string name="failed_connection" msgid="8068661997318286575">"Повезивање са штампачем <xliff:g id="PRINTER">%1$s</xliff:g> није успело"</string>
     <string name="saved_printers" msgid="4567534965213125526">"Сачувани штампачи"</string>
     <string name="forget" msgid="892068061425802502">"Заборави"</string>
-    <string name="connects_via_wifi_direct" msgid="652300632780158437">"Повезује се преко Wi-Fi Direct-а"</string>
+    <string name="connects_via_wifi_direct" msgid="652300632780158437">"Повезује се преко WiFi Direct-а"</string>
     <string name="connects_via_network" msgid="5990041581556733898">"Повезује се преко тренутне мреже помоћу IP адресе <xliff:g id="IP_ADDRESS">%1$s</xliff:g>"</string>
     <string name="recommendation_summary" msgid="2979700524954307566">"Подразумевана услуга штампања пружа основне опције. Остале опције овог штампача су можда доступне у другој услузи штампања."</string>
     <string name="recommendations_heading" msgid="5086762263560605249">"Препоручене услуге"</string>

@@ -54,8 +54,8 @@
     <string name="searching" msgid="2114018057619514587">"Се пребарува…"</string>
     <string name="connect_hint_text" msgid="587112503851044234">"Може ќе треба да ја одобрите врскава на контролната табла на вашиот печатач"</string>
     <string name="connecting_to" msgid="2665161014972086194">"Се поврзува со <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
-    <string name="failed_printer_connection" msgid="4196305972749960362">"Не можеше да се поврзе со печатачот"</string>
-    <string name="failed_connection" msgid="8068661997318286575">"Не можеше да се поврзе со <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
+    <string name="failed_printer_connection" msgid="4196305972749960362">"Не може да се поврзе со печатачот"</string>
+    <string name="failed_connection" msgid="8068661997318286575">"Не може да се поврзе со <xliff:g id="PRINTER">%1$s</xliff:g>"</string>
     <string name="saved_printers" msgid="4567534965213125526">"Зачувани печатачи"</string>
     <string name="forget" msgid="892068061425802502">"Избриши го"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Се поврзува преку Wi-Fi Direct"</string>
