@@ -59,7 +59,7 @@
     <string name="saved_printers" msgid="4567534965213125526">"Gordetako inprimagailuak"</string>
     <string name="forget" msgid="892068061425802502">"Ahaztu"</string>
     <string name="connects_via_wifi_direct" msgid="652300632780158437">"Wi-Fi Direct zerbitzuaren bidez konektatzen da"</string>
-    <string name="connects_via_network" msgid="5990041581556733898">"Uneko sarearen bidez konektatzen da (<xliff:g id="IP_ADDRESS">%1$s</xliff:g>)"</string>
+    <string name="connects_via_network" msgid="5990041581556733898">"Sare honen bidez konektatzen da (<xliff:g id="IP_ADDRESS">%1$s</xliff:g>)"</string>
     <string name="recommendation_summary" msgid="2979700524954307566">"Inprimatze-zerbitzu lehenetsiak oinarrizko aukerak eskaintzen ditu. Baliteke beste inprimatze-zerbitzu batek bestelako aukerak eskaintzea inprimagailurako."</string>
     <string name="recommendations_heading" msgid="5086762263560605249">"Gomendatutako zerbitzuak"</string>
     <string name="recommendation_install_summary" msgid="374785283809791669">"Hautatu instalatzeko"</string>
