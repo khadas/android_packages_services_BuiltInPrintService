@@ -63,7 +63,7 @@
     <string name="recommendation_summary" msgid="2979700524954307566">"De standaard afdrukservice biedt basisopties. Er kunnen andere opties voor deze printer beschikbaar zijn via een andere afdrukservice."</string>
     <string name="recommendations_heading" msgid="5086762263560605249">"Aanbevolen services"</string>
     <string name="recommendation_install_summary" msgid="374785283809791669">"Selecteer om te installeren"</string>
-    <string name="recommendation_enable_summary" msgid="3500907868251326224">"Selecteer om in te schakelen"</string>
+    <string name="recommendation_enable_summary" msgid="3500907868251326224">"Selecteer om aan te zetten"</string>
     <string name="recommendation_manage" msgid="4683640588502866284">"Services beheren"</string>
     <string name="security" msgid="2279008326210305401">"Beveiliging"</string>
     <string name="certificate_update_request" msgid="1314796413107139475">"Deze printer biedt een nieuw beveiligingscertificaat aan, of een ander apparaat imiteert deze printer. Wil je het nieuwe certificaat accepteren?"</string>
